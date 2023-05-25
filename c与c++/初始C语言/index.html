@@ -1,0 +1,1917 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>初始C语言 - blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#include" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="blog" class="md-header__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              初始C语言
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="blog" class="md-nav__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          C与c++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C与c++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        初始C语言
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>1、什么是C语言
+1.1C语言是计算机语言
+计算机语言是任何计算机交流的语言
+计算机语言：C C++ JAVA  Python
+1.2计算机语言的发展
+二进制语言
+硬件-电--&gt;正电/负电            --&gt;二进制手册
+                     1      0
+助记符--&gt;汇编语言--&gt;
+B语言--&gt;
+C语言--&gt;（高级语言）
+1.3C语言发展
+C语言-- &gt;早期C语言不成熟--&gt; 成熟 --&gt;流行--&gt;
+国际标准ANSIC--&gt;C89/C90--&gt;
+常见的C语言的编译器：Clang ,GCC ,WIN-TC.....
+2、第一个C语言程序
+1、创建工程/新建项目
+2、创建文件
+    C代码
+c-源文件
+h-头文件
+3、写代码
+基本框架：
+//包含一个叫stdio.h的文件  std-标准  standard input output</p>
+<h1 id="include">include <stdio.h></h1>
+<p>//int 整型   main前加int是表示main函数调用返回一个整型值
+int main()                          //主函数，主函数是程序的入口，有且只有一个
+{                                     <br />
+printf("hello\n");
+//库函数-C语言本身提供给我们的函数
+return 0;
+}</p>
+<p>3、数据类型
+类型的作用：向内存申请空间
+char                    //字符数据类型
+char ch='A';            //内存
+short               //短整型，
+int                 //整形
+int age = 20;
+printf("%d\n",age); //%d -- 打印整型十进制数据
+long                //长整型
+long mun = 100;
+printf("%d\n"num);
+float               //单精度浮点数
+float f = 5.0;
+printf("%f\n",f);
+double              //双精度浮点数
+double b = 3.13;
+printf("%1f\n",b);</p>
+<p>int main()
+{
+    printf("%d\n",sizeof(char));            // 1
+    printf("%d\n",sizeof(int));         //4
+    printf("%d\n",sizeof(short));
+    printf("%d\n",sizeof(long));
+    printf("%d\n",sizeof(float));
+    printf("%d\n",sizeof(double));
+    return 0;
+}</p>
+<p>3.1 C语言标准规定：
+sizeof(long)&gt;=sizeof(int)
+int main()
+{
+short age = 20;         //像内存申请2byte=16bit，用来存放20
+float weight=95.6f;         //默认95.6是双精度浮点型， 要指定他为单精度浮点型需要在后边加f。  向内存申请4个字节存放95.6
+return 0;
+}</p>
+<p>3.2 单位
+注意：存在这么多类型，其实是为了更加丰富的表达生活中的各种值。
+字节：计算机中的单位
+bit -比特位      <br />
+byte -字节            1byte=8bit<br />
+kb                          1024byte
+mb                          1024kb
+gb                          1024mb
+tb                          1024gb
+pb</p>
+<p>4、变量、常量
+4.1 认识变量、常量
+变量：性别、年龄、薪资、、、
+常量：圆周率、身份证
+定义变量的方式：
+类型 变量名 = 变量；
+int num = 20;                       //全局变量-定义在内部外部
+int main()
+{
+    int num1 = 10;                      //局部变量-定义在代码块内部
+    return 0;
+}</p>
+<p>int num = 20;         <br />
+int main()
+{
+    int num = 10;             <br />
+    printf("%d\n",a);       //打印的是10
+    return 0;
+}
+//局部变量和全局变量的名字建议不同，容易产生误会，产生bug
+//当全局变量和全局变量的名字相同时，会优先局部变量</p>
+<p>int main()
+{
+    {
+        int a = 10;
+    }             <br />
+    printf("%d\n",a);       //局部范围内的变量在局部范围外不可使用
+    return 0;
+}</p>
+<h1 id="define-_cecure_no_warnings-1">define _CECURE_NO_WARNINGS 1</h1>
+<p>int main()
+{
+int num1 = 0;
+int num2 = 0;
+int sum = 0;
+scanf("%d%d",&amp;num1,&amp;num2);<br />
+    //&amp;:取地址符
+// scanf 是C语言提供的，scanf_s是编译器提供的，其他编译器不能识别（导致代码不具有跨平台性），尽量不使用scanf_s  ，定义#define _CECURE_NO_WARNINGS 1
+// C语言提供的库函数都是不安全的VS会报错，只要加#define _CECURE_NO_WARNINGS 1可解决，把他加在C文件的源文件下
+// int sum = 0;   变量不能放在代码块后边。C语言规定，变量定义要在当前代码块之前
+sum = num1+num2;
+return 0;
+}</p>
+<p>4,2 变量的作用域
+局部变量：
+int main()
+{
+    {
+        //局部变量的作用域只在局部变量，不能在全局生效
+        int num=0;
+    }
+    printf("num=%d\n",num); //报错
+    return 0;
+}</p>
+<p>全局变量：
+int global =2020;           //全局变量的作用域是整个工程
+void test()
+{
+    printf("test()-- %d\n",global);
+}
+int main()
+    {
+        test();                     //调用test函数
+        printf("%d\n",global);
+        return 0;
+    }</p>
+<p>4.3生命周期：
+局部变量的生命周期：是从{}局部变量开始到局部变量结束；
+全局变量的生命周期：全局变量的周期和main函数的生命周期是一致，main函数生命周期是整个程序的生命周期；
+int main()
+{
+    {
+        int a = 1;
+        printf("%d\n",a);       //可以运行，a的生命周期在这个{}内；
+    }
+    printf("%d\n",a);           //error
+    return 0;
+}</p>
+<p>常量分类
+● 字面常量
+int main()
+{
+    int num = 4;
+    3;                  //字面常量，直接的常量
+    return 0;
+}
+● const修饰的常量
+int main()
+{
+    //const-长属性
+    //const修饰常变量-本质属性是变量，具有了常量属性。
+    const int num = 4;
+    printf("%d\n",num);
+    num = 8;
+    printf("%d\n",num);     //会报错
+    return 0;
+}
+不能再被赋值改变，但是不能用在需要常量的地方，比如：n已经是常变量，arr[n]={0};是错误语句。</p>
+<p>● #define定义的常量标识符常量
+//#define定义的标识符常量</p>
+<h1 id="define-max-10">define MAX 10；</h1>
+<p>int main()
+{
+    int arr[MAX] = {0};
+    printf("%d\n",MAX);
+    return 0;
+}
+● 枚举常量
+//枚举常量就是一 一列举，
+//例如三原色：红、黄、蓝；星期；
+//枚举关键字 - enum
+enum Sex
+{
+    MALE,
+    FEMALE,
+    SECRET
+    };
+int main()
+{
+    // enum Sex s=FEMALE;  赋值
+    printf("%d\n",MALE);        //0
+    printf("%d\n",FEMALE);      //1
+    printf("%d\n",SECURET);     //2
+    // 枚举常量是有数值的
+    color = YELLOW;     //color是一个变量，可以被重新赋值改变
+    //BLUE = 7; 会报错，枚举常量是有值的无法改变 
+    return 0;
+}</p>
+<p>5、字符串、转义字符、注释
+1、 字符串类型
+由双引号引起的一串字符
+int main()
+{
+    "abcf";
+    "hello";
+    "";     //空字符串
+}</p>
+<p>int mian()
+{
+    // 数据在计算机存储的是二进制，
+    char arr1[] = "abc";
+    // "abc" 其实是四个元素 -- 'a' 'b' 'c' '\0'   --'\0'是字符串的结束标志， \0是隐藏在字符串末尾
+    char arr2[] = {'a','b','c'};
+    // 'a' 'b' 'c' 后边无打印结束的标志会继续打印随机值，如果再后边加 \0会在打印完后结束
+    char arr2[] = {'a','b','c','\0'};
+    printf("%s\n",arr1);
+    printf("%s\n",arr2);
+    return
+}</p>
+<p>int main()
+{
+    char arr1[] = "abc";        //空字符串
+    char arr2[] ={'a','b','c'};
+    //strlen是求字符串的长度，
+    printf("%d\n",strlen(arr1));        // '\0'是字符串的结束标志，不算一个字符'
+    printf("%d\n",strlen(arr2));        //随机值，它会一直去找，直到找到0会结束
+    return 0;
+}
+// '\0'是转义字符</p>
+<p>2、转义字符
+改变某些字符原来的意思</p>
+<h1 id="include_1">include <stdio.h></h1>
+<h1 id="include_2">include <string.h></h1>
+<p>int main()
+{
+    \printf("c:\test\32\test.c");      // \t    水平制表符
+    printf("%d\n",strlen("c:\test\32\test.c"));
+    return 0;
+}</p>
+<p>\ddd   表示1~3个八进制数字            \32作为8简直带包的那个十进制数字，作为ASCII码值对应的字符
+\xdd dd表示2个十六进制的数字。如\x30 0
+3、字符串函数
+4、表示字符串和字符串I/O
+5、字符串数组</p>
+<p>6、控制语句-循环
+● if
+● switch
+1、if 语句
+1、语法结构
+//单分支if
+if(表达式1)
+语句;</p>
+<p>// 双if-else
+if(表达式)
+语句1;
+else
+语句2;</p>
+<p>// 多分枝
+if(表达式1)
+语句1;
+else if(表达式2)
+语句2;
+else
+语句3;</p>
+<p>// 多语句表达式</p>
+<h1 id="include_3">include<stdio.h></h1>
+<p>int mian()
+{
+if(表达式)
+{
+语句列表1；      //代码块
+}
+else 
+{
+语句列表2；
+}
+return 0;
+}
+//悬空else </p>
+<p>// if语句
+1、代码1（条件成立返回下，条件不成立返回y ）</p>
+<p>int main()
+{
+    int a = 10;
+    int b = 20;
+    if (a &gt; b) 
+    {
+        return x;
+    }
+    return y;
+}</p>
+<p>2、优化代码1</p>
+<p>int main()
+{
+    int a = 10;
+    int b = 20;
+    if (a &gt; b) 
+    {
+        return x;
+    }
+else
+{
+        return y;
+}
+}
+3、代码3</p>
+<p>int main()
+{
+    int a = 10;
+    if (a=4) 
+    {
+        printf("hehe\n");
+    }
+    return 0;
+}
+判断一个数是否为奇数
+输出1-100之间的 奇数</p>
+<p>2、switch语句
+解决多分枝问题
+int main ()
+{
+int day = 0;
+sacnf("%d",&amp;day);
+switch(day)
+{
+case1:
+printf("q\n");
+case2:
+printf("b\n");
+}
+return 0;
+}</p>
+<p>由break终止程序</p>
+<p>3、循环语句
+3.1、while
+break :彻底结束循环
+continue：不执行后边的代码，重新太转到判断部分进入循环</p>
+<p>//代码1
+getchar()--获取一个值
+ch=getchar()--将值赋给ch
+putchar()--打印一个值</p>
+<p>//代码</p>
+<p>结果：运行时输入密码回车后直接输出NO
+分析在scanf()和getchar()都为输入函数，输入值会放入输入缓冲区存，回车的转移字符为\n也会被存进去，scanf会等待输入缓冲区内出现值，拿走自己想要的值，当密码被读走后还有\n，被getchar拿走，ret的值为\n
+解决：将\n提前被或去掉，使得缓冲区内无值，再用有一个getchar()把\n拿走</p>
+<p>3.2for循环
+for循环是把初始化、测试、和更新组合在一处。
+int main(void)
+{
+    const int NUMBER = 22;
+    int count;
+    for (count = 1;count &lt;= NUMBER; count++)
+    printf("Be my Valentine!\n");
+    return 0;
+}
+完整的for语句还包括后面的简单语句或复合语句。for圆括号中的表达式也叫做控制表达式，它们都是完整表达式，所以每个表达式的副作用（如，递增变量）都发生在对下一个表达式求值之前。</p>
+<h1 id="include_4">include <stdio.h></h1>
+<p>int main(void)
+{
+    int num;
+    printf("    n     n  cubed\n");
+    for (num = 1; num &lt;= 6; num++)
+        printf("%5d%5d\n",num,num<em>num</em>num);
+    return 0;
+}</p>
+<p>int main(void)
+{
+    int secs;
+    for (secs = 5; secs &gt; 0; secs--)
+        printf("%d  seconds!\n", secs);
+        printf("We have ignition!\n");
+    return 0;
+}
+3.3逗号运算
+逗号运算符扩展了for循环的灵活性，以便在for循环中包含更多的表达式。
+ 逗号运算符并不局限于在for循环中使用，但是这是它最常用的地方。 逗号运算符有两个其他性质。首先，它保证了被它分隔的表达式从左往右求 值（换言之，逗号是一个序列点，所以逗号左侧项的所有副作用都在程序执 行逗号右侧项之前发生）。  </p>
+<h1 id="include_5">include <stdio.h></h1>
+<p>int main(void)
+{
+    const int FIRST_OZ = 46;        //2013邮资
+    const int NEXT_OZ = 20;         //2013邮资
+    int ounces, cost;
+    printf("ounces   cost\n");
+    for (ounces = 1, cost = FIRST_OZ; ounces &lt;= 16; ounces++, cost += NEXT_OZ)
+        printf("%5d  $%4.2f\n", ounces, cost / 100.0);
+    return 0;
+}
+3.4 do while 循环
+ while循环和for循环都是入口条件循环，即在循环的每次迭代之前检查 测试条件，所以有可能根本不执行循环体中的内容。C语言还有出口条件循 环（exit-condition loop），即在循环的每次迭代之后检查测试条件，这保证 了至少执行循环体中的内容一次。这种循环被称为 do while循环。 </p>
+<h1 id="include_6">include <stdio.h></h1>
+<p>int main(void)
+{
+    const int secret_code = 13;
+    int code_entered;
+    do
+    {
+        printf("To enter the trridkidekaphobia therapy club,\n");
+        printf("please enter the sercet code number:  ");
+        scanf("%d", &amp;code_entered);
+    } while (code_entered != secret_code);
+    printf("Congratulations! You are cured!\n");
+    return 0;</p>
+<p>}
+3.5如何选择循环、
+ 一般而言，当循环涉及初始化和更新变量时，用for循环比较合适，而 在其他情况下用while循环更好。<br />
+7、控制语句-分支/跳转
+7.1 if语句</p>
+<h1 id="include_7">include <stdio.h></h1>
+<p>int main(void)
+{
+    const int FREEZING = 0;
+    float temperature;
+    int cold_days = 0;
+    int all_dyas = 0;
+    printf("Enter the list of daily low temperatures.\n");
+    printf("Use Celsius,and enter q to quit.\n");
+    while (scanf("%f",&amp;temperature)==1)
+    {
+        all_dyas++;
+        if (temperature &lt; FREEZING)
+            cold_days++;
+    }</p>
+<div class="highlight"><pre><span></span><code>if (all_dyas != 0)
+
+    printf(&quot;%d days total: %.1f%%were below freezing.\n&quot;, all_dyas, 100.0 * (float)cold_days / all_dyas);
+if (all_dyas == 0)
+    printf(&quot;NO data entered!\n&quot;);
+return 0;
+</code></pre></div>
+<p>}
+1、语法结构
+//单分支if
+if(表达式1)
+语句;</p>
+<p>// 双if-else
+if(表达式)
+语句1;
+else
+语句2;</p>
+<p>// 多分枝
+if(表达式1)
+语句1;
+else if(表达式2)
+语句2;
+else
+语句3;</p>
+<p>// 多语句表达式</p>
+<h1 id="include_8">include<stdio.h></h1>
+<p>int mian()
+{
+    if(表达式)
+{
+    语句列表1；      //代码块
+    }
+    else 
+{
+    语句列表2；
+    }
+    return 0;
+}
+//悬空else </p>
+<p>// if语句
+1、代码1（条件成立返回下，条件不成立返回y ）</p>
+<p>int main()
+{
+    int a = 10;
+    int b = 20;
+    if (a &gt; b) 
+    {
+        return x;
+    }
+    return y;
+}</p>
+<p>2、优化代码1
+int main()
+{
+    int a = 10;
+    int b = 20;
+    if (a &gt; b) 
+    {
+        return x;
+    }
+    else
+    {
+        return y;
+    }
+}</p>
+<p>3、代码3
+int main()
+{
+    int a = 10;
+    if (a=4) 
+    {
+        printf("hehe\n");
+    }
+    return 0;
+}</p>
+<p>判断一个数是否为奇数
+输出1-100之间的 奇数
+7.2 if else 
+8、函数
+1、概念（function）
+是完成特定任务的独立程序代码单元，语法规定了函数的结构和使用方法
+//代码   mian()函数  starbar()函数
+/<em> lethead1.c </em>/</p>
+<h1 id="include_9">include <stdio.h></h1>
+<h1 id="define-name-gigathink-inc">define NAME "GIGATHINK, INC."</h1>
+<h1 id="define-address-101-megabuck-plaza">define ADDRESS "101 Megabuck Plaza"</h1>
+<h1 id="define-place-megapolis-ca-94904">define PLACE "Megapolis, CA 94904"</h1>
+<h1 id="define-width-40">define WIDTH 40</h1>
+<p>void starbar(void);//函数的原型
+//第一个void说明函数无返回值，第二个在括号内void表明函数不带参数
+//分号表明这个是声明函数，不是定义函数
+int main(void)
+{
+    starbar();
+    printf("%s\n", NAME);
+    printf("%s\n",ADDRESS);
+    printf("%s\n", PLACE);
+    starbar();
+    return 0;
+}
+void starbar(void)
+{
+    int count;
+    for (count = 1; count &lt;= WIDTH; count++)
+        putchar('*');
+    putchar('\n');
+}</p>
+<p>/*该程序的输出如下：</p>
+<hr />
+<p>GIGATHINK, INC.
+101 Megabuck Plaza
+Megapolis, CA 94904</p>
+<hr />
+<p>*/
+2、程序分析
+starbar()可以作为一个黑河盒，他的功能是实现打印出40个星号，它不需要和主函数通信</p>
+<p>3、函数参数
+//案例 -针对上述的代码实现打印的文字能居中</p>
+<h1 id="include_10">include <stdio.h></h1>
+<h1 id="include_11">include <string.h></h1>
+<h1 id="define-name-qite">define NAME "QITE"</h1>
+<h1 id="define-address-qite-shi-zhu">define ADDRESS "QITE SHI ZHU"</h1>
+<h1 id="define-place-qite-shi-dogdongxi">define PLACE "QITE SHI DOGDONGXI"</h1>
+<h1 id="define-width-40_1">define WIDTH 40</h1>
+<h1 id="define-space">define SPACE ' '</h1>
+<p>void show_n_char(char ch, int num);
+int main(void)
+{
+    int spaces;
+    //调用show_n_char()函数，并将传递参数给ch ， num
+    show_n_char('<em>', WIDTH); /</em> 用符号常量作为参数 <em>/
+    putchar('\n');
+    show_n_char(SPACE, 12); /</em> 用符号常量作为参数 <em>/
+    //用表达式作为参数：show_n_char(SPACE, (WIDTH-strlen(NAME))/2);
+    printf("%s\n", NAME);
+    spaces = (WIDTH - strlen(ADDRESS)) / 2; /</em> 计算要跳过多少个空格<em>/
+    show_n_char(SPACE, spaces); /</em> 用一个变量作为参数<em>/
+    //用表达式作为参数：show_n_char(SPACE, (WIDTH - strlen(ADDRESS))/2);
+    printf("%s\n", ADDRESS);
+    show_n_char(SPACE, (WIDTH - strlen(PLACE)) / 2);
+    printf("%s\n", PLACE); /</em> 用一个表达式作为参数
+    <em>/
+    show_n_char('</em>', WIDTH);
+    putchar('\n');
+    return 0;
+}
+/<em> show_n_char()函数的定义 </em>/
+void show_n_char(char ch, int num)          //带参数函数，
+{
+    int count;
+    for (count = 1; count &lt;= num; count++)
+        putchar(ch);
+}</p>
+<p>//打印出的内容：
+/*</p>
+<hr />
+<div class="highlight"><pre><span></span><code>              QITE
+          QITE SHI ZHU
+       QITE SHI DOGDONGXI
+</code></pre></div>
+<hr />
+<p>*/
+4、定义带形式参数函数
+带参函数的形式：
+void function(type parameter1,type parameter2)
+//parameter---译：参数
+// void show_n_char(char ch, int num) ch 和num被称为形式参数（formal parameter）
+注：每个便变量前都要声明类型
+5、黑盒视角
+show_n_char(), 待显示的字符和显示的次数是输入。 执行后的结果是打印指定数量的字符。输入以参数的形式被传递给函数。这 些信息清楚地表明了如何在 main()中使用该函数。而且，这也可以作为编写 该函数的设计说明。
+ 黑盒方法的核心部分是：ch、num和count都是show_n_char()私有的局部 变量。如果在main()中使用同名变量，那么它们相互独立，互不影响。也就 是说，如果main()有一个count变量，那么改变它的值不会改变show_n_char() 中的count，反之亦然。黑盒里发生了什么对主调函数是不可见的。<br />
+6、使用return从函数中返回值
+//被调函数将值传递给主函数</p>
+<h1 id="include_12">include <stdio.h></h1>
+<h1 id="include_13">include <string.h></h1>
+<p>//lesser.c -- 找出两个整数中较小的一个
+int imin(int, int);
+int main(void)
+{
+    int evil1, evil2;
+    printf("Enter a pair of integers (q to quit):\n");
+    while (scanf("%d %d", &amp;evil1, &amp;evil2) == 2)
+    {
+        printf("The lesser of %d and %d is %d.\n",evil1, evil2, imin(evil1, evil2));
+        printf("Enter a pair of integers (q to quit):\n");</p>
+<div class="highlight"><pre><span></span><code>}
+printf(&quot;Bye.\n&quot;);
+return 0;
+</code></pre></div>
+<p>}
+int imin(int n, int m)
+{
+    int min;
+    if (n &lt; m)
+        min = n;
+    else
+        min = m;
+    return min;
+}</p>
+<p>返回值不仅可以赋给变量，也可以被用作表达式的一部分。例如，可以 这样：
+ answer = 2 * imin(z, zstar) + 25;
+ printf("%d\n", imin(-32 + answer, LIMIT));  </p>
+<h1 id="define-_crt_secure_no_warnings">define  _CRT_SECURE_NO_WARNINGS</h1>
+<h1 id="include_14">include <stdio.h></h1>
+<h1 id="include_15">include <string.h></h1>
+<p>int imin(int, int);
+int main(void)
+{
+    int answer;
+    int evil1, evil2;
+    answer = 5*imin(scanf("%d", &amp;evil1),scanf("%d", &amp;evil2))+10;
+    printf("%d\n", imin(-12 + answer,answer));
+    return 0;
+}
+int imin(int n, int m)
+{
+    int min;
+    if (n &lt; m)
+        min = n;
+    else
+        min = m;
+    return min;
+}
+7、函数类型
+概述：声明函数必须声明函数类型。带返回值的函数类型应该与其返回值类型相同，而无返回值的函数应声明为void类型
+8、递归函数
+概述：函数自己调用自己，被称为递归函数
+递归的基本原理：
+每级函数调用都有自己变量
+每次函数调用都会返回一次
+递归函数中位于递归调用之前的语句，均按照被调函数的顺序执行。
+递归函数中位于递归调用之前的语句，均被调函数相反的顺序执行。
+虽然每集递归函数都有自己的变量，但并没有拷贝函数的代码。
+递归函数必须有停止调用的语句，否则会进入无限循环。</p>
+<h1 id="include_16">include <stdio.h></h1>
+<p>void up_and_down(int);
+int main(void)
+{
+    up_and_down(1);
+    return 0;
+}
+void up_and_down(int n)
+{
+    printf("Level  %d:  n  location  %p\n", n, &amp;n);
+    if (n &lt; 4)
+        up_and_down(n + 1);
+    printf("LEVEL  %d:  n  location  %p\n", n, &amp;n);
+}
+c
+9、尾递归
+ 最简单的递归形式是把递归调用置于函数的末尾，即正好在 return 语句 之前。这种形式的递归被称为尾递归（tail recursion），因为递归调用在函 数的末尾。尾递归是最简单的递归形式，因为它相当于循环。  </p>
+<p>10、递归和倒叙计算</p>
+<p>11、递归的优缺点</p>
+<p>9、数组
+1、概述
+数组：一组相同类型元素的集合
+数组的一些声明：</p>
+<p>int main(void)
+{
+    float candy[365];       //内含365个float类型元素的数组
+    char code[12];          //内含12char类型元素的数组
+    int states[50];         //内含50个int类型元素的数组
+    //....
+}
+2、初始化数组
+数组通常 被用来存储程序需要的数据。
+只存储单个值的变量有时也称为标量变量
+int mian()
+{
+    int power[8] = { 1,2,3,4,5,6,7,8 };
+    return 0;
+}
+数组通过下标使用
+int main()
+{
+    int arr[10];  //存放10个整型数字的数组
+    char ch[12];
+    float arr2[10];
+    int arr1[10] = {1,2,3,4,5,6,7,8,9,10};  //用下标的形式访问元素，从0开始
+    //arr1[3] --&gt;4
+    return 0;
+}</p>
+<h1 id="include_17">include <stdio.h></h1>
+<h1 id="define-months-12">define MONTHS 12</h1>
+<p>int main()
+{
+    int days[MONTHS] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+    int index;
+    for (index = 0; index &lt; MONTHS; index++)
+        printf("Month %2d has %2d days.\n", index + 1, days[index]);
+    return 0;
+}
+2、指定初始化器
+用下表指定初始化元素</p>
+<h1 id="include_18">include <stdio.h></h1>
+<h1 id="define-months-12_1">define MONTHS 12</h1>
+<p>int main()
+{
+    int days[MONTHS] = { 31,28,[4] = 31,30,31,
+    //如果指定初始化器后面有更多的值，如该例中的初始化列表中的片段：
+   // [4] = 31,30,31，那么后面这些值将被用于初始化指定元素后面的元素
+        [1] = 29 };
+    //如果再次初始化指定的元素，那么最后的初始化将会取代之前的初始化
+    for (int i = 0; i &lt; MONTHS; i++)
+        printf("%2d %d\n",i+1,days[i]);
+    return 0;
+}</p>
+<p>3、给数组元素赋值
+借助下标（索引赋值）</p>
+<h1 id="include_19">include <stdio.h></h1>
+<h1 id="define-size-50">define SIZE 50</h1>
+<p>int main(void)
+{
+    int i , evens[SIZE];
+    for (i = 0 ; i &lt; SIZE; i++)
+    {
+        evens[i] = 2 * i;
+        printf("%d\n", evens[i]);
+    }</p>
+<div class="highlight"><pre><span></span><code>return 0;
+</code></pre></div>
+<p>}
+4、数组边界
+在使用数组时，要防止数组下标超出边界，确保下标是有效值
+假设有如下声明：
+int arr[20];
+下标范围：0-19
+5、指定数组大小
+声明数组时只能在方括号中使用整型常量表达式
+sizeof表达式被视为整型 
+常量，但是（与C++不同）const值不是。另外，表达式的值必须大于0
+int n = 5; 
+657int m = 8; 
+float a1[5]; // 可以 
+float a2[5*2 + 1]; //可以 
+float a3[sizeof(int) + 1]; //可以 
+float a4[-4]; // 不可以，数组大小必须大于0 
+float a5[0]; // 不可以，数组大小必须大于0 
+float a6[2.5]; // 不可以，数组大小必须是整数 
+float a7[(int)2.5]; // 可以，已被强制转换为整型常量 
+float a8[n]; // C99之前不允许 
+float a9[m]; // C99之前不允许</p>
+<h1 id="define-size-4">define SIZE 4</h1>
+<p>int main(void)
+{
+    int arr[SIZE]; // 整数符号常量
+    double lots[144]; // 整数字面常量
+    ...
+6、多维数组</p>
+<h1 id="include_20">include <stdio.h></h1>
+<h1 id="define-months-12_2">define MONTHS 12 // 一年的月份数</h1>
+<h1 id="define-years-5">define YEARS 5 // 年数</h1>
+<p>int main(void)
+{
+    // 用2010～2014年的降水量数据初始化数组
+    const float rain[YEARS][MONTHS] =
+    {
+    { 4.3, 4.3, 4.3, 3.0, 2.0, 1.2, 0.2, 0.2, 0.4, 2.4, 3.5,6.6 },
+    { 8.5, 8.2, 1.2, 1.6, 2.4, 0.0, 5.2, 0.9, 0.3, 0.9, 1.4,7.3 },
+    { 9.1, 8.5, 6.7, 4.3, 2.1, 0.8, 0.2, 0.2, 1.1, 2.3, 6.1,8.4 },
+    { 7.2, 9.9, 8.4, 3.3, 1.2, 0.8, 0.4, 0.0, 0.6, 1.7, 4.3,6.2 },
+    { 7.6, 5.6, 3.8, 2.8, 3.8, 0.2, 0.0, 0.0, 0.0, 1.3, 2.6,5.2 }
+    };
+    int year, month;
+    float subtot, total;
+    printf(" YEAR RAINFALL (inches)\n");
+    for (year = 0, total = 0; year &lt; YEARS; year++)
+    { // 每一年，各月的降水量总和
+        for (month = 0, subtot = 0; month &lt; MONTHS; month++)
+            subtot += rain[year][month];
+            printf("%5d %15.1f\n", 2010 + year, subtot);
+            total += subtot; // 5年的总降水量
+    }
+    printf("\nThe yearly average is %.1f inches.\n\n", total /YEARS);
+    printf("MONTHLY AVERAGES:\n\n");
+    printf(" Jan Feb Mar Apr May Jun Jul Aug SepOct ");
+    printf(" Nov Dec\n");
+    for (month = 0; month &lt; MONTHS; month++)
+    { // 每个月，5年的总降水量
+        for (year = 0, subtot = 0; year &lt; YEARS; year++)
+            subtot += rain[year][month];
+        printf("%4.1f ", subtot / YEARS);
+    }
+    printf("\n");
+        return 0;
+}</p>
+<p>//结果：
+/*
+ YEAR RAINFALL (inches)
+ 2010            32.4
+ 2011            37.9
+ 2012            49.8
+ 2013            44.0
+ 2014            32.9</p>
+<p>The yearly average is 39.4 inches.</p>
+<p>MONTHLY AVERAGES:</p>
+<p>Jan Feb Mar Apr May Jun Jul Aug SepOct  Nov Dec
+ 7.3  7.3  4.9  3.0  2.3  0.6  1.2  0.3  0.5  1.7  3.6  6.7
+*/
+7、初始化二维数组
+初始化二维数组是建立在初始化一维数组的基础上。
+10、操作符
+算数操作符</p>
+<p>取模操作符
+%
+移位操作符
+移动（2进制）位操作符</p>
+<blockquote>
+<blockquote>
+<p>右移
+&lt;&lt;左移</p>
+</blockquote>
+</blockquote>
+<p>a = 1;
+00000000000000000000000000000000000001
+a&lt;&lt;1;
+00000000000000000000000000000000000010
+位操作</p>
+<p>单目操作符
+！
+-
++
+&amp;           取地址
+sizeof      操作数的类型长度（以字节为单位）
+~           对一个数的二进制按位取数      <br />
+--          自减<br />
+++          自增
+后置自增/自减             前置自增/自减法 <br />
+先赋值后自增/自减           先自增后/自减赋值
+*           间接访问操作符
+(类型)        强制类型转换
+int a = (int)3.14       //强制类型转换</p>
+<p>问题，in a;int arr[];  打印sizeof(int)；打印的是那个</p>
+<p>原码，反码、补码
+负数在内存中存储的时候，是二进制补码
+最高位表示的是符号位
+内存是补码，打印的是这个数的原码
+原反补码知识（存在问题）
+反码求原码  --&gt;反码减一  --&gt;取反得补码--&gt;高位不变取反得原码
+1111        反码
+1110        补码
+1001        原码
+关系操作符</p>
+<blockquote>
+<p>=
+&lt;=
+==
+!=
+逻辑操作符
+0  --  假
+非0 --  真
+||     逻辑或
+int a = 0;
+int b = 5;
+int c = a &amp;&amp; b;
+printf("c = %d\n",c);      c--1        c为真
+return 0;
+&amp;&amp;     逻辑与
+int a = 0;
+int b = 5;
+int c = a &amp;&amp; b;
+printf("c = %d\n",c);      c--0        c为假
+return 0;</p>
+</blockquote>
+<p>条件操作符
+exp1 ? exp2 : exp3
+如果exp1的结果为真，则执行exp2，则整个表达式的结果为exp2的结果，否则为exp3.
+int a =10;
+int b =20;
+int max =0;
+max =(a&gt;b ? a : b);</p>
+<p>逗号表达式
+下标表达式
+int arr[10]={0,2,3,4,6,8};
+arr[4];     //下标引用操作符
+函数调用操作符
+int Add(int x, int y)
+{
+    int z= 0;
+    z=x+y;
+    return z;
+}
+int main()
+{
+    int sum = Add(a,b);     //()--函数调用操作符
+    return 0;
+}</p>
+<p>11、常见关键字
+C语言内定的关键字
+auto (一般用在局部变量。自动变量)    、break  case        char        const   continue        default         do  double  register（寄存器关键字，建议把定义的变量放在寄存器，但是是否真的放在寄存器编译器会自己判断，在进行执行）        return  short   int         unsigned int 定义无符号      strut       union   volatile    while   viod        typedef（类型重定义  typedef undsigned int u_int; //(将无符号int类型定义为，起别名 ）
+static
+static是修饰变量和函数的
+1.修饰局部变量-静态局部变量
+2.修饰全局变量-静态全局变量
+3.修饰函数-静态函数
+static修饰局部变量可以改变局部变量的生命周期
+正常情况下局部变量每次调用结束后就会失效</p>
+<p>修饰全局变量：改变变量的作用域。--让静态的全局变量只能在自己所在的源文件内部使用，出了源文件就无法使用</p>
+<p>12、define定义常量和宏</p>
+<h1 id="define">define 定义常量</h1>
+<p>//定义常量和宏</p>
+<h1 id="define-max10">define MAX=10</h1>
+<p>int main()
+{
+    int a= MAX;
+    return 0;
+}</p>
+<h1 id="define_1">define定于宏</h1>
+<p>用函数表达：</p>
+<p>用宏的方式i定义</p>
+<p>13、指针
+13.1 指针定义及存储变量
+13.1.1 指针定义
+通过地址可以找到内存变量单元，地址就是指针
+指针就是变量，用来存放地址的变量。（存放在指针中的值都被当地址来处理）
+● 一个小的单元大小：1字节
+● 如何编址
+一个字节给一个对应的地址是比较合适的
+对于32位的机器，假设由32根地址线，假设每根地址现在寻址的是产生一个电信号(正电/负电，1/0)
+32根地址线产生的地址会是：
+00000000 00000000 00000000 00000000
+...
+...
+11111111 11111111 11111111 11111111
+从32个全0到32个全1，就有2的32次方个地址
+每个地址标识一个字节，可以给4G的空间编址。
+● 指针是用来存放地址的，地址是唯一表示一块地址的空间
+● 指针的大小在32位平台是4字节，在64位平台是8字节。</p>
+<p>13.1.2 用指针存储一个变量
+int a=10;
+//开辟一个空间存储a的变量
+int<em> p=&a;          //p是指针变量
+//取a的地址 ，把变量a的地址存在p变量
+</em>p=20;
+//直接指到a的地址，把20放在放在a的空间</p>
+<h1 id="include_21">include <stdio.h></h1>
+<h1 id="include_22">include <string.h></h1>
+<p>int main()
+{
+    int a = 10;
+    int<em> p = &a;
+    printf("%d\n", </em>p);     //10
+    printf("%d\n",a);       //10
+    <em>p = 20;
+    printf("%d\n", a);      //20
+    printf("%d\n", </em>p);     //20
+    printf("%p\n", p);      //00000056F4B3FA94
+    printf("%d\n", &amp;a);     //00000056F4B3FA94
+    return 0;
+}</p>
+<p>13.1.3 使用指针在函数间通信</p>
+<h1 id="include_23">include <stdio.h></h1>
+<p>void interchange(int<em> u, int</em> v);
+int main()
+{
+    int x = 5, y = 10;
+    printf("Originally  x = %d and y = %d.\n", x, y);
+    interchange(&amp;x, &amp;y);//把地址送给函数
+    printf("Now x  =  %d and y = %d.\n", x, y);
+    return  0;
+}
+void interchange(int<em> u, int</em> v)
+{
+    int temp;
+    temp = <em>u;
+    </em>u = <em>v;
+    </em>v = temp;
+}</p>
+<p>//结果
+/<em>
+Originally  x = 5 and y = 10.
+Now x  =  10 and y = 5.
+</em>/
+13.2 指针和指针类型
+13.2.1指针类型定义
+指针类型决定了指针进行解引用操作的时候，能够访问空间的大小
+int<em>p；</em>p能够访问4个字节
+char<em>p; </em>p能够访问1个字节
+double<em>p; </em>p能够访问8个字节
+● 指针的类型决定了，对指针解引用操作的时候有很多权限（能操作几个字符）。
+● 指针加减整数，指针类型决定指针步长</p>
+<h1 id="include_24">include <stdio.h></h1>
+<h1 id="include_25">include <string.h></h1>
+<p>int main()
+{
+    int a = 0x11223344;
+    int<em> pa = &a;
+    char</em> pc = &a;
+    printf("%p\n", pa);
+    printf("%p\n", pa + 1);     //向后跳4个字节
+    printf("%p\n", pc);
+    printf("%p\n", pc + 1);     //向后跳过1个字节</p>
+<div class="highlight"><pre><span></span><code>return 0;
+</code></pre></div>
+<p>}</p>
+<p>//结果：
+/<em>
+000000D740B1F8C4
+000000D740B1F8C8
+000000D740B1F8C4
+000000D740B1F8C5
+</em>/
+13.2.2 野指针
+野指针是指针的位置是不可知（随机的、不正确、没有明确限制的）
+注意：需要避免空指针
+● 初始化指针
+● 小心指针越界
+● 指针指向空间释放，使其置为NULL
+● 指针使用前检查有效性
+1、指针未初始化
+int main()
+{
+    int<em> p;
+    //局部变量不初始化，默认是随机值
+    //局部的指针变量，就被初始化随机值
+    </em>p=20;
+    //int <em>p=NULL;
+    return 0;
+}
+2、指针越界访问
+int main()
+{
+    int arr[10]={10};
+    int</em>p=arr;
+    int i=0;
+    for(i=0;i&lt;12;i++)
+    {
+        //当指针指向的范围超出数组arr的范围时，p就是野指针
+        p++; <br />
+    }
+    return 0;
+}
+3、指针指向的空间释放
+13.3 指针运算
+● 指针+-整数
+● 指针-指针
+● 指针的关系运算
+13.3.1 指针+-整数
+指针类型决定指针步长</p>
+<h1 id="include_26">include <stdio.h></h1>
+<h1 id="include_27">include <string.h></h1>
+<p>int main()
+{
+    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    int i = 0;
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    int<em> p = arr;
+    for (i = 0; i &lt; sz; i++)
+    {
+        printf("%d  ", </em>p);
+        p ++;
+    }
+    return 0;
+}</p>
+<p>//1  2  3  4  5  6  7  8  9  10
+13.3.2 指针-指针
+结果是中间的元素个数</p>
+<h1 id="include_28">include <stdio.h></h1>
+<h1 id="include_29">include <string.h></h1>
+<p>int main()
+{
+    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    int i = 0;
+    int<em> p1 = &amp;arr[9];
+    int</em> p2 = &amp;arr[0];
+    //指针-指针的运算一定要运用于同一块空间
+    printf("%d\n",p1 - p2);     //9
+    printf("%d\n",p2 - p1);     //-9
+    return 0;
+}</p>
+<p>int my_strlen(char<em> str)
+{
+    char</em> start= str;
+    char<em> end = str;
+    while (</em>end != '\0')
+    {
+        end++;
+    }
+    return end - start;
+}</p>
+<p>int main()
+{
+    char arr[] = "bit";
+    int len = my_strlen(arr);
+    printf("%d\n", len);
+    return 0;
+}
+13.3.3 指针的关系运算</p>
+<h1 id="include_30">include <stdio.h></h1>
+<h1 id="include_31">include <string.h></h1>
+<h1 id="define-n_vaules-5">define N_VAULES 5</h1>
+<p>int main()
+{
+    float  value[N_VAULES];
+    float<em> vp;
+    for(vp=&amp;value[N_VAULES];vp&gt;&amp;value[0];)
+    {
+        //地址前移
+        </em>--vp = 0;
+    }
+    printf("%d\n", value[1]);
+    return 0;
+}
+      改进：
+在大多数编译器上是可以顺利完成一下代码的任务，但是应该避免这样写，因为标准不代表他可行</p>
+<h1 id="include_32">include <stdio.h></h1>
+<h1 id="include_33">include <string.h></h1>
+<h1 id="define-n_vaules-5_1">define N_VAULES 5</h1>
+<p>int main()
+{
+    float  value[N_VAULES];
+    float<em> vp;
+    for(vp=&amp;value[N_VAULES-1];vp&gt;=&amp;value[0];vp--)
+    {
+        </em>vp = 0;
+    }
+    printf("%d\n", value[2]);
+    return 0;
+}</p>
+<p>标准规定：
+● 允许指向数组元素的指针与指向数组最后一个元素后面的那个内存位置的指针比较，但不允许与指向第一个元素之前的那个内存位置的指针进行比较，p2和p1可以比较，不可以和p3比较。
+● 
+13.4  指针和数组
+13.4.1数组名
+数组名：首元素的地址
+int main()
+{
+    int arr[10] = { 0 };
+    printf("%p\n", arr);
+    printf("%p\n", &amp;arr[0]);
+    return 0;
+}</p>
+<p>/<em>
+000000E601CFF988
+000000E601CFF988
+</em>/
+两个例外：
+1. &amp;arr  -- &amp;数组名  数组名不是首元素地址-数组名表示整个数组 --取出的是整个数组的地址
+2. sizeof(arr)--sizeof(数组名)--数组名表示整个数组--计算整个数组的大小，单位是字节
+int main()
+{
+    int arr[10] = { 0 };
+    printf("%p\n", arr);
+    //向后移动一位加4字节
+    printf("%p\n", arr+1);
+    printf("\n");
+    printf("%p\n", &amp;arr[0]);
+     //向后移动一位加4字节
+    printf("%p\n", &amp;arr[0]+1);
+    printf("\n");
+    printf("%p\n", &amp;arr);
+    // //向后移动真个数组加4*10字节
+    printf("%p\n", &amp;arr+1);
+    return 0;
+}</p>
+<p>/*
+0000003F9AEFFC68
+0000003F9AEFFC6C</p>
+<p>0000003F9AEFFC68
+0000003F9AEFFC6C</p>
+<p>0000003F9AEFFC68
+0000003F9AEFFC90
+<em>/
+13.4.2指针提供一种以符号形式使用地址的方法
+例如：arr1是一个数组
+arr1==&amp;arr1[0];
+arr1和&amp;arr1[0]都表示数组元素的地址，两者都是常量在程序的运行过程中，不会改变。但是可以把它们赋值给指针变量，然后可以修改指针变量的值。
+转换说明：%p通常以十六进制显示指针的
+我们的系统中，地址按字节编址，short类型占用2字节，double类型占 
+用8字节。在C中，指针加1指的是增加一个存储单元。
+声明指针所指向对象类型的原因之一。只知道地址 
+不够，因为计算机要知道储存对象需要多少字节（即使指针指向的是标量变 
+量，也要知道变量的类型，否则</em>pt 就无法正确地取回地址上的值）。</p>
+<h1 id="include_34">include <stdio.h></h1>
+<h1 id="define-size-4_1">define SIZE 4</h1>
+<p>int main(void)
+{
+    short dates[SIZE];
+    short<em> pti;
+    short index;
+    double bills[SIZE];
+    double</em> ptf;
+    pti = dates; // 把数组地址赋给指针
+    ptf = bills;
+    printf("%23s %15s\n", "short", "double");
+    for (index = 0; index &lt; SIZE; index++)
+    {
+        printf("pointers:  %d: %10p %10p\n", index, pti, ptf);
+        printf("pointers + %d: %10p %10p\n", index, pti + index, ptf + index);
+    }
+    return 0;
+}</p>
+<p>//我们的系统中，地址按字节编址，short类型占用2字节，double类型占
+//用8字节。在C中，指针加1指的是增加一个存储单元。</p>
+<p>//结果：
+/<em>
+                  short          double
+pointers:  0: 0000009345FCF4C8 0000009345FCF528
+pointers + 0: 0000009345FCF4C8 0000009345FCF528
+pointers:  1: 0000009345FCF4C8 0000009345FCF528
+pointers + 1: 0000009345FCF4CA 0000009345FCF530
+pointers:  2: 0000009345FCF4C8 0000009345FCF528
+pointers + 2: 0000009345FCF4CC 0000009345FCF538
+pointers:  3: 0000009345FCF4C8 0000009345FCF528
+pointers + 3: 0000009345FCF4CE 0000009345FCF540
+</em>/</p>
+<p>在指针前面使用<em>运算符可以得到该指针所指向对象的值。 
+指针加1，指针的值递增它所指向类型的大小（以字节为单位）。 
+下面的等式体现了C语言的灵活性： 
+dates + 2 == &amp;date[2] // 相同的地址 
+</em>(dates + 2) == dates[2] // 相同的值
+定义ar[n]的意思 
+是<em>(ar + n)。可以认为</em>(ar + n)的意思是“到内存的ar位置，然后移动n个单 
+元，检索储存在那里的值”。
+顺带一提，不要混淆 <em>(dates+2)和</em>dates+2。间接运算符（<em>）的优先级 
+高于+，所以</em>dates+2相当于(<em>dates)+2： 
+</em>(dates + 2) // dates第3个元素的值 
+*dates + 2 // dates第1个元素的值加2</p>
+<h1 id="include_35">include <stdio.h></h1>
+<h1 id="define-months-12_3">define MONTHS 12</h1>
+<p>int main(void)
+{
+    int days[MONTHS] = { 31, 28, 31, 30, 31, 30, 31, 31,30, 31, 30, 31 };
+    int index;
+    for (index = 0; index &lt; MONTHS; index++)
+        printf("Month %2d has %d days.\n", index + 1,<em>(days + index)); //与 days[index]相同
+    return 0;
+}
+//结果：
+/</em>
+Month  1 has 31 days.
+Month  2 has 28 days.
+Month  3 has 31 days.
+Month  4 has 30 days.
+Month  5 has 31 days.
+Month  6 has 30 days.
+Month  7 has 31 days.
+Month  8 has 31 days.
+Month  9 has 30 days.
+Month 10 has 31 days.
+Month 11 has 30 days.
+Month 12 has 31 days.
+<em>/
+13.4.3 指针数组  数组指针
+● 指针数组：本质是数组--存放指针的数组
+int main()
+{
+    int a = 10;
+    int b = 20;
+    int c = 30;
+    //整型数组-存放整形
+    //字符数组-存放字符
+    //指针数组-存放指针
+    int arr[10];
+    int</em> arr2[3] = {&amp;a,&amp;b,&amp;c};      //指针数组
+    //打印数组arr2每个元素对印的值
+    int i = 0;
+    for (i=0;  i&lt; 3; i++)
+    {
+        printf("%d\n", *(arr2[i]));
+    }</p>
+<p>}
+● 数组指针：本质是指针
+13.4.4 指针、函数、数组</p>
+<p>等价：
+int sum(int <em>ar, int n); 
+int sum(int </em>, int); 
+int sum(int ar[], int n); 
+int sum(int [], int);
+13.4.5 指针和字符串
+14.5 二级指针
+int main()
+{
+    int a = 10;
+    int<em> pa = &a;
+    int</em><em> ppa = &pa;        //二级指针
+    int</em><strong> pppa = &ppa;     //三级指针
+    printf("%d\n",</strong>ppa);   //10
+    return 0;
+}
+ppa里存放的是pa的地址
+int*<em>  ---指向的对象是int</em></p>
+<p>14、结构体
+示例；创建图书目录</p>
+<h1 id="define-_crt_secure_no_warnings_1">define  _CRT_SECURE_NO_WARNINGS</h1>
+<h1 id="include_36">include <stdio.h></h1>
+<h1 id="include_37">include <string.h></h1>
+<h1 id="define-maxtitl-41-1">define MAXTITL 41   //书名的最大长度加1</h1>
+<h1 id="define-maxautl-31-1">define MAXAUTL 31      //作者姓名的最大长度加1</h1>
+<p>//声明一个指针函数
+char<em> s_gets(char</em> st, int n);
+//描述一本书的数据
+//标题
+//作者
+//价格
+//创建结构体类型struct book相当于int 
+//struct：结构体关键字  book：结构体标记   组合起来就是创建的结构体类型
+struct book
+{
+    //成员变量
+    char title[MAXTITL];
+    char author[MAXAUTL];
+    float value;
+};
+int main(void)
+{
+    //结构体变量的创建library
+    //library是局部变量
+    struct book library;        //把library声明成一个book类型的变量
+    printf("Please enter the book title.\n");
+    s_gets(library.title, MAXTITL);     //访问title部分
+    printf("No enter the author.\n");
+    s_gets(library.author, MAXAUTL);
+    printf("Now enter the value.\n");
+    scanf("%f", &amp;library.value);
+    printf("%s:\"%s\"($%.2f)\n", library.author, library.title, library.value);
+    printf("Done.\n");
+    return 0;
+}
+char<em> s_gets(char</em> st, int n)
+{
+    char<em> ret_val;
+    char</em> find;
+    ret_val = fgets(st, n, stdin);      //fgets()函数类似与getchar()，相较于更安全
+    if (ret_val)
+    {
+        find = strchr(st, '\n');    //字符查找函数
+        if (find)           //如果地址不是null
+            *find = '\0';       //在此处放置一个空字符
+        else
+            while (getchar() != '\n')
+                continue;       //  处理输入行剩余 的数字</p>
+<div class="highlight"><pre><span></span><code>}
+return ret_val;
+</code></pre></div>
+<p>}
+14.1建立结构声明
+结构声明是描述一个结构的组织布局，结构类似如下：
+struct book     //struct是关键字  book是可选的标记
+{
+    char title[MAXTITL];
+    char author[MAXAUTL];
+    float value;
+};
+该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。
+把library声明为一个使用book结构布局的结构变量。
+struct book library<br />
+用结构体描述复杂对象---自己创造出来的一种类型。
+用“ . ”操作符，指向结构体成员
+使用：结构体变量.成员</p>
+<h1 id="define-_crt_secure_no_warnings_2">define  _CRT_SECURE_NO_WARNINGS</h1>
+<h1 id="include_38">include <stdio.h></h1>
+<h1 id="include_39">include <string.h></h1>
+<p>struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { "快乐",30 };
+    printf("name:%s\n", b1.name);
+    printf("price:%s\n", b1.price);
+    b1.price = 40;      //修改price 的值
+    printf("修改后的价格为：%d元\n", b1.price);
+}
+用指针表示</p>
+<h1 id="include_40">include <stdio.h></h1>
+<h1 id="include_41">include <string.h></h1>
+<p>struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { "快乐",30 };
+    struct BOOK<em> pb = &b1;
+    printf("name:%s\n", (</em>pb).name);
+    printf("price:%s\n", (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf("修改后的价格为：%d元\n", b1.price);
+}
+操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<h1 id="include_42">include <stdio.h></h1>
+<h1 id="include_43">include <string.h></h1>
+<p>struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { "快乐",30 };
+    struct BOOK* pb = &b1;
+    printf("name:%s\n", pb-&gt;name);
+    printf("price:%s\n", pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf("修改后的价格为：%d元\n", b1.price);
+}</p>
+<p>name是无法更改的，name是一个字符串只能用拷贝的方式更改
+strcpy(b1.name,"C++");
+strcpy是一个库函数
+strcopy-string copy -字符串拷贝-库函数-
+头文件  --  string.h           #include<string.h></p>
+<h1 id="include_44">include <stdio.h></h1>
+<h1 id="include_45">include <string.h></h1>
+<p>struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { "快乐",30 };
+    struct BOOK* pb = &b1;
+    strcpy(pb-&gt;name, "阴天");
+    printf("修改后的书名为：%s\n", pb-&gt;name);
+    return 0;
+}</p>
+<p>14.2 定义结构变量
+结构由两层含义。
+一：“结构布局”，结构布局告诉编译器如何表示数据，但是他并未让编译器为数据分配空间。
+二：创建结构变量 （struct book library;）
+编译器执行这行代码便创建了一个结构变量library。编译器使用book模板为该变量分配空间：一个含MAXTITL个
+元素的char数组、一个含MAXAUTL个元素的char数组和一个float类型的变量。这些存储空间都与一个人library结合在一起。
+在结构变量的声明中，struct book所起的作用相当于声明中的int或float。例如可以定义两个struct book类型的变量，或者只想struct book类型的指针：
+struct book doyle,panshin,*ptbook
+//doyle,panshi包含title，author和value部分。指针ptbook可以指向任何变量</p>
+<p>struct book library;
+//是以下声明的简化
+struct book
+{
+    char title[MAXTITL];
+    char name[MAXAUTL];
+    float value;
+}library;       //声明结构的过程和定义结构的过程可以组成一个步骤。
+//library是全局变量
+组合后的结构声明不需要使用结果标记
+如果打算多次使用结构模板就要是有标记的形式；或者，使用本章后面介绍的typedef。
+typdef struct Book
+{
+    //成员变量
+    char title[MAXTITL];
+    char name[MAXAUTL];
+    float value;
+}Book；
+//重新定义结构变量,这里的Book是类型;struct Book ==Book
+int main()
+{
+    struct BOOK1 l1;
+    BOOK1 l2;
+}
+这是定义一个结构变量，在例子中并未初始化 结构变量
+14.3 结构体成员的类型
+结构体成员可以是标量、数组、指针、甚至是结构体
+14.4 结构体变量的定义和初始化
+struct Point
+{
+    int x;
+    int y;
+}p1;        //声明类型的同时定义变量
+struct Point p2;    //定义结构体变量p2</p>
+<p>//初始化：定义变量的同时赋初值。
+struct Point p3={x,y}; </p>
+<p>struct S
+{
+    int a;
+    char c;
+    char arr[20];
+    double d;
+};
+struct T
+{
+    char ch[10];
+    struct S s;
+    char<em> pc;
+};
+int main(void)
+{
+    char arr[] = "hello ";
+    struct T t = { "hehe",{12,'c',"world",3.14},arr };
+    printf("%s", t.pc);
+    printf("%s\n", t.s.arr);
+    printf("%lf\n", t.s.d);
+    printf("%s\n", t.ch);
+    return 0;
+}
+//结果：
+/</em>
+hello world
+3.140000
+hehe
+*/</p>
+<p>14.5 结构体成员访问
+结构体变量访问成员 结果变量通过操作符（.）访问。点操作符接受两个操作数。
+结构体指针访问指向变量的成员 有时候我们得到的不是一个结构体变量，而是指向结构体的指针。</p>
+<h1 id="include_46">include <stdio.h></h1>
+<h1 id="include_47">include <string.h></h1>
+<p>typedef struct Stu
+{
+    char name[20];
+    short age;
+    char tele[12];
+    char sex[5];
+}Stu;
+void print1(Stu data1)
+{
+    printf("name: %s\n",data1.name);
+    printf("age:  %d\n", data1.age);
+    printf("age:  %s\n", data1.tele);
+    printf("age:  %s\n", data1.sex);
+}
+void print2(Stu* data2)       <br />
+{
+    printf("name: %s\n", data2-&gt;name);
+    printf("age:  %d\n", data2-&gt;age);
+    printf("age:  %s\n", data2-&gt;tele);
+    printf("age:  %s\n", data2-&gt;sex);
+}</p>
+<p>int main()
+{
+    Stu s = { "艾莉",12,"13888888888","女" };
+    //打印结构体数据
+    //print1和print2，print2为优选
+    //使用print1需要重新开辟空间，把数据拷贝过去，浪费空间和时间
+    print1(s);
+    //print2传参传的地址
+    print2(&amp;s);
+    return 0;
+}</p>
+<p>15、输出和输入
+内容：输入输出、缓冲输入和无缓冲输入。
+函数：printf()   scanf()   getchar()    putchar()
+1、单字符I/O：getchar()\ putchar()
+putchar()和getchar()的使用和stdio.h头文件相关联，使得他们不被算为正真的函数，而被定义为供预处理器使用的宏
+这两个函数每次只处理一个字符</p>
+<p>2、缓冲区
+● 无缓冲输入：
+程序可以立即使用改内容，既用
+键盘输入什么便显示什么。</p>
+<p>● 缓冲输入：
+输入的字符被逐个送入缓冲区，程序再通过输出函数去打印缓冲区的内容。</p>
+<p>缓冲区分为两类
+    ■ 完全缓冲I/O:当缓冲区被填满时才刷星缓冲区（内容被发送至目的地），通常出现在文件输入中
+大小：512字节或者4096字节
+    ■ 行缓冲I/O：出现换行符时刷新缓冲区，键盘输入通常是行缓冲输入，在enter后刷新传冲区</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
