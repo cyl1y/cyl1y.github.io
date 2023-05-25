@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#include" class="md-skip">
+        <a href="#define" class="md-skip">
           跳转至
         </a>
       
@@ -313,171 +313,201 @@ h-头文件
 3、写代码
 基本框架：
 //包含一个叫stdio.h的文件  std-标准  standard input output</p>
-<h1 id="include">include <stdio.h></h1>
-<p>//int 整型   main前加int是表示main函数调用返回一个整型值
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+//int 整型   main前加int是表示main函数调用返回一个整型值
 int main()                          //主函数，主函数是程序的入口，有且只有一个
-{                                     <br />
-printf("hello\n");
+{                                       
+printf(&quot;hello\n&quot;);
 //库函数-C语言本身提供给我们的函数
 return 0;
-}</p>
+}
+</code></pre></div>
 <p>3、数据类型
-类型的作用：向内存申请空间
-char                    //字符数据类型
-char ch='A';            //内存
+类型的作用：向内存申请空间</p>
+<div class="highlight"><pre><span></span><code>char                    //字符数据类型
+char ch=&#39;A&#39;;            //内存
 short               //短整型，
 int                 //整形
 int age = 20;
-printf("%d\n",age); //%d -- 打印整型十进制数据
+printf(&quot;%d\n&quot;,age); //%d -- 打印整型十进制数据
 long                //长整型
 long mun = 100;
-printf("%d\n"num);
+printf(&quot;%d\n&quot;num);
 float               //单精度浮点数
 float f = 5.0;
-printf("%f\n",f);
+printf(&quot;%f\n&quot;,f);
 double              //双精度浮点数
 double b = 3.13;
-printf("%1f\n",b);</p>
-<p>int main()
+printf(&quot;%1f\n&quot;,b);
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>int main()
 {
-    printf("%d\n",sizeof(char));            // 1
-    printf("%d\n",sizeof(int));         //4
-    printf("%d\n",sizeof(short));
-    printf("%d\n",sizeof(long));
-    printf("%d\n",sizeof(float));
-    printf("%d\n",sizeof(double));
+    printf(&quot;%d\n&quot;,sizeof(char));            // 1
+    printf(&quot;%d\n&quot;,sizeof(int));         //4
+    printf(&quot;%d\n&quot;,sizeof(short));
+    printf(&quot;%d\n&quot;,sizeof(long));
+    printf(&quot;%d\n&quot;,sizeof(float));
+    printf(&quot;%d\n&quot;,sizeof(double));
     return 0;
-}</p>
-<p>3.1 C语言标准规定：
-sizeof(long)&gt;=sizeof(int)
+}
+</code></pre></div>
+<p>3.1 C语言标准规定：</p>
+<div class="highlight"><pre><span></span><code>sizeof(long)&gt;=sizeof(int)
 int main()
 {
 short age = 20;         //像内存申请2byte=16bit，用来存放20
 float weight=95.6f;         //默认95.6是双精度浮点型， 要指定他为单精度浮点型需要在后边加f。  向内存申请4个字节存放95.6
 return 0;
-}</p>
+}
+</code></pre></div>
 <p>3.2 单位
 注意：存在这么多类型，其实是为了更加丰富的表达生活中的各种值。
-字节：计算机中的单位
-bit -比特位      <br />
-byte -字节            1byte=8bit<br />
+字节：计算机中的单位</p>
+<div class="highlight"><pre><span></span><code>bit -比特位        
+byte -字节            1byte=8bit  
 kb                          1024byte
 mb                          1024kb
 gb                          1024mb
 tb                          1024gb
-pb</p>
+pb
+</code></pre></div>
 <p>4、变量、常量
 4.1 认识变量、常量
 变量：性别、年龄、薪资、、、
 常量：圆周率、身份证
 定义变量的方式：
-类型 变量名 = 变量；
-int num = 20;                       //全局变量-定义在内部外部
+类型 变量名 = 变量；</p>
+<div class="highlight"><pre><span></span><code>int num = 20;                       //全局变量-定义在内部外部
 int main()
 {
     int num1 = 10;                      //局部变量-定义在代码块内部
     return 0;
-}</p>
-<p>int num = 20;         <br />
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>int num = 20;           
 int main()
 {
-    int num = 10;             <br />
-    printf("%d\n",a);       //打印的是10
+    int num = 10;               
+    printf(&quot;%d\n&quot;,a);       //打印的是10
     return 0;
 }
-//局部变量和全局变量的名字建议不同，容易产生误会，产生bug
+</code></pre></div>
+<p>//局部变量和全局变量的名字建议不同，容易产生误会，产生bug
 //当全局变量和全局变量的名字相同时，会优先局部变量</p>
-<p>int main()
+<div class="highlight"><pre><span></span><code>int main()
 {
     {
         int a = 10;
-    }             <br />
-    printf("%d\n",a);       //局部范围内的变量在局部范围外不可使用
+    }               
+    printf(&quot;%d\n&quot;,a);       //局部范围内的变量在局部范围外不可使用
     return 0;
-}</p>
-<h1 id="define-_cecure_no_warnings-1">define _CECURE_NO_WARNINGS 1</h1>
-<p>int main()
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#define _CECURE_NO_WARNINGS 1
+int main()
 {
 int num1 = 0;
 int num2 = 0;
 int sum = 0;
-scanf("%d%d",&amp;num1,&amp;num2);<br />
+scanf(&quot;%d%d&quot;,&amp;num1,&amp;num2);  
     //&amp;:取地址符
 // scanf 是C语言提供的，scanf_s是编译器提供的，其他编译器不能识别（导致代码不具有跨平台性），尽量不使用scanf_s  ，定义#define _CECURE_NO_WARNINGS 1
 // C语言提供的库函数都是不安全的VS会报错，只要加#define _CECURE_NO_WARNINGS 1可解决，把他加在C文件的源文件下
 // int sum = 0;   变量不能放在代码块后边。C语言规定，变量定义要在当前代码块之前
 sum = num1+num2;
 return 0;
-}</p>
+}
+</code></pre></div>
 <p>4,2 变量的作用域
-局部变量：
-int main()
+局部变量：</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     {
         //局部变量的作用域只在局部变量，不能在全局生效
         int num=0;
     }
-    printf("num=%d\n",num); //报错
+    printf(&quot;num=%d\n&quot;,num); //报错
     return 0;
-}</p>
-<p>全局变量：
-int global =2020;           //全局变量的作用域是整个工程
+}
+</code></pre></div>
+<p>全局变量：</p>
+<div class="highlight"><pre><span></span><code>int global =2020;           //全局变量的作用域是整个工程
 void test()
 {
-    printf("test()-- %d\n",global);
+    printf(&quot;test()-- %d\n&quot;,global);
 }
 int main()
     {
         test();                     //调用test函数
-        printf("%d\n",global);
+        printf(&quot;%d\n&quot;,global);
         return 0;
-    }</p>
+    }
+</code></pre></div>
 <p>4.3生命周期：
 局部变量的生命周期：是从{}局部变量开始到局部变量结束；
-全局变量的生命周期：全局变量的周期和main函数的生命周期是一致，main函数生命周期是整个程序的生命周期；
-int main()
+全局变量的生命周期：全局变量的周期和main函数的生命周期是一致，main函数生命周期是整个程序的生命周期；</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     {
         int a = 1;
-        printf("%d\n",a);       //可以运行，a的生命周期在这个{}内；
+        printf(&quot;%d\n&quot;,a);       //可以运行，a的生命周期在这个{}内；
     }
-    printf("%d\n",a);           //error
+    printf(&quot;%d\n&quot;,a);           //error
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>常量分类
-● 字面常量
-int main()
+● 字面常量</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int num = 4;
     3;                  //字面常量，直接的常量
     return 0;
 }
-● const修饰的常量
-int main()
+</code></pre></div>
+<p>● const修饰的常量</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     //const-长属性
     //const修饰常变量-本质属性是变量，具有了常量属性。
     const int num = 4;
-    printf("%d\n",num);
+    printf(&quot;%d\n&quot;,num);
     num = 8;
-    printf("%d\n",num);     //会报错
+    printf(&quot;%d\n&quot;,num);     //会报错
     return 0;
 }
-不能再被赋值改变，但是不能用在需要常量的地方，比如：n已经是常变量，arr[n]={0};是错误语句。</p>
+</code></pre></div>
+<p>不能再被赋值改变，但是不能用在需要常量的地方，比如：n已经是常变量，arr[n]={0};是错误语句。</p>
+<p>不能再被赋值改变，但是不能用在需要常量的地方，比如：n已经是常变量，arr[n]={0};是错误语句。</p>
+<p>● const修饰的常量</p>
+<div class="highlight"><pre><span></span><code>int main()
+{
+    //const-长属性
+    //const修饰常变量-本质属性是变量，具有了常量属性。
+    const int num = 4;
+    printf(&quot;%d\n&quot;,num);
+    num = 8;
+    printf(&quot;%d\n&quot;,num);     //会报错
+    return 0;
+}
+</code></pre></div>
+<p>不能再被赋值改变，但是不能用在需要常量的地方，比如：n已经是常变量，arr[n]={0};是错误语句。</p>
+<p>不能再被赋值改变，但是不能用在需要常量的地方，比如：n已经是常变量，arr[n]={0};是错误语句。</p>
 <p>● #define定义的常量标识符常量
 //#define定义的标识符常量</p>
-<h1 id="define-max-10">define MAX 10；</h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#define MAX 10；
+int main()
 {
     int arr[MAX] = {0};
-    printf("%d\n",MAX);
+    printf(&quot;%d\n&quot;,MAX);
     return 0;
 }
-● 枚举常量
+</code></pre></div>
+<p>● 枚举常量
 //枚举常量就是一 一列举，
 //例如三原色：红、黄、蓝；星期；
-//枚举关键字 - enum
-enum Sex
+//枚举关键字 - enum</p>
+<div class="highlight"><pre><span></span><code>enum Sex
 {
     MALE,
     FEMALE,
@@ -486,55 +516,82 @@ enum Sex
 int main()
 {
     // enum Sex s=FEMALE;  赋值
-    printf("%d\n",MALE);        //0
-    printf("%d\n",FEMALE);      //1
-    printf("%d\n",SECURET);     //2
+    printf(&quot;%d\n&quot;,MALE);        //0
+    printf(&quot;%d\n&quot;,FEMALE);      //1
+    printf(&quot;%d\n&quot;,SECURET);     //2
     // 枚举常量是有数值的
     color = YELLOW;     //color是一个变量，可以被重新赋值改变
     //BLUE = 7; 会报错，枚举常量是有值的无法改变 
     return 0;
-}</p>
-<p>5、字符串、转义字符、注释
-1、 字符串类型
-由双引号引起的一串字符
+}
+</code></pre></div>
+<p>● 枚举常量
+//枚举常量就是一 一列举，
+//例如三原色：红、黄、蓝；星期；
+//枚举关键字 - enum</p>
+<div class="highlight"><pre><span></span><code>enum Sex
+{
+    MALE,
+    FEMALE,
+    SECRET
+    };
 int main()
 {
-    "abcf";
-    "hello";
-    "";     //空字符串
-}</p>
-<p>int mian()
-{
-    // 数据在计算机存储的是二进制，
-    char arr1[] = "abc";
-    // "abc" 其实是四个元素 -- 'a' 'b' 'c' '\0'   --'\0'是字符串的结束标志， \0是隐藏在字符串末尾
-    char arr2[] = {'a','b','c'};
-    // 'a' 'b' 'c' 后边无打印结束的标志会继续打印随机值，如果再后边加 \0会在打印完后结束
-    char arr2[] = {'a','b','c','\0'};
-    printf("%s\n",arr1);
-    printf("%s\n",arr2);
-    return
-}</p>
-<p>int main()
-{
-    char arr1[] = "abc";        //空字符串
-    char arr2[] ={'a','b','c'};
-    //strlen是求字符串的长度，
-    printf("%d\n",strlen(arr1));        // '\0'是字符串的结束标志，不算一个字符'
-    printf("%d\n",strlen(arr2));        //随机值，它会一直去找，直到找到0会结束
+    // enum Sex s=FEMALE;  赋值
+    printf(&quot;%d\n&quot;,MALE);        //0
+    printf(&quot;%d\n&quot;,FEMALE);      //1
+    printf(&quot;%d\n&quot;,SECURET);     //2
+    // 枚举常量是有数值的
+    color = YELLOW;     //color是一个变量，可以被重新赋值改变
+    //BLUE = 7; 会报错，枚举常量是有值的无法改变 
     return 0;
 }
-// '\0'是转义字符</p>
+</code></pre></div>
+<p>5、字符串、转义字符、注释
+1、 字符串类型
+由双引号引起的一串字符</p>
+<div class="highlight"><pre><span></span><code>int main()
+{
+    &quot;abcf&quot;;
+    &quot;hello&quot;;
+    &quot;&quot;;     //空字符串
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>int mian()
+{
+    // 数据在计算机存储的是二进制，
+    char arr1[] = &quot;abc&quot;;
+    // &quot;abc&quot; 其实是四个元素 -- &#39;a&#39; &#39;b&#39; &#39;c&#39; &#39;\0&#39;   --&#39;\0&#39;是字符串的结束标志， \0是隐藏在字符串末尾
+    char arr2[] = {&#39;a&#39;,&#39;b&#39;,&#39;c&#39;};
+    // &#39;a&#39; &#39;b&#39; &#39;c&#39; 后边无打印结束的标志会继续打印随机值，如果再后边加 \0会在打印完后结束
+    char arr2[] = {&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;\0&#39;};
+    printf(&quot;%s\n&quot;,arr1);
+    printf(&quot;%s\n&quot;,arr2);
+    return
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>int main()
+{
+    char arr1[] = &quot;abc&quot;;        //空字符串
+    char arr2[] ={&#39;a&#39;,&#39;b&#39;,&#39;c&#39;};
+    //strlen是求字符串的长度，
+    printf(&quot;%d\n&quot;,strlen(arr1));        // &#39;\0&#39;是字符串的结束标志，不算一个字符&#39;
+    printf(&quot;%d\n&quot;,strlen(arr2));        //随机值，它会一直去找，直到找到0会结束
+    return 0;
+}
+</code></pre></div>
+<p>// '\0'是转义字符</p>
 <p>2、转义字符
 改变某些字符原来的意思</p>
-<h1 id="include_1">include <stdio.h></h1>
-<h1 id="include_2">include <string.h></h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt; 
+#include &lt;string.h&gt;
+int main()
 {
-    \printf("c:\test\32\test.c");      // \t    水平制表符
-    printf("%d\n",strlen("c:\test\32\test.c"));
+    \\printf(&quot;c:\test\32\test.c&quot;);      // \t    水平制表符
+    printf(&quot;%d\n&quot;,strlen(&quot;c:\test\32\test.c&quot;));
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>\ddd   表示1~3个八进制数字            \32作为8简直带包的那个十进制数字，作为ASCII码值对应的字符
 \xdd dd表示2个十六进制的数字。如\x30 0
 3、字符串函数
@@ -561,8 +618,8 @@ else if(表达式2)
 else
 语句3;</p>
 <p>// 多语句表达式</p>
-<h1 id="include_3">include<stdio.h></h1>
-<p>int mian()
+<div class="highlight"><pre><span></span><code>#include&lt;stdio.h&gt;
+int mian()
 {
 if(表达式)
 {
@@ -574,10 +631,11 @@ else
 }
 return 0;
 }
-//悬空else </p>
+//悬空else 
+</code></pre></div>
 <p>// if语句
 1、代码1（条件成立返回下，条件不成立返回y ）</p>
-<p>int main()
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     int b = 20;
@@ -586,9 +644,10 @@ return 0;
         return x;
     }
     return y;
-}</p>
+}
+</code></pre></div>
 <p>2、优化代码1</p>
-<p>int main()
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     int b = 20;
@@ -601,33 +660,36 @@ else
         return y;
 }
 }
-3、代码3</p>
-<p>int main()
+</code></pre></div>
+<p>3、代码3</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     if (a=4) 
     {
-        printf("hehe\n");
+        printf(&quot;hehe\n&quot;);
     }
     return 0;
 }
-判断一个数是否为奇数
+</code></pre></div>
+<p>判断一个数是否为奇数
 输出1-100之间的 奇数</p>
 <p>2、switch语句
-解决多分枝问题
-int main ()
+解决多分枝问题</p>
+<div class="highlight"><pre><span></span><code>int main ()
 {
 int day = 0;
-sacnf("%d",&amp;day);
+sacnf(&quot;%d&quot;,&amp;day);
 switch(day)
 {
 case1:
-printf("q\n");
+printf(&quot;q\n&quot;);
 case2:
-printf("b\n");
+printf(&quot;b\n&quot;);
 }
 return 0;
-}</p>
+}
+</code></pre></div>
 <p>由break终止程序</p>
 <p>3、循环语句
 3.1、while
@@ -642,91 +704,104 @@ putchar()--打印一个值</p>
 分析在scanf()和getchar()都为输入函数，输入值会放入输入缓冲区存，回车的转移字符为\n也会被存进去，scanf会等待输入缓冲区内出现值，拿走自己想要的值，当密码被读走后还有\n，被getchar拿走，ret的值为\n
 解决：将\n提前被或去掉，使得缓冲区内无值，再用有一个getchar()把\n拿走</p>
 <p>3.2for循环
-for循环是把初始化、测试、和更新组合在一处。
-int main(void)
+for循环是把初始化、测试、和更新组合在一处。</p>
+<div class="highlight"><pre><span></span><code>int main(void)
 {
     const int NUMBER = 22;
     int count;
     for (count = 1;count &lt;= NUMBER; count++)
-    printf("Be my Valentine!\n");
+    printf(&quot;Be my Valentine!\n&quot;);
     return 0;
 }
-完整的for语句还包括后面的简单语句或复合语句。for圆括号中的表达式也叫做控制表达式，它们都是完整表达式，所以每个表达式的副作用（如，递增变量）都发生在对下一个表达式求值之前。</p>
-<h1 id="include_4">include <stdio.h></h1>
-<p>int main(void)
+</code></pre></div>
+<p>完整的for语句还包括后面的简单语句或复合语句。for圆括号中的表达式也叫做控制表达式，它们都是完整表达式，所以每个表达式的副作用（如，递增变量）都发生在对下一个表达式求值之前。</p>
+<p>完整的for语句还包括后面的简单语句或复合语句。for圆括号中的表达式也叫做控制表达式，它们都是完整表达式，所以每个表达式的副作用（如，递增变量）都发生在对下一个表达式求值之前。</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+int main(void)
 {
     int num;
-    printf("    n     n  cubed\n");
+    printf(&quot;    n     n  cubed\n&quot;);
     for (num = 1; num &lt;= 6; num++)
-        printf("%5d%5d\n",num,num<em>num</em>num);
+        printf(&quot;%5d%5d\n&quot;,num,num*num*num);
     return 0;
-}</p>
-<p>int main(void)
+}
+
+int main(void)
 {
     int secs;
     for (secs = 5; secs &gt; 0; secs--)
-        printf("%d  seconds!\n", secs);
-        printf("We have ignition!\n");
+        printf(&quot;%d  seconds!\n&quot;, secs);
+        printf(&quot;We have ignition!\n&quot;);
     return 0;
 }
-3.3逗号运算
+</code></pre></div>
+<p>3.3逗号运算
 逗号运算符扩展了for循环的灵活性，以便在for循环中包含更多的表达式。
  逗号运算符并不局限于在for循环中使用，但是这是它最常用的地方。 逗号运算符有两个其他性质。首先，它保证了被它分隔的表达式从左往右求 值（换言之，逗号是一个序列点，所以逗号左侧项的所有副作用都在程序执 行逗号右侧项之前发生）。  </p>
-<h1 id="include_5">include <stdio.h></h1>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+int main(void)
 {
     const int FIRST_OZ = 46;        //2013邮资
     const int NEXT_OZ = 20;         //2013邮资
     int ounces, cost;
-    printf("ounces   cost\n");
+    printf(&quot;ounces   cost\n&quot;);
     for (ounces = 1, cost = FIRST_OZ; ounces &lt;= 16; ounces++, cost += NEXT_OZ)
-        printf("%5d  $%4.2f\n", ounces, cost / 100.0);
+        printf(&quot;%5d  $%4.2f\n&quot;, ounces, cost / 100.0);
     return 0;
 }
-3.4 do while 循环
+</code></pre></div>
+<p>3.4 do while 循环
  while循环和for循环都是入口条件循环，即在循环的每次迭代之前检查 测试条件，所以有可能根本不执行循环体中的内容。C语言还有出口条件循 环（exit-condition loop），即在循环的每次迭代之后检查测试条件，这保证 了至少执行循环体中的内容一次。这种循环被称为 do while循环。 </p>
-<h1 id="include_6">include <stdio.h></h1>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+int main(void)
 {
     const int secret_code = 13;
     int code_entered;
     do
     {
-        printf("To enter the trridkidekaphobia therapy club,\n");
-        printf("please enter the sercet code number:  ");
-        scanf("%d", &amp;code_entered);
+        printf(&quot;To enter the trridkidekaphobia therapy club,\n&quot;);
+        printf(&quot;please enter the sercet code number:  &quot;);
+        scanf(&quot;%d&quot;, &amp;code_entered);
     } while (code_entered != secret_code);
-    printf("Congratulations! You are cured!\n");
-    return 0;</p>
-<p>}
-3.5如何选择循环、
+    printf(&quot;Congratulations! You are cured!\n&quot;);
+    return 0;
+
+}
+</code></pre></div>
+<p>3.5如何选择循环、
  一般而言，当循环涉及初始化和更新变量时，用for循环比较合适，而 在其他情况下用while循环更好。<br />
 7、控制语句-分支/跳转
 7.1 if语句</p>
-<h1 id="include_7">include <stdio.h></h1>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+int main(void)
 {
     const int FREEZING = 0;
     float temperature;
     int cold_days = 0;
     int all_dyas = 0;
-    printf("Enter the list of daily low temperatures.\n");
-    printf("Use Celsius,and enter q to quit.\n");
-    while (scanf("%f",&amp;temperature)==1)
+    printf(&quot;Enter the list of daily low temperatures.\n&quot;);
+    printf(&quot;Use Celsius,and enter q to quit.\n&quot;);
+    while (scanf(&quot;%f&quot;,&amp;temperature)==1)
     {
         all_dyas++;
         if (temperature &lt; FREEZING)
             cold_days++;
-    }</p>
-<div class="highlight"><pre><span></span><code>if (all_dyas != 0)
+    }
+
+if (all_dyas != 0)
 
     printf(&quot;%d days total: %.1f%%were below freezing.\n&quot;, all_dyas, 100.0 * (float)cold_days / all_dyas);
 if (all_dyas == 0)
     printf(&quot;NO data entered!\n&quot;);
 return 0;
+
+}
 </code></pre></div>
-<p>}
-1、语法结构
+<p>1、语法结构
+//单分支if
+if(表达式1)
+语句;</p>
+<p>1、语法结构
 //单分支if
 if(表达式1)
 语句;</p>
@@ -743,8 +818,8 @@ else if(表达式2)
 else
 语句3;</p>
 <p>// 多语句表达式</p>
-<h1 id="include_8">include<stdio.h></h1>
-<p>int mian()
+<div class="highlight"><pre><span></span><code>#include&lt;stdio.h&gt;
+int mian()
 {
     if(表达式)
 {
@@ -756,10 +831,11 @@ else
     }
     return 0;
 }
-//悬空else </p>
+</code></pre></div>
+<p>//悬空else </p>
 <p>// if语句
 1、代码1（条件成立返回下，条件不成立返回y ）</p>
-<p>int main()
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     int b = 20;
@@ -768,9 +844,10 @@ else
         return x;
     }
     return y;
-}</p>
-<p>2、优化代码1
-int main()
+}
+</code></pre></div>
+<p>2、优化代码1</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     int b = 20;
@@ -782,39 +859,41 @@ int main()
     {
         return y;
     }
-}</p>
-<p>3、代码3
-int main()
+}
+</code></pre></div>
+<p>3、代码3</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     if (a=4) 
     {
-        printf("hehe\n");
+        printf(&quot;hehe\n&quot;);
     }
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>判断一个数是否为奇数
 输出1-100之间的 奇数
 7.2 if else 
 8、函数
 1、概念（function）
-是完成特定任务的独立程序代码单元，语法规定了函数的结构和使用方法
-//代码   mian()函数  starbar()函数
-/<em> lethead1.c </em>/</p>
-<h1 id="include_9">include <stdio.h></h1>
-<h1 id="define-name-gigathink-inc">define NAME "GIGATHINK, INC."</h1>
-<h1 id="define-address-101-megabuck-plaza">define ADDRESS "101 Megabuck Plaza"</h1>
-<h1 id="define-place-megapolis-ca-94904">define PLACE "Megapolis, CA 94904"</h1>
-<h1 id="define-width-40">define WIDTH 40</h1>
-<p>void starbar(void);//函数的原型
+是完成特定任务的独立程序代码单元，语法规定了函数的结构和使用方法</p>
+<div class="highlight"><pre><span></span><code>//代码   mian()函数  starbar()函数
+/* lethead1.c */
+#include &lt;stdio.h&gt;
+#define NAME &quot;GIGATHINK, INC.&quot;
+#define ADDRESS &quot;101 Megabuck Plaza&quot;
+#define PLACE &quot;Megapolis, CA 94904&quot;
+#define WIDTH 40
+void starbar(void);//函数的原型
 //第一个void说明函数无返回值，第二个在括号内void表明函数不带参数
 //分号表明这个是声明函数，不是定义函数
 int main(void)
 {
     starbar();
-    printf("%s\n", NAME);
-    printf("%s\n",ADDRESS);
-    printf("%s\n", PLACE);
+    printf(&quot;%s\n&quot;, NAME);
+    printf(&quot;%s\n&quot;,ADDRESS);
+    printf(&quot;%s\n&quot;, PLACE);
     starbar();
     return 0;
 }
@@ -822,9 +901,10 @@ void starbar(void)
 {
     int count;
     for (count = 1; count &lt;= WIDTH; count++)
-        putchar('*');
-    putchar('\n');
-}</p>
+        putchar(&#39;*&#39;);
+    putchar(&#39;\n&#39;);
+}
+</code></pre></div>
 <p>/*该程序的输出如下：</p>
 <hr />
 <p>GIGATHINK, INC.
@@ -836,41 +916,42 @@ Megapolis, CA 94904</p>
 starbar()可以作为一个黑河盒，他的功能是实现打印出40个星号，它不需要和主函数通信</p>
 <p>3、函数参数
 //案例 -针对上述的代码实现打印的文字能居中</p>
-<h1 id="include_10">include <stdio.h></h1>
-<h1 id="include_11">include <string.h></h1>
-<h1 id="define-name-qite">define NAME "QITE"</h1>
-<h1 id="define-address-qite-shi-zhu">define ADDRESS "QITE SHI ZHU"</h1>
-<h1 id="define-place-qite-shi-dogdongxi">define PLACE "QITE SHI DOGDONGXI"</h1>
-<h1 id="define-width-40_1">define WIDTH 40</h1>
-<h1 id="define-space">define SPACE ' '</h1>
-<p>void show_n_char(char ch, int num);
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define NAME &quot;QITE&quot;
+#define ADDRESS &quot;QITE SHI ZHU&quot;
+#define PLACE &quot;QITE SHI DOGDONGXI&quot;
+#define WIDTH 40
+#define SPACE &#39; &#39;
+void show_n_char(char ch, int num);
 int main(void)
 {
     int spaces;
     //调用show_n_char()函数，并将传递参数给ch ， num
-    show_n_char('<em>', WIDTH); /</em> 用符号常量作为参数 <em>/
-    putchar('\n');
-    show_n_char(SPACE, 12); /</em> 用符号常量作为参数 <em>/
+    show_n_char(&#39;*&#39;, WIDTH); /* 用符号常量作为参数 */
+    putchar(&#39;\n&#39;);
+    show_n_char(SPACE, 12); /* 用符号常量作为参数 */
     //用表达式作为参数：show_n_char(SPACE, (WIDTH-strlen(NAME))/2);
-    printf("%s\n", NAME);
-    spaces = (WIDTH - strlen(ADDRESS)) / 2; /</em> 计算要跳过多少个空格<em>/
-    show_n_char(SPACE, spaces); /</em> 用一个变量作为参数<em>/
+    printf(&quot;%s\n&quot;, NAME);
+    spaces = (WIDTH - strlen(ADDRESS)) / 2; /* 计算要跳过多少个空格*/
+    show_n_char(SPACE, spaces); /* 用一个变量作为参数*/
     //用表达式作为参数：show_n_char(SPACE, (WIDTH - strlen(ADDRESS))/2);
-    printf("%s\n", ADDRESS);
+    printf(&quot;%s\n&quot;, ADDRESS);
     show_n_char(SPACE, (WIDTH - strlen(PLACE)) / 2);
-    printf("%s\n", PLACE); /</em> 用一个表达式作为参数
-    <em>/
-    show_n_char('</em>', WIDTH);
-    putchar('\n');
+    printf(&quot;%s\n&quot;, PLACE); /* 用一个表达式作为参数
+    */
+    show_n_char(&#39;*&#39;, WIDTH);
+    putchar(&#39;\n&#39;);
     return 0;
 }
-/<em> show_n_char()函数的定义 </em>/
+/* show_n_char()函数的定义 */
 void show_n_char(char ch, int num)          //带参数函数，
 {
     int count;
     for (count = 1; count &lt;= num; count++)
         putchar(ch);
-}</p>
+}
+</code></pre></div>
 <p>//打印出的内容：
 /*</p>
 <hr />
@@ -891,23 +972,25 @@ show_n_char(), 待显示的字符和显示的次数是输入。 执行后的结�
  黑盒方法的核心部分是：ch、num和count都是show_n_char()私有的局部 变量。如果在main()中使用同名变量，那么它们相互独立，互不影响。也就 是说，如果main()有一个count变量，那么改变它的值不会改变show_n_char() 中的count，反之亦然。黑盒里发生了什么对主调函数是不可见的。<br />
 6、使用return从函数中返回值
 //被调函数将值传递给主函数</p>
-<h1 id="include_12">include <stdio.h></h1>
-<h1 id="include_13">include <string.h></h1>
-<p>//lesser.c -- 找出两个整数中较小的一个
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+//lesser.c -- 找出两个整数中较小的一个
 int imin(int, int);
 int main(void)
 {
     int evil1, evil2;
-    printf("Enter a pair of integers (q to quit):\n");
-    while (scanf("%d %d", &amp;evil1, &amp;evil2) == 2)
+    printf(&quot;Enter a pair of integers (q to quit):\n&quot;);
+    while (scanf(&quot;%d %d&quot;, &amp;evil1, &amp;evil2) == 2)
     {
-        printf("The lesser of %d and %d is %d.\n",evil1, evil2, imin(evil1, evil2));
-        printf("Enter a pair of integers (q to quit):\n");</p>
-<div class="highlight"><pre><span></span><code>}
+        printf(&quot;The lesser of %d and %d is %d.\n&quot;,evil1, evil2, imin(evil1, evil2));
+        printf(&quot;Enter a pair of integers (q to quit):\n&quot;);
+
+
+}
 printf(&quot;Bye.\n&quot;);
 return 0;
-</code></pre></div>
-<p>}
+
+}
 int imin(int n, int m)
 {
     int min;
@@ -916,20 +999,21 @@ int imin(int n, int m)
     else
         min = m;
     return min;
-}</p>
+}
+</code></pre></div>
 <p>返回值不仅可以赋给变量，也可以被用作表达式的一部分。例如，可以 这样：
  answer = 2 * imin(z, zstar) + 25;
  printf("%d\n", imin(-32 + answer, LIMIT));  </p>
-<h1 id="define-_crt_secure_no_warnings">define  _CRT_SECURE_NO_WARNINGS</h1>
-<h1 id="include_14">include <stdio.h></h1>
-<h1 id="include_15">include <string.h></h1>
-<p>int imin(int, int);
+<div class="highlight"><pre><span></span><code>#define  _CRT_SECURE_NO_WARNINGS 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int imin(int, int);
 int main(void)
 {
     int answer;
     int evil1, evil2;
-    answer = 5*imin(scanf("%d", &amp;evil1),scanf("%d", &amp;evil2))+10;
-    printf("%d\n", imin(-12 + answer,answer));
+    answer = 5*imin(scanf(&quot;%d&quot;, &amp;evil1),scanf(&quot;%d&quot;, &amp;evil2))+10;
+    printf(&quot;%d\n&quot;, imin(-12 + answer,answer));
     return 0;
 }
 int imin(int n, int m)
@@ -941,7 +1025,8 @@ int imin(int n, int m)
         min = m;
     return min;
 }
-7、函数类型
+</code></pre></div>
+<p>7、函数类型
 概述：声明函数必须声明函数类型。带返回值的函数类型应该与其返回值类型相同，而无返回值的函数应声明为void类型
 8、递归函数
 概述：函数自己调用自己，被称为递归函数
@@ -952,8 +1037,19 @@ int imin(int n, int m)
 递归函数中位于递归调用之前的语句，均被调函数相反的顺序执行。
 虽然每集递归函数都有自己的变量，但并没有拷贝函数的代码。
 递归函数必须有停止调用的语句，否则会进入无限循环。</p>
-<h1 id="include_16">include <stdio.h></h1>
-<p>void up_and_down(int);
+<p>7、函数类型
+概述：声明函数必须声明函数类型。带返回值的函数类型应该与其返回值类型相同，而无返回值的函数应声明为void类型
+8、递归函数
+概述：函数自己调用自己，被称为递归函数
+递归的基本原理：
+每级函数调用都有自己变量
+每次函数调用都会返回一次
+递归函数中位于递归调用之前的语句，均按照被调函数的顺序执行。
+递归函数中位于递归调用之前的语句，均被调函数相反的顺序执行。
+虽然每集递归函数都有自己的变量，但并没有拷贝函数的代码。
+递归函数必须有停止调用的语句，否则会进入无限循环。</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+void up_and_down(int);
 int main(void)
 {
     up_and_down(1);
@@ -961,12 +1057,13 @@ int main(void)
 }
 void up_and_down(int n)
 {
-    printf("Level  %d:  n  location  %p\n", n, &amp;n);
+    printf(&quot;Level  %d:  n  location  %p\n&quot;, n, &amp;n);
     if (n &lt; 4)
         up_and_down(n + 1);
-    printf("LEVEL  %d:  n  location  %p\n", n, &amp;n);
+    printf(&quot;LEVEL  %d:  n  location  %p\n&quot;, n, &amp;n);
 }
-c
+</code></pre></div>
+<p>c
 9、尾递归
  最简单的递归形式是把递归调用置于函数的末尾，即正好在 return 语句 之前。这种形式的递归被称为尾递归（tail recursion），因为递归调用在函 数的末尾。尾递归是最简单的递归形式，因为它相当于循环。  </p>
 <p>10、递归和倒叙计算</p>
@@ -975,23 +1072,25 @@ c
 1、概述
 数组：一组相同类型元素的集合
 数组的一些声明：</p>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>int main(void)
 {
     float candy[365];       //内含365个float类型元素的数组
     char code[12];          //内含12char类型元素的数组
     int states[50];         //内含50个int类型元素的数组
     //....
 }
-2、初始化数组
+</code></pre></div>
+<p>2、初始化数组
 数组通常 被用来存储程序需要的数据。
-只存储单个值的变量有时也称为标量变量
-int mian()
+只存储单个值的变量有时也称为标量变量</p>
+<div class="highlight"><pre><span></span><code>int mian()
 {
     int power[8] = { 1,2,3,4,5,6,7,8 };
     return 0;
 }
-数组通过下标使用
-int main()
+</code></pre></div>
+<p>数组通过下标使用</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int arr[10];  //存放10个整型数字的数组
     char ch[12];
@@ -999,22 +1098,35 @@ int main()
     int arr1[10] = {1,2,3,4,5,6,7,8,9,10};  //用下标的形式访问元素，从0开始
     //arr1[3] --&gt;4
     return 0;
-}</p>
-<h1 id="include_17">include <stdio.h></h1>
-<h1 id="define-months-12">define MONTHS 12</h1>
-<p>int main()
+}
+</code></pre></div>
+<p>数组通过下标使用</p>
+<div class="highlight"><pre><span></span><code>int main()
+{
+    int arr[10];  //存放10个整型数字的数组
+    char ch[12];
+    float arr2[10];
+    int arr1[10] = {1,2,3,4,5,6,7,8,9,10};  //用下标的形式访问元素，从0开始
+    //arr1[3] --&gt;4
+    return 0;
+}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#define MONTHS 12
+int main()
 {
     int days[MONTHS] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
     int index;
     for (index = 0; index &lt; MONTHS; index++)
-        printf("Month %2d has %2d days.\n", index + 1, days[index]);
+        printf(&quot;Month %2d has %2d days.\n&quot;, index + 1, days[index]);
     return 0;
 }
-2、指定初始化器
+</code></pre></div>
+<p>2、指定初始化器
 用下表指定初始化元素</p>
-<h1 id="include_18">include <stdio.h></h1>
-<h1 id="define-months-12_1">define MONTHS 12</h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#define MONTHS 12
+int main()
 {
     int days[MONTHS] = { 31,28,[4] = 31,30,31,
     //如果指定初始化器后面有更多的值，如该例中的初始化列表中的片段：
@@ -1022,25 +1134,29 @@ int main()
         [1] = 29 };
     //如果再次初始化指定的元素，那么最后的初始化将会取代之前的初始化
     for (int i = 0; i &lt; MONTHS; i++)
-        printf("%2d %d\n",i+1,days[i]);
+        printf(&quot;%2d %d\n&quot;,i+1,days[i]);
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>3、给数组元素赋值
 借助下标（索引赋值）</p>
-<h1 id="include_19">include <stdio.h></h1>
-<h1 id="define-size-50">define SIZE 50</h1>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#define SIZE 50
+int main(void)
 {
     int i , evens[SIZE];
     for (i = 0 ; i &lt; SIZE; i++)
     {
         evens[i] = 2 * i;
-        printf("%d\n", evens[i]);
-    }</p>
-<div class="highlight"><pre><span></span><code>return 0;
+        printf(&quot;%d\n&quot;, evens[i]);
+    }
+
+
+return 0;
+
+}
 </code></pre></div>
-<p>}
-4、数组边界
+<p>4、数组边界
 在使用数组时，要防止数组下标超出边界，确保下标是有效值
 假设有如下声明：
 int arr[20];
@@ -1048,8 +1164,8 @@ int arr[20];
 5、指定数组大小
 声明数组时只能在方括号中使用整型常量表达式
 sizeof表达式被视为整型 
-常量，但是（与C++不同）const值不是。另外，表达式的值必须大于0
-int n = 5; 
+常量，但是（与C++不同）const值不是。另外，表达式的值必须大于0</p>
+<div class="highlight"><pre><span></span><code>int n = 5; 
 657int m = 8; 
 float a1[5]; // 可以 
 float a2[5*2 + 1]; //可以 
@@ -1059,18 +1175,49 @@ float a5[0]; // 不可以，数组大小必须大于0
 float a6[2.5]; // 不可以，数组大小必须是整数 
 float a7[(int)2.5]; // 可以，已被强制转换为整型常量 
 float a8[n]; // C99之前不允许 
-float a9[m]; // C99之前不允许</p>
-<h1 id="define-size-4">define SIZE 4</h1>
-<p>int main(void)
+float a9[m]; // C99之前不允许
+#define SIZE 4
+int main(void)
 {
     int arr[SIZE]; // 整数符号常量
     double lots[144]; // 整数字面常量
     ...
-6、多维数组</p>
-<h1 id="include_20">include <stdio.h></h1>
-<h1 id="define-months-12_2">define MONTHS 12 // 一年的月份数</h1>
-<h1 id="define-years-5">define YEARS 5 // 年数</h1>
-<p>int main(void)
+</code></pre></div>
+<p>6、多维数组</p>
+<p>6、多维数组</p>
+<p>4、数组边界
+在使用数组时，要防止数组下标超出边界，确保下标是有效值
+假设有如下声明：
+int arr[20];
+下标范围：0-19
+5、指定数组大小
+声明数组时只能在方括号中使用整型常量表达式
+sizeof表达式被视为整型 
+常量，但是（与C++不同）const值不是。另外，表达式的值必须大于0</p>
+<div class="highlight"><pre><span></span><code>int n = 5; 
+657int m = 8; 
+float a1[5]; // 可以 
+float a2[5*2 + 1]; //可以 
+float a3[sizeof(int) + 1]; //可以 
+float a4[-4]; // 不可以，数组大小必须大于0 
+float a5[0]; // 不可以，数组大小必须大于0 
+float a6[2.5]; // 不可以，数组大小必须是整数 
+float a7[(int)2.5]; // 可以，已被强制转换为整型常量 
+float a8[n]; // C99之前不允许 
+float a9[m]; // C99之前不允许
+#define SIZE 4
+int main(void)
+{
+    int arr[SIZE]; // 整数符号常量
+    double lots[144]; // 整数字面常量
+    ...
+</code></pre></div>
+<p>6、多维数组</p>
+<p>6、多维数组</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#define MONTHS 12 // 一年的月份数
+#define YEARS 5 // 年数
+int main(void)
 {
     // 用2010～2014年的降水量数据初始化数组
     const float rain[YEARS][MONTHS] =
@@ -1083,27 +1230,28 @@ float a9[m]; // C99之前不允许</p>
     };
     int year, month;
     float subtot, total;
-    printf(" YEAR RAINFALL (inches)\n");
+    printf(&quot; YEAR RAINFALL (inches)\n&quot;);
     for (year = 0, total = 0; year &lt; YEARS; year++)
     { // 每一年，各月的降水量总和
         for (month = 0, subtot = 0; month &lt; MONTHS; month++)
             subtot += rain[year][month];
-            printf("%5d %15.1f\n", 2010 + year, subtot);
+            printf(&quot;%5d %15.1f\n&quot;, 2010 + year, subtot);
             total += subtot; // 5年的总降水量
     }
-    printf("\nThe yearly average is %.1f inches.\n\n", total /YEARS);
-    printf("MONTHLY AVERAGES:\n\n");
-    printf(" Jan Feb Mar Apr May Jun Jul Aug SepOct ");
-    printf(" Nov Dec\n");
+    printf(&quot;\nThe yearly average is %.1f inches.\n\n&quot;, total /YEARS);
+    printf(&quot;MONTHLY AVERAGES:\n\n&quot;);
+    printf(&quot; Jan Feb Mar Apr May Jun Jul Aug SepOct &quot;);
+    printf(&quot; Nov Dec\n&quot;);
     for (month = 0; month &lt; MONTHS; month++)
     { // 每个月，5年的总降水量
         for (year = 0, subtot = 0; year &lt; YEARS; year++)
             subtot += rain[year][month];
-        printf("%4.1f ", subtot / YEARS);
+        printf(&quot;%4.1f &quot;, subtot / YEARS);
     }
-    printf("\n");
+    printf(&quot;\n&quot;);
         return 0;
-}</p>
+}
+</code></pre></div>
 <p>//结果：
 /*
  YEAR RAINFALL (inches)
@@ -1193,8 +1341,8 @@ max =(a&gt;b ? a : b);</p>
 下标表达式
 int arr[10]={0,2,3,4,6,8};
 arr[4];     //下标引用操作符
-函数调用操作符
-int Add(int x, int y)
+函数调用操作符</p>
+<div class="highlight"><pre><span></span><code>int Add(int x, int y)
 {
     int z= 0;
     z=x+y;
@@ -1204,7 +1352,8 @@ int main()
 {
     int sum = Add(a,b);     //()--函数调用操作符
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>11、常见关键字
 C语言内定的关键字
 auto (一般用在局部变量。自动变量)    、break  case        char        const   continue        default         do  double  register（寄存器关键字，建议把定义的变量放在寄存器，但是是否真的放在寄存器编译器会自己判断，在进行执行）        return  short   int         unsigned int 定义无符号      strut       union   volatile    while   viod        typedef（类型重定义  typedef undsigned int u_int; //(将无符号int类型定义为，起别名 ）
@@ -1217,15 +1366,16 @@ static修饰局部变量可以改变局部变量的生命周期
 正常情况下局部变量每次调用结束后就会失效</p>
 <p>修饰全局变量：改变变量的作用域。--让静态的全局变量只能在自己所在的源文件内部使用，出了源文件就无法使用</p>
 <p>12、define定义常量和宏</p>
-<h1 id="define">define 定义常量</h1>
-<p>//定义常量和宏</p>
-<h1 id="define-max10">define MAX=10</h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#define 定义常量
+//定义常量和宏
+#define MAX=10
+int main()
 {
     int a= MAX;
     return 0;
-}</p>
-<h1 id="define_1">define定于宏</h1>
+}
+</code></pre></div>
+<h1 id="define">define定于宏</h1>
 <p>用函数表达：</p>
 <p>用宏的方式i定义</p>
 <p>13、指针
@@ -1249,43 +1399,45 @@ static修饰局部变量可以改变局部变量的生命周期
 <p>13.1.2 用指针存储一个变量
 int a=10;
 //开辟一个空间存储a的变量
-int<em> p=&a;          //p是指针变量
-//取a的地址 ，把变量a的地址存在p变量
-</em>p=20;
-//直接指到a的地址，把20放在放在a的空间</p>
-<h1 id="include_21">include <stdio.h></h1>
-<h1 id="include_22">include <string.h></h1>
-<p>int main()
+int* p=&a;          //p是指针变量
+//取a的地址 ，把变量a的地址存在p变量</p>
+<div class="highlight"><pre><span></span><code>*p=20;
+//直接指到a的地址，把20放在放在a的空间
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
 {
     int a = 10;
-    int<em> p = &a;
-    printf("%d\n", </em>p);     //10
-    printf("%d\n",a);       //10
-    <em>p = 20;
-    printf("%d\n", a);      //20
-    printf("%d\n", </em>p);     //20
-    printf("%p\n", p);      //00000056F4B3FA94
-    printf("%d\n", &amp;a);     //00000056F4B3FA94
+    int* p = &amp;a;
+    printf(&quot;%d\n&quot;, *p);     //10
+    printf(&quot;%d\n&quot;,a);       //10
+    *p = 20;
+    printf(&quot;%d\n&quot;, a);      //20
+    printf(&quot;%d\n&quot;, *p);     //20
+    printf(&quot;%p\n&quot;, p);      //00000056F4B3FA94
+    printf(&quot;%d\n&quot;, &amp;a);     //00000056F4B3FA94
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>13.1.3 使用指针在函数间通信</p>
-<h1 id="include_23">include <stdio.h></h1>
-<p>void interchange(int<em> u, int</em> v);
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+void interchange(int* u, int* v);
 int main()
 {
     int x = 5, y = 10;
-    printf("Originally  x = %d and y = %d.\n", x, y);
+    printf(&quot;Originally  x = %d and y = %d.\n&quot;, x, y);
     interchange(&amp;x, &amp;y);//把地址送给函数
-    printf("Now x  =  %d and y = %d.\n", x, y);
+    printf(&quot;Now x  =  %d and y = %d.\n&quot;, x, y);
     return  0;
 }
-void interchange(int<em> u, int</em> v)
+void interchange(int* u, int* v)
 {
     int temp;
-    temp = <em>u;
-    </em>u = <em>v;
-    </em>v = temp;
-}</p>
+    temp = *u;
+    *u = *v;
+    *v = temp;
+}
+</code></pre></div>
 <p>//结果
 /<em>
 Originally  x = 5 and y = 10.
@@ -1299,27 +1451,29 @@ char<em>p; </em>p能够访问1个字节
 double<em>p; </em>p能够访问8个字节
 ● 指针的类型决定了，对指针解引用操作的时候有很多权限（能操作几个字符）。
 ● 指针加减整数，指针类型决定指针步长</p>
-<h1 id="include_24">include <stdio.h></h1>
-<h1 id="include_25">include <string.h></h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
 {
     int a = 0x11223344;
-    int<em> pa = &a;
-    char</em> pc = &a;
-    printf("%p\n", pa);
-    printf("%p\n", pa + 1);     //向后跳4个字节
-    printf("%p\n", pc);
-    printf("%p\n", pc + 1);     //向后跳过1个字节</p>
-<div class="highlight"><pre><span></span><code>return 0;
+    int* pa = &amp;a;
+    char* pc = &amp;a;
+    printf(&quot;%p\n&quot;, pa);
+    printf(&quot;%p\n&quot;, pa + 1);     //向后跳4个字节
+    printf(&quot;%p\n&quot;, pc);
+    printf(&quot;%p\n&quot;, pc + 1);     //向后跳过1个字节
+
+return 0;
+
+}
 </code></pre></div>
-<p>}</p>
 <p>//结果：
-/<em>
+/*
 000000D740B1F8C4
 000000D740B1F8C8
 000000D740B1F8C4
-000000D740B1F8C5
-</em>/
+000000D740B1F8C5</p>
+<p>*/
 13.2.2 野指针
 野指针是指针的位置是不可知（随机的、不正确、没有明确限制的）
 注意：需要避免空指针
@@ -1327,152 +1481,315 @@ double<em>p; </em>p能够访问8个字节
 ● 小心指针越界
 ● 指针指向空间释放，使其置为NULL
 ● 指针使用前检查有效性
-1、指针未初始化
-int main()
+1、指针未初始化</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
-    int<em> p;
+    int* p;
     //局部变量不初始化，默认是随机值
     //局部的指针变量，就被初始化随机值
-    </em>p=20;
-    //int <em>p=NULL;
+    *p=20;
+    //int *p=NULL;
     return 0;
 }
-2、指针越界访问
-int main()
+</code></pre></div>
+<p>2、指针越界访问</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int arr[10]={10};
-    int</em>p=arr;
+    int*p=arr;
     int i=0;
     for(i=0;i&lt;12;i++)
     {
         //当指针指向的范围超出数组arr的范围时，p就是野指针
-        p++; <br />
+        p++;   
     }
     return 0;
 }
-3、指针指向的空间释放
+</code></pre></div>
+<p>3、指针指向的空间释放
 13.3 指针运算
 ● 指针+-整数
 ● 指针-指针
 ● 指针的关系运算
 13.3.1 指针+-整数
 指针类型决定指针步长</p>
-<h1 id="include_26">include <stdio.h></h1>
-<h1 id="include_27">include <string.h></h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
 {
     int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
     int i = 0;
     int sz = sizeof(arr) / sizeof(arr[0]);
-    int<em> p = arr;
+    int* p = arr;
     for (i = 0; i &lt; sz; i++)
     {
-        printf("%d  ", </em>p);
+        printf(&quot;%d  &quot;, *p);
         p ++;
     }
     return 0;
-}</p>
-<p>//1  2  3  4  5  6  7  8  9  10
-13.3.2 指针-指针
-结果是中间的元素个数</p>
-<h1 id="include_28">include <stdio.h></h1>
-<h1 id="include_29">include <string.h></h1>
-<p>int main()
+}
+</code></pre></div>
+<p>3、指针指向的空间释放
+13.3 指针运算
+● 指针+-整数
+● 指针-指针
+● 指针的关系运算
+13.3.1 指针+-整数
+指针类型决定指针步长</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
 {
     int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
     int i = 0;
-    int<em> p1 = &amp;arr[9];
-    int</em> p2 = &amp;arr[0];
-    //指针-指针的运算一定要运用于同一块空间
-    printf("%d\n",p1 - p2);     //9
-    printf("%d\n",p2 - p1);     //-9
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    int* p = arr;
+    for (i = 0; i &lt; sz; i++)
+    {
+        printf(&quot;%d  &quot;, *p);
+        p ++;
+    }
     return 0;
-}</p>
-<p>int my_strlen(char<em> str)
+}
+</code></pre></div>
+<p>2、指针越界访问</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
-    char</em> start= str;
-    char<em> end = str;
-    while (</em>end != '\0')
+    int arr[10]={10};
+    int*p=arr;
+    int i=0;
+    for(i=0;i&lt;12;i++)
+    {
+        //当指针指向的范围超出数组arr的范围时，p就是野指针
+        p++;   
+    }
+    return 0;
+}
+</code></pre></div>
+<p>3、指针指向的空间释放
+13.3 指针运算
+● 指针+-整数
+● 指针-指针
+● 指针的关系运算
+13.3.1 指针+-整数
+指针类型决定指针步长</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    int i = 0;
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    int* p = arr;
+    for (i = 0; i &lt; sz; i++)
+    {
+        printf(&quot;%d  &quot;, *p);
+        p ++;
+    }
+    return 0;
+}
+</code></pre></div>
+<p>3、指针指向的空间释放
+13.3 指针运算
+● 指针+-整数
+● 指针-指针
+● 指针的关系运算
+13.3.1 指针+-整数
+指针类型决定指针步长</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    int i = 0;
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    int* p = arr;
+    for (i = 0; i &lt; sz; i++)
+    {
+        printf(&quot;%d  &quot;, *p);
+        p ++;
+    }
+    return 0;
+}
+</code></pre></div>
+<p>//1  2  3  4  5  6  7  8  9  10
+13.3.2 指针-指针
+结果是中间的元素个数</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    int i = 0;
+    int* p1 = &amp;arr[9];
+    int* p2 = &amp;arr[0];
+    //指针-指针的运算一定要运用于同一块空间
+    printf(&quot;%d\n&quot;,p1 - p2);     //9
+    printf(&quot;%d\n&quot;,p2 - p1);     //-9
+    return 0;
+}
+
+int my_strlen(char* str)
+{
+    char* start= str;
+    char* end = str;
+    while (*end != &#39;\0&#39;)
     {
         end++;
     }
     return end - start;
-}</p>
-<p>int main()
+}
+
+int main()
 {
-    char arr[] = "bit";
+    char arr[] = &quot;bit&quot;;
     int len = my_strlen(arr);
-    printf("%d\n", len);
+    printf(&quot;%d\n&quot;, len);
     return 0;
 }
-13.3.3 指针的关系运算</p>
-<h1 id="include_30">include <stdio.h></h1>
-<h1 id="include_31">include <string.h></h1>
-<h1 id="define-n_vaules-5">define N_VAULES 5</h1>
-<p>int main()
+</code></pre></div>
+<p>13.3.3 指针的关系运算</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N_VAULES 5
+int main()
 {
     float  value[N_VAULES];
-    float<em> vp;
+    float* vp;
     for(vp=&amp;value[N_VAULES];vp&gt;&amp;value[0];)
     {
         //地址前移
-        </em>--vp = 0;
+        *--vp = 0;
     }
-    printf("%d\n", value[1]);
+    printf(&quot;%d\n&quot;, value[1]);
     return 0;
 }
-      改进：
+</code></pre></div>
+<p>​      改进：
 在大多数编译器上是可以顺利完成一下代码的任务，但是应该避免这样写，因为标准不代表他可行</p>
-<h1 id="include_32">include <stdio.h></h1>
-<h1 id="include_33">include <string.h></h1>
-<h1 id="define-n_vaules-5_1">define N_VAULES 5</h1>
-<p>int main()
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N_VAULES 5
+int main()
 {
     float  value[N_VAULES];
-    float<em> vp;
+    float* vp;
     for(vp=&amp;value[N_VAULES-1];vp&gt;=&amp;value[0];vp--)
     {
-        </em>vp = 0;
+        *vp = 0;
     }
-    printf("%d\n", value[2]);
+    printf(&quot;%d\n&quot;, value[2]);
     return 0;
-}</p>
+}
+</code></pre></div>
+<p>​      改进：
+在大多数编译器上是可以顺利完成一下代码的任务，但是应该避免这样写，因为标准不代表他可行</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N_VAULES 5
+int main()
+{
+    float  value[N_VAULES];
+    float* vp;
+    for(vp=&amp;value[N_VAULES-1];vp&gt;=&amp;value[0];vp--)
+    {
+        *vp = 0;
+    }
+    printf(&quot;%d\n&quot;, value[2]);
+    return 0;
+}
+</code></pre></div>
+<p>13.3.3 指针的关系运算</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N_VAULES 5
+int main()
+{
+    float  value[N_VAULES];
+    float* vp;
+    for(vp=&amp;value[N_VAULES];vp&gt;&amp;value[0];)
+    {
+        //地址前移
+        *--vp = 0;
+    }
+    printf(&quot;%d\n&quot;, value[1]);
+    return 0;
+}
+</code></pre></div>
+<p>​      改进：
+在大多数编译器上是可以顺利完成一下代码的任务，但是应该避免这样写，因为标准不代表他可行</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N_VAULES 5
+int main()
+{
+    float  value[N_VAULES];
+    float* vp;
+    for(vp=&amp;value[N_VAULES-1];vp&gt;=&amp;value[0];vp--)
+    {
+        *vp = 0;
+    }
+    printf(&quot;%d\n&quot;, value[2]);
+    return 0;
+}
+</code></pre></div>
+<p>​      改进：
+在大多数编译器上是可以顺利完成一下代码的任务，但是应该避免这样写，因为标准不代表他可行</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define N_VAULES 5
+int main()
+{
+    float  value[N_VAULES];
+    float* vp;
+    for(vp=&amp;value[N_VAULES-1];vp&gt;=&amp;value[0];vp--)
+    {
+        *vp = 0;
+    }
+    printf(&quot;%d\n&quot;, value[2]);
+    return 0;
+}
+</code></pre></div>
 <p>标准规定：
 ● 允许指向数组元素的指针与指向数组最后一个元素后面的那个内存位置的指针比较，但不允许与指向第一个元素之前的那个内存位置的指针进行比较，p2和p1可以比较，不可以和p3比较。
 ● 
 13.4  指针和数组
 13.4.1数组名
-数组名：首元素的地址
-int main()
+数组名：首元素的地址</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int arr[10] = { 0 };
-    printf("%p\n", arr);
-    printf("%p\n", &amp;arr[0]);
+    printf(&quot;%p\n&quot;, arr);
+    printf(&quot;%p\n&quot;, &amp;arr[0]);
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>/<em>
 000000E601CFF988
 000000E601CFF988
 </em>/
 两个例外：
-1. &amp;arr  -- &amp;数组名  数组名不是首元素地址-数组名表示整个数组 --取出的是整个数组的地址
-2. sizeof(arr)--sizeof(数组名)--数组名表示整个数组--计算整个数组的大小，单位是字节
-int main()
+1. &amp;arr  -- &amp;数组名  数组名不是首元素地址-数组名表示整个数组 --取出的是整个数组的地址</p>
+<ol>
+<li>sizeof(arr)--sizeof(数组名)--数组名表示整个数组--计算整个数组的大小，单位是字节</li>
+</ol>
+<div class="highlight"><pre><span></span><code>int main()
 {
-    int arr[10] = { 0 };
-    printf("%p\n", arr);
-    //向后移动一位加4字节
-    printf("%p\n", arr+1);
-    printf("\n");
-    printf("%p\n", &amp;arr[0]);
-     //向后移动一位加4字节
-    printf("%p\n", &amp;arr[0]+1);
-    printf("\n");
-    printf("%p\n", &amp;arr);
-    // //向后移动真个数组加4*10字节
-    printf("%p\n", &amp;arr+1);
-    return 0;
-}</p>
+int arr[10] = { 0 };
+printf(&quot;%p\n&quot;, arr);
+ //向后移动一位加4字节
+printf(&quot;%p\n&quot;, arr+1);
+printf(&quot;\n&quot;);
+printf(&quot;%p\n&quot;, &amp;arr[0]);
+  //向后移动一位加4字节
+printf(&quot;%p\n&quot;, &amp;arr[0]+1);
+printf(&quot;\n&quot;);
+printf(&quot;%p\n&quot;, &amp;arr);
+ // //向后移动真个数组加4*10字节
+printf(&quot;%p\n&quot;, &amp;arr+1);
+return 0;
+}
+</code></pre></div>
 <p>/*
 0000003F9AEFFC68
 0000003F9AEFFC6C</p>
@@ -1491,25 +1808,26 @@ arr1和&amp;arr1[0]都表示数组元素的地址，两者都是常量在程序�
 声明指针所指向对象类型的原因之一。只知道地址 
 不够，因为计算机要知道储存对象需要多少字节（即使指针指向的是标量变 
 量，也要知道变量的类型，否则</em>pt 就无法正确地取回地址上的值）。</p>
-<h1 id="include_34">include <stdio.h></h1>
-<h1 id="define-size-4_1">define SIZE 4</h1>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#define SIZE 4
+int main(void)
 {
     short dates[SIZE];
-    short<em> pti;
+    short* pti;
     short index;
     double bills[SIZE];
-    double</em> ptf;
+    double* ptf;
     pti = dates; // 把数组地址赋给指针
     ptf = bills;
-    printf("%23s %15s\n", "short", "double");
+    printf(&quot;%23s %15s\n&quot;, &quot;short&quot;, &quot;double&quot;);
     for (index = 0; index &lt; SIZE; index++)
     {
-        printf("pointers:  %d: %10p %10p\n", index, pti, ptf);
-        printf("pointers + %d: %10p %10p\n", index, pti + index, ptf + index);
+        printf(&quot;pointers:  %d: %10p %10p\n&quot;, index, pti, ptf);
+        printf(&quot;pointers + %d: %10p %10p\n&quot;, index, pti + index, ptf + index);
     }
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>//我们的系统中，地址按字节编址，short类型占用2字节，double类型占
 //用8字节。在C中，指针加1指的是增加一个存储单元。</p>
 <p>//结果：
@@ -1536,18 +1854,19 @@ dates + 2 == &amp;date[2] // 相同的地址
 高于+，所以</em>dates+2相当于(<em>dates)+2： 
 </em>(dates + 2) // dates第3个元素的值 
 *dates + 2 // dates第1个元素的值加2</p>
-<h1 id="include_35">include <stdio.h></h1>
-<h1 id="define-months-12_3">define MONTHS 12</h1>
-<p>int main(void)
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#define MONTHS 12
+int main(void)
 {
     int days[MONTHS] = { 31, 28, 31, 30, 31, 30, 31, 31,30, 31, 30, 31 };
     int index;
     for (index = 0; index &lt; MONTHS; index++)
-        printf("Month %2d has %d days.\n", index + 1,<em>(days + index)); //与 days[index]相同
+        printf(&quot;Month %2d has %d days.\n&quot;, index + 1,*(days + index)); //与 days[index]相同
     return 0;
 }
-//结果：
-/</em>
+</code></pre></div>
+<p>//结果：
+/<em>
 Month  1 has 31 days.
 Month  2 has 28 days.
 Month  3 has 31 days.
@@ -1560,10 +1879,10 @@ Month  9 has 30 days.
 Month 10 has 31 days.
 Month 11 has 30 days.
 Month 12 has 31 days.
-<em>/
+</em>/
 13.4.3 指针数组  数组指针
-● 指针数组：本质是数组--存放指针的数组
-int main()
+● 指针数组：本质是数组--存放指针的数组</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     int a = 10;
     int b = 20;
@@ -1572,19 +1891,23 @@ int main()
     //字符数组-存放字符
     //指针数组-存放指针
     int arr[10];
-    int</em> arr2[3] = {&amp;a,&amp;b,&amp;c};      //指针数组
+    int* arr2[3] = {&amp;a,&amp;b,&amp;c};      //指针数组
     //打印数组arr2每个元素对印的值
     int i = 0;
     for (i=0;  i&lt; 3; i++)
     {
-        printf("%d\n", *(arr2[i]));
-    }</p>
-<p>}
-● 数组指针：本质是指针
+        printf(&quot;%d\n&quot;, *(arr2[i]));
+    }
+
+}
+</code></pre></div>
+<p>● 数组指针：本质是指针
 13.4.4 指针、函数、数组</p>
-<p>等价：
-int sum(int <em>ar, int n); 
-int sum(int </em>, int); 
+<p>● 数组指针：本质是指针
+13.4.4 指针、函数、数组</p>
+<p>等价：</p>
+<div class="highlight"><pre><span></span><code>int sum(int *ar, int n); 
+int sum(int *, int); 
 int sum(int ar[], int n); 
 int sum(int [], int);
 13.4.5 指针和字符串
@@ -1592,23 +1915,26 @@ int sum(int [], int);
 int main()
 {
     int a = 10;
-    int<em> pa = &a;
-    int</em><em> ppa = &pa;        //二级指针
-    int</em><strong> pppa = &ppa;     //三级指针
-    printf("%d\n",</strong>ppa);   //10
+    int* pa = &amp;a;
+    int** ppa = &amp;pa;        //二级指针
+    int*** pppa = &amp;ppa;     //三级指针
+    printf(&quot;%d\n&quot;,**ppa);   //10
     return 0;
 }
-ppa里存放的是pa的地址
+</code></pre></div>
+<p>ppa里存放的是pa的地址
+int*<em>  ---指向的对象是int</em></p>
+<p>ppa里存放的是pa的地址
 int*<em>  ---指向的对象是int</em></p>
 <p>14、结构体
 示例；创建图书目录</p>
-<h1 id="define-_crt_secure_no_warnings_1">define  _CRT_SECURE_NO_WARNINGS</h1>
-<h1 id="include_36">include <stdio.h></h1>
-<h1 id="include_37">include <string.h></h1>
-<h1 id="define-maxtitl-41-1">define MAXTITL 41   //书名的最大长度加1</h1>
-<h1 id="define-maxautl-31-1">define MAXAUTL 31      //作者姓名的最大长度加1</h1>
-<p>//声明一个指针函数
-char<em> s_gets(char</em> st, int n);
+<div class="highlight"><pre><span></span><code>#define  _CRT_SECURE_NO_WARNINGS 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAXTITL 41   //书名的最大长度加1  
+#define MAXAUTL 31      //作者姓名的最大长度加1
+//声明一个指针函数
+char* s_gets(char* st, int n);
 //描述一本书的数据
 //标题
 //作者
@@ -1627,51 +1953,54 @@ int main(void)
     //结构体变量的创建library
     //library是局部变量
     struct book library;        //把library声明成一个book类型的变量
-    printf("Please enter the book title.\n");
+    printf(&quot;Please enter the book title.\n&quot;);
     s_gets(library.title, MAXTITL);     //访问title部分
-    printf("No enter the author.\n");
+    printf(&quot;No enter the author.\n&quot;);
     s_gets(library.author, MAXAUTL);
-    printf("Now enter the value.\n");
-    scanf("%f", &amp;library.value);
-    printf("%s:\"%s\"($%.2f)\n", library.author, library.title, library.value);
-    printf("Done.\n");
+    printf(&quot;Now enter the value.\n&quot;);
+    scanf(&quot;%f&quot;, &amp;library.value);
+    printf(&quot;%s:\&quot;%s\&quot;($%.2f)\n&quot;, library.author, library.title, library.value);
+    printf(&quot;Done.\n&quot;);
     return 0;
 }
-char<em> s_gets(char</em> st, int n)
+char* s_gets(char* st, int n)
 {
-    char<em> ret_val;
-    char</em> find;
+    char* ret_val;
+    char* find;
     ret_val = fgets(st, n, stdin);      //fgets()函数类似与getchar()，相较于更安全
     if (ret_val)
     {
-        find = strchr(st, '\n');    //字符查找函数
+        find = strchr(st, &#39;\n&#39;);    //字符查找函数
         if (find)           //如果地址不是null
-            *find = '\0';       //在此处放置一个空字符
+            *find = &#39;\0&#39;;       //在此处放置一个空字符
         else
-            while (getchar() != '\n')
-                continue;       //  处理输入行剩余 的数字</p>
-<div class="highlight"><pre><span></span><code>}
+            while (getchar() != &#39;\n&#39;)
+                continue;       //  处理输入行剩余 的数字
+
+}
 return ret_val;
+
+}
 </code></pre></div>
-<p>}
-14.1建立结构声明
-结构声明是描述一个结构的组织布局，结构类似如下：
-struct book     //struct是关键字  book是可选的标记
+<p>14.1建立结构声明
+结构声明是描述一个结构的组织布局，结构类似如下：</p>
+<div class="highlight"><pre><span></span><code>struct book     //struct是关键字  book是可选的标记
 {
     char title[MAXTITL];
     char author[MAXAUTL];
     float value;
 };
-该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。
+</code></pre></div>
+<p>该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。
 把library声明为一个使用book结构布局的结构变量。
 struct book library<br />
 用结构体描述复杂对象---自己创造出来的一种类型。
 用“ . ”操作符，指向结构体成员
 使用：结构体变量.成员</p>
-<h1 id="define-_crt_secure_no_warnings_2">define  _CRT_SECURE_NO_WARNINGS</h1>
-<h1 id="include_38">include <stdio.h></h1>
-<h1 id="include_39">include <string.h></h1>
-<p>struct BOOK
+<div class="highlight"><pre><span></span><code>#define  _CRT_SECURE_NO_WARNINGS 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
 {
     char name[20];      //定义书的名字
     short price;        //定义价格
@@ -1679,15 +2008,368 @@ struct book library<br />
 int main(void)
 {
     //用结构体创建一个类型的结构变量
-    struct BOOK b1 = { "快乐",30 };
-    printf("name:%s\n", b1.name);
-    printf("price:%s\n", b1.price);
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    printf(&quot;name:%s\n&quot;, b1.name);
+    printf(&quot;price:%s\n&quot;, b1.price);
     b1.price = 40;      //修改price 的值
-    printf("修改后的价格为：%d元\n", b1.price);
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
 }
-用指针表示</p>
-<h1 id="include_40">include <stdio.h></h1>
-<h1 id="include_41">include <string.h></h1>
+</code></pre></div>
+<p>用指针表示</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, (*pb).name);
+    printf(&quot;price:%s\n&quot;, (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, (*pb).name);
+    printf(&quot;price:%s\n&quot;, (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。
+把library声明为一个使用book结构布局的结构变量。
+struct book library<br />
+用结构体描述复杂对象---自己创造出来的一种类型。
+用“ . ”操作符，指向结构体成员
+使用：结构体变量.成员</p>
+<div class="highlight"><pre><span></span><code>#define  _CRT_SECURE_NO_WARNINGS 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    printf(&quot;name:%s\n&quot;, b1.name);
+    printf(&quot;price:%s\n&quot;, b1.price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, (*pb).name);
+    printf(&quot;price:%s\n&quot;, (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, (*pb).name);
+    printf(&quot;price:%s\n&quot;, (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>14.1建立结构声明
+结构声明是描述一个结构的组织布局，结构类似如下：</p>
+<div class="highlight"><pre><span></span><code>struct book     //struct是关键字  book是可选的标记
+{
+    char title[MAXTITL];
+    char author[MAXAUTL];
+    float value;
+};
+</code></pre></div>
+<p>该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。
+把library声明为一个使用book结构布局的结构变量。
+struct book library<br />
+用结构体描述复杂对象---自己创造出来的一种类型。
+用“ . ”操作符，指向结构体成员
+使用：结构体变量.成员</p>
+<div class="highlight"><pre><span></span><code>#define  _CRT_SECURE_NO_WARNINGS 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    printf(&quot;name:%s\n&quot;, b1.name);
+    printf(&quot;price:%s\n&quot;, b1.price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<h1 id="include">include <stdio.h></h1>
+<div class="highlight"><pre><span></span><code>#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, (*pb).name);
+    printf(&quot;price:%s\n&quot;, (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<h1 id="include_1">include <stdio.h></h1>
+<h1 id="include_2">include <string.h></h1>
 <p>struct BOOK
 {
     char name[20];      //定义书的名字
@@ -1705,8 +2387,129 @@ int main(void)
 }
 操作符 -&gt;
 结构体指针-&gt;成员 </p>
-<h1 id="include_42">include <stdio.h></h1>
-<h1 id="include_43">include <string.h></h1>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。
+把library声明为一个使用book结构布局的结构变量。
+struct book library<br />
+用结构体描述复杂对象---自己创造出来的一种类型。
+用“ . ”操作符，指向结构体成员
+使用：结构体变量.成员</p>
+<div class="highlight"><pre><span></span><code>#define  _CRT_SECURE_NO_WARNINGS 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    printf(&quot;name:%s\n&quot;, b1.name);
+    printf(&quot;price:%s\n&quot;, b1.price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, (*pb).name);
+    printf(&quot;price:%s\n&quot;, (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    printf(&quot;name:%s\n&quot;, pb-&gt;name);
+    printf(&quot;price:%s\n&quot;, pb-&gt;price);
+    b1.price = 40;      //修改price 的值
+    printf(&quot;修改后的价格为：%d元\n&quot;, b1.price);
+}
+</code></pre></div>
+<p>用指针表示</p>
+<h1 id="include_3">include <stdio.h></h1>
+<h1 id="include_4">include <string.h></h1>
+<p>struct BOOK
+{
+    char name[20];      //定义书的名字
+    short price;        //定义价格
+};
+int main(void)
+{
+    //用结构体创建一个类型的结构变量
+    struct BOOK b1 = { "快乐",30 };
+    struct BOOK<em> pb = &b1;
+    printf("name:%s\n", (</em>pb).name);
+    printf("price:%s\n", (*pb).price);
+    b1.price = 40;      //修改price 的值
+    printf("修改后的价格为：%d元\n", b1.price);
+}
+操作符 -&gt;
+结构体指针-&gt;成员 </p>
+<h1 id="include_5">include <stdio.h></h1>
+<h1 id="include_6">include <string.h></h1>
 <p>struct BOOK
 {
     char name[20];      //定义书的名字
@@ -1727,9 +2530,9 @@ strcpy(b1.name,"C++");
 strcpy是一个库函数
 strcopy-string copy -字符串拷贝-库函数-
 头文件  --  string.h           #include<string.h></p>
-<h1 id="include_44">include <stdio.h></h1>
-<h1 id="include_45">include <string.h></h1>
-<p>struct BOOK
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+struct BOOK
 {
     char name[20];      //定义书的名字
     short price;        //定义价格
@@ -1737,12 +2540,13 @@ strcopy-string copy -字符串拷贝-库函数-
 int main(void)
 {
     //用结构体创建一个类型的结构变量
-    struct BOOK b1 = { "快乐",30 };
-    struct BOOK* pb = &b1;
-    strcpy(pb-&gt;name, "阴天");
-    printf("修改后的书名为：%s\n", pb-&gt;name);
+    struct BOOK b1 = { &quot;快乐&quot;,30 };
+    struct BOOK* pb = &amp;b1;
+    strcpy(pb-&gt;name, &quot;阴天&quot;);
+    printf(&quot;修改后的书名为：%s\n&quot;, pb-&gt;name);
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>14.2 定义结构变量
 结构由两层含义。
 一：“结构布局”，结构布局告诉编译器如何表示数据，但是他并未让编译器为数据分配空间。
@@ -1752,7 +2556,7 @@ int main(void)
 在结构变量的声明中，struct book所起的作用相当于声明中的int或float。例如可以定义两个struct book类型的变量，或者只想struct book类型的指针：
 struct book doyle,panshin,*ptbook
 //doyle,panshi包含title，author和value部分。指针ptbook可以指向任何变量</p>
-<p>struct book library;
+<div class="highlight"><pre><span></span><code>struct book library;
 //是以下声明的简化
 struct book
 {
@@ -1761,34 +2565,40 @@ struct book
     float value;
 }library;       //声明结构的过程和定义结构的过程可以组成一个步骤。
 //library是全局变量
-组合后的结构声明不需要使用结果标记
-如果打算多次使用结构模板就要是有标记的形式；或者，使用本章后面介绍的typedef。
-typdef struct Book
+</code></pre></div>
+<p>组合后的结构声明不需要使用结果标记
+如果打算多次使用结构模板就要是有标记的形式；或者，使用本章后面介绍的typedef。</p>
+<div class="highlight"><pre><span></span><code>typdef struct Book
 {
     //成员变量
     char title[MAXTITL];
     char name[MAXAUTL];
     float value;
 }Book；
-//重新定义结构变量,这里的Book是类型;struct Book ==Book
-int main()
+</code></pre></div>
+<p>//重新定义结构变量,这里的Book是类型;struct Book ==Book</p>
+<div class="highlight"><pre><span></span><code>int main()
 {
     struct BOOK1 l1;
     BOOK1 l2;
 }
-这是定义一个结构变量，在例子中并未初始化 结构变量
+</code></pre></div>
+<p>这是定义一个结构变量，在例子中并未初始化 结构变量
 14.3 结构体成员的类型
 结构体成员可以是标量、数组、指针、甚至是结构体
-14.4 结构体变量的定义和初始化
-struct Point
+14.4 结构体变量的定义和初始化</p>
+<div class="highlight"><pre><span></span><code>struct Point
 {
     int x;
     int y;
 }p1;        //声明类型的同时定义变量
-struct Point p2;    //定义结构体变量p2</p>
-<p>//初始化：定义变量的同时赋初值。
-struct Point p3={x,y}; </p>
-<p>struct S
+struct Point p2;    //定义结构体变量p2
+
+
+//初始化：定义变量的同时赋初值。
+struct Point p3={x,y}; 
+
+struct S
 {
     int a;
     char c;
@@ -1799,30 +2609,37 @@ struct T
 {
     char ch[10];
     struct S s;
-    char<em> pc;
+    char* pc;
 };
 int main(void)
 {
-    char arr[] = "hello ";
-    struct T t = { "hehe",{12,'c',"world",3.14},arr };
-    printf("%s", t.pc);
-    printf("%s\n", t.s.arr);
-    printf("%lf\n", t.s.d);
-    printf("%s\n", t.ch);
+    char arr[] = &quot;hello &quot;;
+    struct T t = { &quot;hehe&quot;,{12,&#39;c&#39;,&quot;world&quot;,3.14},arr };
+    printf(&quot;%s&quot;, t.pc);
+    printf(&quot;%s\n&quot;, t.s.arr);
+    printf(&quot;%lf\n&quot;, t.s.d);
+    printf(&quot;%s\n&quot;, t.ch);
     return 0;
 }
-//结果：
-/</em>
+</code></pre></div>
+<p>//结果：
+/<em>
 hello world
 3.140000
 hehe
-*/</p>
+</em>/</p>
+<p>//结果：
+/<em>
+hello world
+3.140000
+hehe
+</em>/</p>
 <p>14.5 结构体成员访问
 结构体变量访问成员 结果变量通过操作符（.）访问。点操作符接受两个操作数。
 结构体指针访问指向变量的成员 有时候我们得到的不是一个结构体变量，而是指向结构体的指针。</p>
-<h1 id="include_46">include <stdio.h></h1>
-<h1 id="include_47">include <string.h></h1>
-<p>typedef struct Stu
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+typedef struct Stu
 {
     char name[20];
     short age;
@@ -1831,21 +2648,22 @@ hehe
 }Stu;
 void print1(Stu data1)
 {
-    printf("name: %s\n",data1.name);
-    printf("age:  %d\n", data1.age);
-    printf("age:  %s\n", data1.tele);
-    printf("age:  %s\n", data1.sex);
+    printf(&quot;name: %s\n&quot;,data1.name);
+    printf(&quot;age:  %d\n&quot;, data1.age);
+    printf(&quot;age:  %s\n&quot;, data1.tele);
+    printf(&quot;age:  %s\n&quot;, data1.sex);
 }
-void print2(Stu* data2)       <br />
+void print2(Stu* data2)         
 {
-    printf("name: %s\n", data2-&gt;name);
-    printf("age:  %d\n", data2-&gt;age);
-    printf("age:  %s\n", data2-&gt;tele);
-    printf("age:  %s\n", data2-&gt;sex);
-}</p>
-<p>int main()
+    printf(&quot;name: %s\n&quot;, data2-&gt;name);
+    printf(&quot;age:  %d\n&quot;, data2-&gt;age);
+    printf(&quot;age:  %s\n&quot;, data2-&gt;tele);
+    printf(&quot;age:  %s\n&quot;, data2-&gt;sex);
+}
+
+int main()
 {
-    Stu s = { "艾莉",12,"13888888888","女" };
+    Stu s = { &quot;艾莉&quot;,12,&quot;13888888888&quot;,&quot;女&quot; };
     //打印结构体数据
     //print1和print2，print2为优选
     //使用print1需要重新开辟空间，把数据拷贝过去，浪费空间和时间
@@ -1853,7 +2671,8 @@ void print2(Stu* data2)       <br />
     //print2传参传的地址
     print2(&amp;s);
     return 0;
-}</p>
+}
+</code></pre></div>
 <p>15、输出和输入
 内容：输入输出、缓冲输入和无缓冲输入。
 函数：printf()   scanf()   getchar()    putchar()
