@@ -1,0 +1,873 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../8_%E6%8C%87%E9%92%88/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>9 结构体 - blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="blog" class="md-header__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9 结构体
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="blog" class="md-nav__button md-logo" aria-label="blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          C与c++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C与c++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_%E5%88%9D%E5%A7%8BC%E8%AF%AD%E8%A8%80/" class="md-nav__link">
+        1 初始C语言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_%E5%BE%AA%E7%8E%AF%E4%BD%93/" class="md-nav__link">
+        2 循环体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        3 数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="md-nav__link">
+        4 操作符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        1、概念（function）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
+        6 常见关键字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%20_define%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E5%92%8C%E5%AE%8F/" class="md-nav__link">
+        7  define定义常量和宏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_%E6%8C%87%E9%92%88/" class="md-nav__link">
+        8 指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          9 结构体
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        9 结构体
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    结构体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、建立结构声明
+  </a>
+  
+    <nav class="md-nav" aria-label="1、建立结构声明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    操作符 -&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 、定义结构变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 、结构体成员的类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、结构体变量的定义和初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 、结构体成员访问
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    结构体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、建立结构声明
+  </a>
+  
+    <nav class="md-nav" aria-label="1、建立结构声明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    操作符 -&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 、定义结构变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 、结构体成员的类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4、结构体变量的定义和初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 、结构体成员访问
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>9 结构体</h1>
+
+<h2 id="_1">结构体</h2>
+<p>示例；创建图书目录</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define  _CRT_SECURE_NO_WARNINGS </span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#define MAXTITL 41   </span><span class="c1">//书名的最大长度加1  </span>
+<span class="cp">#define MAXAUTL 31      </span><span class="c1">//作者姓名的最大长度加1</span>
+<span class="c1">//声明一个指针函数</span>
+<span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">s_gets</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="c1">//描述一本书的数据</span>
+<span class="c1">//标题</span>
+<span class="c1">//作者</span>
+<span class="c1">//价格</span>
+<span class="c1">//创建结构体类型struct book相当于int </span>
+<span class="c1">//struct：结构体关键字  book：结构体标记   组合起来就是创建的结构体类型</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//成员变量</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="n">MAXTITL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">author</span><span class="p">[</span><span class="n">MAXAUTL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//结构体变量的创建library</span>
+<span class="w">    </span><span class="c1">//library是局部变量</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">library</span><span class="p">;</span><span class="w">        </span><span class="c1">//把library声明成一个book类型的变量</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Please enter the book title.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">s_gets</span><span class="p">(</span><span class="n">library</span><span class="p">.</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">MAXTITL</span><span class="p">);</span><span class="w">     </span><span class="c1">//访问title部分</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;No enter the author.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">s_gets</span><span class="p">(</span><span class="n">library</span><span class="p">.</span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="n">MAXAUTL</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Now enter the value.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">library</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s:</span><span class="se">\&quot;</span><span class="s">%s</span><span class="se">\&quot;</span><span class="s">($%.2f)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">library</span><span class="p">.</span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="n">library</span><span class="p">.</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">library</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Done.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">s_gets</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ret_val</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">find</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ret_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fgets</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">stdin</span><span class="p">);</span><span class="w">      </span><span class="c1">//fgets()函数类似与getchar()，相较于更安全</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret_val</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">find</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strchr</span><span class="p">(</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">);</span><span class="w">    </span><span class="c1">//字符查找函数</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">find</span><span class="p">)</span><span class="w">           </span><span class="c1">//如果地址不是null</span>
+<span class="w">            </span><span class="o">*</span><span class="n">find</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span><span class="w">       </span><span class="c1">//在此处放置一个空字符</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+<span class="w">                </span><span class="k">continue</span><span class="p">;</span><span class="w">       </span><span class="c1">//  处理输入行剩余 的数字</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret_val</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="1">1、建立结构声明</h2>
+<p>结构声明是描述一个结构的组织布局，结构类似如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w">     </span><span class="c1">//struct是关键字  book是可选的标记</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="n">MAXTITL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">author</span><span class="p">[</span><span class="n">MAXAUTL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>该声明描述了一个由两个字符数组和一个float类型变量组成的结构，该结构并未声明并创建实际的数据对象，只描述了该对象由什么组成。</p>
+<p>把library声明为一个使用book结构布局的结构变量。</p>
+<div class="highlight"><pre><span></span><code>struct book library
+</code></pre></div>
+<p>用结构体描述复杂对象---自己创造出来的一种类型。</p>
+<p>用“ . ”操作符，指向结构体成员</p>
+<p>使用：结构体变量.成员</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define  _CRT_SECURE_NO_WARNINGS </span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w">      </span><span class="c1">//定义书的名字</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w">        </span><span class="c1">//定义价格</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//用结构体创建一个类型的结构变量</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;快乐&quot;</span><span class="p">,</span><span class="mi">30</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;name:%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;price:%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w">      </span><span class="c1">//修改price 的值</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;修改后的价格为：%d元</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>用指针表示</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w">      </span><span class="c1">//定义书的名字</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w">        </span><span class="c1">//定义价格</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//用结构体创建一个类型的结构变量</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;快乐&quot;</span><span class="p">,</span><span class="mi">30</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="o">*</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;name:%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pb</span><span class="p">).</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;price:%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pb</span><span class="p">).</span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w">      </span><span class="c1">//修改price 的值</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;修改后的价格为：%d元</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="-">操作符 -&gt;</h5>
+<p>结构体指针-&gt;成员 </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w">      </span><span class="c1">//定义书的名字</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w">        </span><span class="c1">//定义价格</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//用结构体创建一个类型的结构变量</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;快乐&quot;</span><span class="p">,</span><span class="mi">30</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="o">*</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;name:%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;price:%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="o">-&gt;</span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w">      </span><span class="c1">//修改price 的值</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;修改后的价格为：%d元</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b1</span><span class="p">.</span><span class="n">price</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>name是无法更改的，name是一个字符串只能用拷贝的方式更改</p>
+<p>strcpy(b1.name,"C++");</p>
+<p>strcpy是一个库函数</p>
+<p>strcopy-string copy -字符串拷贝-库函数-</p>
+<p>头文件  --  string.h           //#include<string.h></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span><span class="w">      </span><span class="c1">//定义书的名字</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">price</span><span class="p">;</span><span class="w">        </span><span class="c1">//定义价格</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//用结构体创建一个类型的结构变量</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;快乐&quot;</span><span class="p">,</span><span class="mi">30</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK</span><span class="o">*</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">pb</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;阴天&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;修改后的书名为：%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="2">2 、定义结构变量</h2>
+<p>结构由两层含义。</p>
+<p>一：“结构布局”，结构布局告诉编译器如何表示数据，但是他并未让编译器为数据分配空间。</p>
+<p>二：创建结构变量 （struct book library;）</p>
+<p>编译器执行这行代码便创建了一个结构变量library。编译器使用book模板为该变量分配空间：一个含MAXTITL个</p>
+<p>元素的char数组、一个含MAXAUTL个元素的char数组和一个float类型的变量。这些存储空间都与一个人library结合在一起。</p>
+<p>在结构变量的声明中，struct book所起的作用相当于声明中的int或float。例如可以定义两个struct book类型的变量，或者只想struct book类型的指针：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">doyle</span><span class="p">,</span><span class="n">panshin</span><span class="p">,</span><span class="o">*</span><span class="n">ptbook</span>
+<span class="c1">//doyle,panshi包含title，author和value部分。指针ptbook可以指向任何变量</span>
+
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">library</span><span class="p">;</span>
+<span class="c1">//是以下声明的简化</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="n">MAXTITL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">MAXAUTL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span><span class="n">library</span><span class="p">;</span><span class="w">       </span><span class="c1">//声明结构的过程和定义结构的过程可以组成一个步骤。</span>
+<span class="c1">//library是全局变量</span>
+</code></pre></div>
+<p>组合后的结构声明不需要使用结果标记</p>
+<p>如果打算多次使用结构模板就要是有标记的形式；或者，使用本章后面介绍的typedef。</p>
+<div class="highlight"><pre><span></span><code><span class="n">typdef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Book</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//成员变量</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="n">MAXTITL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="n">MAXAUTL</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Book</span><span class="err">；</span>
+<span class="c1">//重新定义结构变量,这里的Book是类型;struct Book ==Book</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BOOK1</span><span class="w"> </span><span class="n">l1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">BOOK1</span><span class="w"> </span><span class="n">l2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这是定义一个结构变量，在例子中并未初始化 结构变量</p>
+<h2 id="3">3 、结构体成员的类型</h2>
+<p>结构体成员可以是标量、数组、指针、甚至是结构体</p>
+<h2 id="4">4、结构体变量的定义和初始化</h2>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span><span class="n">p1</span><span class="p">;</span><span class="w">        </span><span class="c1">//声明类型的同时定义变量</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="n">p2</span><span class="p">;</span><span class="w">    </span><span class="c1">//定义结构体变量p2</span>
+
+
+<span class="c1">//初始化：定义变量的同时赋初值。</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="n">p3</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">};</span><span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">S</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">T</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">S</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pc</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">T</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;hehe&quot;</span><span class="p">,{</span><span class="mi">12</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="mf">3.14</span><span class="p">},</span><span class="n">arr</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">pc</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">s</span><span class="p">.</span><span class="n">arr</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">s</span><span class="p">.</span><span class="n">d</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ch</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//结果：</span>
+<span class="cm">/*</span>
+<span class="cm">hello world</span>
+<span class="cm">3.140000</span>
+<span class="cm">hehe</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<h2 id="5">5 、结构体成员访问</h2>
+<p>结构体变量访问成员 结果变量通过操作符（.）访问。点操作符接受两个操作数。</p>
+<p>结构体指针访问指向变量的成员 有时候我们得到的不是一个结构体变量，而是指向结构体的指针。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Stu</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">tele</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">sex</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="p">}</span><span class="n">Stu</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">print1</span><span class="p">(</span><span class="n">Stu</span><span class="w"> </span><span class="n">data1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">data1</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;age:  %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data1</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;age:  %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data1</span><span class="p">.</span><span class="n">tele</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;age:  %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data1</span><span class="p">.</span><span class="n">sex</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">print2</span><span class="p">(</span><span class="n">Stu</span><span class="o">*</span><span class="w"> </span><span class="n">data2</span><span class="p">)</span><span class="w">         </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;age:  %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="o">-&gt;</span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;age:  %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="o">-&gt;</span><span class="n">tele</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;age:  %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="o">-&gt;</span><span class="n">sex</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Stu</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;艾莉&quot;</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="s">&quot;13888888888&quot;</span><span class="p">,</span><span class="s">&quot;女&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="c1">//打印结构体数据</span>
+<span class="w">    </span><span class="c1">//print1和print2，print2为优选</span>
+<span class="w">    </span><span class="c1">//使用print1需要重新开辟空间，把数据拷贝过去，浪费空间和时间</span>
+<span class="w">    </span><span class="n">print1</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//print2传参传的地址</span>
+<span class="w">    </span><span class="n">print2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_2"></h2>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>

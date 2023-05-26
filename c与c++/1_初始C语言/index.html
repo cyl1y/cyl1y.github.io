@@ -12,14 +12,14 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../%E5%BE%AA%E7%8E%AF%E4%BD%93/">
+        <link rel="next" href="../2_%E5%BE%AA%E7%8E%AF%E4%BD%93/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>初始C语言 - blog</title>
+        <title>1 初始C语言 - blog</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              初始C语言
+              1 初始C语言
             
           </span>
         </div>
@@ -242,12 +242,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          初始C语言
+          1 初始C语言
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        初始C语言
+        1 初始C语言
       </a>
       
         
@@ -480,6 +480,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    5、 字符串-转义字符-注释
+  </a>
+  
+    <nav class="md-nav" aria-label="5、 字符串-转义字符-注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1字符串类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 转义字符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -495,8 +522,106 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%BE%AA%E7%8E%AF%E4%BD%93/" class="md-nav__link">
-        循环体
+      <a href="../2_%E5%BE%AA%E7%8E%AF%E4%BD%93/" class="md-nav__link">
+        2 循环体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        3 数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="md-nav__link">
+        4 操作符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        1、概念（function）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
+        6 常见关键字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%20_define%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F%E5%92%8C%E5%AE%8F/" class="md-nav__link">
+        7  define定义常量和宏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_%E6%8C%87%E9%92%88/" class="md-nav__link">
+        8 指针
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_%E7%BB%93%E6%9E%84%E4%BD%93/" class="md-nav__link">
+        9 结构体
       </a>
     </li>
   
@@ -750,6 +875,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    5、 字符串-转义字符-注释
+  </a>
+  
+    <nav class="md-nav" aria-label="5、 字符串-转义字符-注释">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1字符串类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 转义字符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -765,7 +917,7 @@
                   
 
 
-  <h1>初始C语言</h1>
+  <h1>1 初始C语言</h1>
 
 <h2 id="1c">1、什么是C语言</h2>
 <h3 id="11-c">1.1 C语言是计算机语言</h3>
@@ -1010,6 +1162,56 @@ pb
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="5-">5、 字符串-转义字符-注释</h2>
+<h3 id="51">5.1字符串类型</h3>
+<p>由双引号引起的一串字符</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="s">&quot;abcf&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="s">&quot;hello&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w">     </span><span class="c1">//空字符串</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">mian</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// 数据在计算机存储的是二进制，</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// &quot;abc&quot; 其实是四个元素 -- &#39;a&#39; &#39;b&#39; &#39;c&#39; &#39;\0&#39;   --&#39;\0&#39;是字符串的结束标志， \0是隐藏在字符串末尾</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">};</span>
+<span class="w">    </span><span class="c1">// &#39;a&#39; &#39;b&#39; &#39;c&#39; 后边无打印结束的标志会继续打印随机值，如果再后边加 \0会在打印完后结束</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="sc">&#39;\0&#39;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">arr1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">arr2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span><span class="w">        </span><span class="c1">//空字符串</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">arr2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">};</span>
+<span class="w">    </span><span class="c1">//strlen是求字符串的长度，</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="n">arr1</span><span class="p">));</span><span class="w">        </span><span class="c1">// &#39;\0&#39;是字符串的结束标志，不算一个字符&#39;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="n">arr2</span><span class="p">));</span><span class="w">        </span><span class="c1">//随机值，它会一直去找，直到找到0会结束</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// &#39;\0&#39;是转义字符</span>
+</code></pre></div>
+<hr />
+<h3 id="52">5.2 转义字符</h3>
+<p>改变某些字符原来的意思</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="err">\\</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;c:</span><span class="se">\t</span><span class="s">est</span><span class="se">\32\t</span><span class="s">est.c&quot;</span><span class="p">);</span><span class="w">      </span><span class="c1">// \t    水平制表符</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="s">&quot;c:</span><span class="se">\t</span><span class="s">est</span><span class="se">\32\t</span><span class="s">est.c&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>\ddd   表示1~3个八进制数字            \32作为8简直带包的那个十进制数字，作为ASCII码值对应的字符</p>
+<p>\xdd dd表示2个十六进制的数字。如\x30 0</p>
 
 
 
