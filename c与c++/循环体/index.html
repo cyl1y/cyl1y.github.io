@@ -859,6 +859,7 @@
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">password</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;请输入密码：》&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;请野人密码(Y/N)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="o">==</span><span class="s">&quot;Y&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">);</span>
@@ -872,7 +873,39 @@
 <p>结果：运行时输入密码回车后直接输出NO</p>
 <p>分析在scanf()和getchar()都为输入函数，输入值会放入输入缓冲区存，回车的转移字符为\n也会被存进去，scanf会等待输入缓冲区内出现值，拿走自己想要的值，当密码被读走后还有\n，被getchar拿走，ret的值为\n</p>
 <p>解决：将\n提前被或去掉，使得缓冲区内无值，再用有一个getchar()把\n拿走</p>
-<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2023/png/23085415/1675345738756-a1904bfa-e507-4c72-9896-ea8538d2d375.png" /><img alt="img" src="https://cdn.nlark.com/yuque/0/2023/png/23085415/1675216609237-708e9aad-6a9a-4f02-9c94-b1954116f5dc.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">password</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;请输入密码：》&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="n">getchar</span><span class="p">();</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;请确认密码(Y/N)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="o">==</span><span class="s">&quot;Y&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;NO&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">#incluede &lt;stdio.h&gt;</span>
+<span class="cp">#incluede &lt;string&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">line</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;eat?&quot;</span><span class="p">)</span><span class="o">:</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">line</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;吃%d口</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">line</span><span class="p">);</span>
+<span class="w">        </span><span class="n">line</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;不吃了&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h3 id="32-for">3.2 for循环</h3>
 <p>for循环是把初始化、测试、和更新组合在一处。</p>
@@ -886,7 +919,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>完整的for语句还包括后面的简单语句或复合语句。for圆括号中的表达式也叫做控制表达式，它们都是完整表达式，所以每个表达式的副作用（如，递增变量）都发生在对下一个表达式求值之前。</p>
-<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2023/png/23085415/1677131344806-e7665c59-3d35-4df5-be42-889abaa0d00a.png" /></p>
+<p><img alt="img" src="C:\Users\22271\Desktop\cyl1y.github.io\image\Image_xunhuanfor.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
