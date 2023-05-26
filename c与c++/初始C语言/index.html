@@ -800,9 +800,9 @@
 <div class="highlight"><pre><span></span><code><span class="c1">//int 整型   main前加int是表示main函数调用返回一个整型值</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w">                          </span><span class="c1">//主函数，主函数是程序的入口，有且只有一个</span>
 <span class="p">{</span><span class="w">                                       </span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="c1">//库函数-C语言本身提供给我们的函数</span>
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//库函数-C语言本身提供给我们的函数</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="3">3 、数据类型</h2>
@@ -836,13 +836,13 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="32-c">3.2 C语言标准规定：</h3>
-<div class="highlight"><pre><span></span><code>sizeof(long)&gt;=sizeof(int)
-int main()
-{
-short age = 20;         //像内存申请2byte=16bit，用来存放20
-float weight=95.6f;         //默认95.6是双精度浮点型， 要指定他为单精度浮点型需要在后边加f。  向内存申请4个字节存放95.6
-return 0;
-}
+<div class="highlight"><pre><span></span><code><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">&gt;=</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">         </span><span class="c1">//像内存申请2byte=16bit，用来存放20</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">weight</span><span class="o">=</span><span class="mf">95.6f</span><span class="p">;</span><span class="w">         </span><span class="c1">//默认95.6是双精度浮点型， 要指定他为单精度浮点型需要在后边加f。  向内存申请4个字节存放95.6</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="33">3.3 单位</h3>
 <p>注意：存在这么多类型，其实是为了更加丰富的表达生活中的各种值。
@@ -887,7 +887,7 @@ pb
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><img alt="" src="C:\Users\22271\Desktop\cyl1y.github.io\docs\c与c++\1673538908686-5448712d-ab57-4890-b923-39a374d9b3e7.png" /></p>
+<p><img alt="alt" src="C:\Users\22271\Desktop\cyl1y.github.io\image\Image_20230526135351.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#define _CECURE_NO_WARNINGS 1</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>

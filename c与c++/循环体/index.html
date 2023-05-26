@@ -823,14 +823,52 @@
 <h3 id="31while">3.1、while</h3>
 <p>break :彻底结束循环</p>
 <p>continue：不执行后边的代码，重新太转到判断部分进入循环</p>
-<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2023/png/23085415/1675324666206-008ae831-9acc-4824-b330-e2e9b5754738.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h6 id="1">//代码1</h6>
 <p>getchar()--获取一个值</p>
 <p>ch=getchar()--将值赋给ch</p>
 <p>putchar()--打印一个值</p>
-<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2023/png/23085415/1675327134345-0104dc86-b9fe-410b-8aa7-a784a2796cb4.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//EOF--ctrl+z</span>
+<span class="w">    </span><span class="c1">//EOF--end of file -&gt; -1</span>
+<span class="w">    </span><span class="k">while</span><span class="p">((</span><span class="n">ch</span><span class="o">=</span><span class="n">getchar</span><span class="p">())</span><span class="o">!=</span><span class="n">EOF</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h6 id="_3">//代码</h6>
-<p><img alt="img" src="https://cdn.nlark.com/yuque/0/2023/png/23085415/1675345693396-9ce510f8-0802-4720-9f4a-eeb377cf5457.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">password</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;请输入密码：》&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">password</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ret</span><span class="o">==</span><span class="s">&quot;Y&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;NO&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>结果：运行时输入密码回车后直接输出NO</p>
 <p>分析在scanf()和getchar()都为输入函数，输入值会放入输入缓冲区存，回车的转移字符为\n也会被存进去，scanf会等待输入缓冲区内出现值，拿走自己想要的值，当密码被读走后还有\n，被getchar拿走，ret的值为\n</p>
 <p>解决：将\n提前被或去掉，使得缓冲区内无值，再用有一个getchar()把\n拿走</p>
