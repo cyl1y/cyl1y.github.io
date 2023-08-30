@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../PostgreSQL%20%E9%AB%98%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2019-9193%EF%BC%89/">
+        <link rel="prev" href="../XSS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/">
       
       
-        <link rel="next" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
+        <link rel="next" href="../driftingblues7_vh/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>RCE - 陈奕霖</title>
+        <title>XXE - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rceremote-commandcode-execute" class="md-skip">
+        <a href="#xml" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RCE
+              XXE
             
           </span>
         </div>
@@ -673,48 +673,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          RCE
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RCE/" class="md-nav__link">
         RCE
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -766,11 +729,82 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../XXE/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          XXE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         XXE
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    XML文档结构：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtd" class="md-nav__link">
+    具体的关于DTD语法:
+  </a>
+  
+    <nav class="md-nav" aria-label="具体的关于DTD语法:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区分实体：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pikachu-xxe" class="md-nav__link">
+    pikachu -XXE漏洞
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xxe" class="md-nav__link">
+    XXE靶机实验
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -947,8 +981,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
+  <a href="#xml" class="md-nav__link">
+    XML文档结构：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dtd" class="md-nav__link">
+    具体的关于DTD语法:
+  </a>
+  
+    <nav class="md-nav" aria-label="具体的关于DTD语法:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区分实体：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pikachu-xxe" class="md-nav__link">
+    pikachu -XXE漏洞
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xxe" class="md-nav__link">
+    XXE靶机实验
   </a>
   
 </li>
@@ -968,19 +1036,105 @@
                   
 
 
-  <h1>RCE</h1>
+  <h1>XXE</h1>
 
-<h2 id="rceremote-commandcode-execute">RCE(remote command/code execute)概述</h2>
-<p>RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统</p>
-<p>远程系统命令执行</p>
-<p>正常PING</p>
-<p><img alt="img" src="../RCE.assets/wps6.jpg" /> </p>
-<p>Ping 127.0.0.1 | whoami</p>
-<p><img alt="img" src="../RCE.assets/wps7.jpg" /> </p>
-<p>在命令行中一般例如  ipconfig | whoami执行后边命令</p>
-<p>​          ipconfig | |whoami执行前边命令</p>
-<p>​         ipconfig2 | |whoami执行有效命令</p>
-<p>​         ipconfig &amp;&amp;whoami执行后边两个命令</p>
+<p>XML外部实体注入（XML External Entity）简称XXE漏洞。</p>
+<p>XML 指可扩展标记语言（EXtensible Markup Language）。</p>
+<p>XML 是一种很像HTML的标记语言。</p>
+<p>XML 的设计宗旨是传输数据，而不是显示数据。</p>
+<p>XML 标签没有被预定义。需要自行定义标签。</p>
+<p>XML 被设计为具有自我描述性。</p>
+<p>XML 是 W3C 的推荐标准。</p>
+<h2 id="xml">XML文档结构：</h2>
+<p>包括XML声明、DTD文档类型定义（可选）、文档元素。</p>
+<p><img alt="img" src="../XXE.assets/wps1.jpg" /> </p>
+<h2 id="dtd">具体的关于DTD语法:</h2>
+<p>DTD（Document Type Definition，文档类型定义），用来为 XML 文档定义语法约束，可以是内部申明也可以使引用外部DTD现在很多语言里面对应的解析xml的函数默认是禁止解析外部实体内容的，从而也就直接避免了这个漏洞。</p>
+<h3 id="_1">区分实体：</h3>
+<p>实体可以理解为变量，其必须在DTD中定义申明，可以在文档中的其他位置引用该变量的值。
+实体按类型主要分为以下四种：</p>
+<p>内置实体 (Built-in entities)</p>
+<p>字符实体 (Character entities)</p>
+<p>通用实体 (General entities)</p>
+<p>参数实体 (Parameter entities)</p>
+<p>外部实体：</p>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE 根元素 SYSTEM &quot;文件名&quot;&gt;
+</code></pre></div>
+<p>内部实体：</p>
+<div class="highlight"><pre><span></span><code>&lt;!ENTITY 实体名称 &quot;实体的值&quot;&gt;
+</code></pre></div>
+<h2 id="pikachu-xxe">pikachu -XXE漏洞</h2>
+<p>既"xml外部实体注入漏洞"。
+概括一下就是"攻击者通过向服务器注入指定的xml实体内容,从而让服务器按照指定的配置进行执行,导致问题"
+也就是说服务端接收和解析了来自用户端的xml数据,而又没有做严格的安全控制,从而导致xml外部实体注入。</p>
+<p>实验过程：</p>
+<p>1.分析：</p>
+<p>先输入一个xml文档</p>
+<p><img alt="img" src="../XXE.assets/wps2.jpg" /> </p>
+<p>提交后解析成功：</p>
+<p><img alt="img" src="../XXE.assets/wps3.jpg" /> </p>
+<p>输入一个引用外部实体XML文件</p>
+<div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+
+&lt;!DOCTYPE ANY [
+
+   &lt;!ENTITY xxe SYSTEM &quot;file:///d://shiyan.txt&quot; &gt;]&gt;     
+
+&lt;value&gt;&amp;xxe;&lt;/value&gt;
+</code></pre></div>
+<p>其中shiyan文件中的内容为：helloworld</p>
+<p>提交之后解析成功</p>
+<p><img alt="img" src="../XXE.assets/wps4.jpg" /> </p>
+<h2 id="xxe">XXE靶机实验</h2>
+<p>实验设置靶机和kali在同一网段</p>
+<p><img alt="img" src="../XXE.assets/wps5.jpg" /> </p>
+<p>探测靶机ip为192.168.8.144</p>
+<p>访问192.168.8.144页面：</p>
+<p><img alt="img" src="../XXE.assets/wps6.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps7.jpg" /> </p>
+<p>探测目录</p>
+<p><img alt="img" src="../XXE.assets/wps8.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps9.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps10.jpg" /> </p>
+<p>用gobuster探测xxe目录</p>
+<p><img alt="img" src="../XXE.assets/wps11.jpg" /> </p>
+<p>在网页探测admin.php和index.php</p>
+<p><img alt="img" src="../XXE.assets/wps12.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps13.jpg" /> </p>
+<p>登录192.168.8.144/xee页面下的登录页，并开启抓包</p>
+<p><img alt="img" src="../XXE.assets/wps14.jpg" /> </p>
+<p>通过抓取的包文件发现又XML语句，判断出可以存在WEB实体注</p>
+<p>入</p>
+<p>更改XML文件，并发送</p>
+<p><img alt="img" src="../XXE.assets/wps15.jpg" /> </p>
+<p>*可以发送到暴力破解，对文件目录暴力破解，批量探测：</p>
+<p><img alt="img" src="../XXE.assets/wps16.jpg" /> </p>
+<p>将XML文件再更改发送：</p>
+<p><img alt="img" src="../XXE.assets/wps17.jpg" /> </p>
+<div class="highlight"><pre><span></span><code>&lt;!ENTITY sp SYSTEM &quot;php://filter/read=convert.base64-encode/resource=admin.php&quot;&gt;
+
+]&gt;
+</code></pre></div>
+<p>此为外部实体注入，事通过调用"php"里的函数调用base64-encode将admin.php文档进行base64编码</p>
+<p>将回应的内容发送到encode编码</p>
+<p>通过转换获取一段代码，并分析获取可登录的账号密码，并解密密码</p>
+<p><img alt="img" src="../XXE.assets/wps18.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps19.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps20.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps21.jpg" /> </p>
+<p>访问并想读取flagmeout.php内文件</p>
+<p><img alt="img" src="../XXE.assets/wps22.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps23.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps24.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps25.jpg" /> </p>
+<p><img alt="img" src="../XXE.assets/wps26.jpg" /> </p>
+<p>得到一个加密的webshell</p>
+<p><img alt="img" src="../XXE.assets/wps27.jpg" /> </p>
+<p>将他保存到文件，并执行D:\phpStudy\PHPTutorial\WWW下</p>
+<p><img alt="img" src="../XXE.assets/wps28.jpg" /> </p>
+<p>注：加php头</p>
+<p>访问<your ip>/lala.php</p>
+<p><img alt="img" src="../XXE.assets/wps29.jpg" /> </p>
 
 
 

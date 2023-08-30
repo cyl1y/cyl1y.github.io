@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../PostgreSQL%20%E9%AB%98%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2019-9193%EF%BC%89/">
+        <link rel="prev" href="../shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%28CVE-2016-4437%29/">
       
       
-        <link rel="next" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
+        <link rel="next" href="../vulhub_Lame/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>RCE - 陈奕霖</title>
+        <title>Varlog目录下日志文件 - 陈奕霖</title>
       
     
     
@@ -66,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#rceremote-commandcode-execute" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RCE
+              Varlog目录下日志文件
             
           </span>
         </div>
@@ -673,48 +668,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          RCE
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RCE/" class="md-nav__link">
         RCE
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -864,11 +822,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../varlog%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Varlog目录下日志文件
       </a>
+      
     </li>
   
 
@@ -940,21 +906,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -968,19 +919,74 @@
                   
 
 
-  <h1>RCE</h1>
+  <h1>Varlog目录下日志文件</h1>
 
-<h2 id="rceremote-commandcode-execute">RCE(remote command/code execute)概述</h2>
-<p>RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统</p>
-<p>远程系统命令执行</p>
-<p>正常PING</p>
-<p><img alt="img" src="../RCE.assets/wps6.jpg" /> </p>
-<p>Ping 127.0.0.1 | whoami</p>
-<p><img alt="img" src="../RCE.assets/wps7.jpg" /> </p>
-<p>在命令行中一般例如  ipconfig | whoami执行后边命令</p>
-<p>​          ipconfig | |whoami执行前边命令</p>
-<p>​         ipconfig2 | |whoami执行有效命令</p>
-<p>​         ipconfig &amp;&amp;whoami执行后边两个命令</p>
+<p>中一些只有特定版本采用，如dpkg.log只能在基于Debian的系统中看到。</p>
+<ol>
+<li>/var/log/messages —     包括整体系统信息，其中也包含系统启动期间的日志。此外，mail，cron，daemon，kern和auth等内容也记录在</li>
+</ol>
+<p>var/log/messages日志中。</p>
+<ol>
+<li>/var/log/dmesg — 包含内核缓冲信息（kernel ring buffer）。在系统启动</li>
+</ol>
+<p>时，会在屏幕上显示许多与硬件有关的信息。可以用dmesg查看它们。</p>
+<ol>
+<li>/var/log/auth.log —     包含系统授权信息，包括用户登录和使用的权限机制等。</li>
+<li>/var/log/boot.log — 包含系统启动时的日志。</li>
+<li>/var/log/daemon.log — 包含各种系统后台守护进程日志信息。</li>
+<li>/var/log/dpkg.log – 包括安装或dpkg命令清除软件包的日志。</li>
+<li>/var/log/kern.log – 包含内核产生的日志，有助于在定制内核时解决问</li>
+</ol>
+<p>题。</p>
+<ol>
+<li>/var/log/lastlog —     记录所有用户的最近信息。这不是一个ASCII文件，因此需要用lastlog命令查看内容。</li>
+<li>/var/log/maillog     /var/log/mail.log — 包含来着系统运行电子邮件服务器</li>
+</ol>
+<p>的日志信息。例如，sendmail日志信息就全部送到这个文件中。</p>
+<ol>
+<li>/var/log/user.log —     记录所有等级用户信息的日志。</li>
+<li>/var/log/Xorg.x.log — 来自X的日志信息。</li>
+<li>/var/log/alternatives.log –     更新替代信息都记录在这个文件中。</li>
+<li>/var/log/btmp – 记录所有失败登录信息。使用last命令可以查看btmp文</li>
+</ol>
+<p>件。例如，”last -f /var/log/btmp | more“。</p>
+<ol>
+<li>/var/log/cups —     涉及所有打印信息的日志。</li>
+<li>/var/log/anaconda.log — 在安装Linux时，所有安装信息都储存在这个文</li>
+</ol>
+<p>件中。</p>
+<ol>
+<li>/var/log/yum.log —     包含使用yum安装的软件包信息。</li>
+<li>/var/log/cron — 每当cron进程开始一个工作时，就会将相关信息记录在</li>
+</ol>
+<p>这个文件中。</p>
+<ol>
+<li>/var/log/secure —     包含验证和授权方面信息。例如，sshd会将所有信息</li>
+</ol>
+<p>记录（其中包括失败登录）在这里。</p>
+<ol>
+<li>/var/log/wtmp或/var/log/utmp — 包含登录信息。使用wtmp可以找出谁</li>
+</ol>
+<p>正在登陆进入系统，谁使用命令显示这个文件或信息等。</p>
+<ol>
+<li>/var/log/faillog –     包含用户登录失败信息。此外，错误登录命令也会记</li>
+</ol>
+<p>录在本文件中。</p>
+<p>除了上述Log文件以外， /var/log还基于系统的具体应用包含以下一些子目录：</p>
+<ul>
+<li>/var/log/httpd/或/var/log/apache2 — 包含服务器access_log和error_log</li>
+</ul>
+<p>信息。</p>
+<ul>
+<li>/var/log/lighttpd/ — 包含light HTTPD的access_log和error_log。</li>
+<li>/var/log/mail/ – 这个子目录包含邮件服务器的额外日志。</li>
+<li>/var/log/prelink/ — 包含.so文件被prelink修改的信息。</li>
+<li>/var/log/audit/ — 包含被 Linux audit daemon储存的信息。</li>
+<li>/var/log/samba/ – 包含由samba存储的信息。</li>
+<li>/var/log/sa/ — 包含每日由sysstat软件包收集的sar文件。</li>
+<li>/var/log/sssd/ – 用于守护进程安全服务。</li>
+</ul>
+<p>除了手动存档和清除这些日志文件以外，还可以使用logrotate在文件达到一定大小后自动删除。可以尝试用vi，tail，grep和less等命令查看这些日志文件</p>
 
 
 

